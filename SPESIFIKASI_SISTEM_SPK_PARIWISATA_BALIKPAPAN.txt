@@ -1,0 +1,1193 @@
+================================================================
+PROMPT SPESIFIKASI SISTEM
+SISTEM PENDUKUNG KEPUTUSAN (SPK) AHP-TOPSIS
+PEMILIHAN PRIORITAS PENGEMBANGAN PARIWISATA KOTA BALIKPAPAN
+================================================================
+Versi       : 1.0
+Tanggal     : Juni 2025
+Target Stack: Next.js 14 (App Router) + Supabase + Vercel
+================================================================
+
+
+================================================================
+BAGIAN 1 — KONTEKS & TUJUAN SISTEM
+================================================================
+
+Bangun sebuah Sistem Pendukung Keputusan (SPK) berbasis web
+untuk mendukung pengambilan keputusan dalam menentukan prioritas
+pengembangan destinasi pariwisata di Kota Balikpapan menggunakan
+metode gabungan AHP (Analytic Hierarchy Process) dan TOPSIS
+(Technique for Order of Preference by Similarity to Ideal
+Solution).
+
+Sistem ini digunakan oleh Dinas Pariwisata Kota Balikpapan
+sebagai alat bantu analisis. Tidak ada fitur login/register.
+Sistem bersifat publik (dapat diakses siapa saja) namun tetap
+menyediakan fitur CRUD lengkap untuk seluruh data.
+
+Konteks latar belakang:
+- Balikpapan ditetapkan sebagai mitra strategis dan superhub
+  ekonomi Ibu Kota Nusantara (IKN) berdasarkan UU No. 3/2022.
+- Perlunya skala prioritas program pengembangan pariwisata
+  agar alokasi anggaran tepat sasaran dan efisien.
+- Pengembangan mengacu pada konsep 4A: Atraksi, Amenitas,
+  Aksesibilitas, Ansileri/Kelembagaan.
+- Regulasi acuan: Perda Kota Balikpapan No. 12/2012 (RTRW)
+  dan No. 6/2021 (RPJMD).
+
+
+================================================================
+BAGIAN 2 — TECH STACK & INFRASTRUKTUR
+================================================================
+
+FRONTEND:
+- Framework     : Next.js 14 (App Router, React Server Components)
+- Language      : TypeScript
+- Styling       : Tailwind CSS
+- UI Components : shadcn/ui
+- Icons         : Lucide React
+- Grafik/Chart  : Recharts
+- Peta          : React-Leaflet + Leaflet.js
+- Tabel         : TanStack Table v8
+- Notifikasi    : react-hot-toast
+- Export PDF    : jsPDF + jspdf-autotable
+- Export Excel  : xlsx (SheetJS)
+- Form          : React Hook Form + Zod
+
+DATABASE & BACKEND:
+- Database      : Supabase (PostgreSQL)
+- ORM/Query     : Supabase JS Client (@supabase/supabase-js)
+- API           : Next.js API Routes (App Router route handlers)
+- Real-time     : Supabase Realtime (opsional untuk update ranking)
+
+DEPLOYMENT:
+- Hosting       : Vercel
+- Environment   : Vercel Environment Variables untuk Supabase keys
+- Domain        : Subdomain Vercel atau custom domain
+
+PACKAGE MANAGER:
+- npm atau pnpm
+
+FOLDER STRUCTURE:
+/app
+  /dashboard          → halaman dashboard utama
+  /objek-wisata       → CRUD destinasi wisata
+  /kriteria           → CRUD kriteria dan sub-kriteria
+  /kalkulasi-ahp      → input & kalkulasi AHP
+  /kalkulasi-topsis   → input & kalkulasi TOPSIS
+  /ranking            → halaman hasil ranking
+  /laporan            → ekspor laporan
+  /metodologi         → penjelasan metode
+  /sumber-referensi   → dokumen referensi & regulasi
+/components
+  /ui                 → komponen shadcn/ui
+  /shared             → komponen reusable (Sidebar, Header, dll)
+  /maps               → komponen peta Leaflet
+  /charts             → komponen grafik Recharts
+/lib
+  /supabase           → supabase client & server setup
+  /calculations       → fungsi kalkulasi AHP & TOPSIS murni TS
+  /utils              → helper functions
+  /validations        → Zod schemas
+/types                → TypeScript interfaces & types
+
+
+================================================================
+BAGIAN 3 — SKEMA DATABASE (SUPABASE / POSTGRESQL)
+================================================================
+
+--- TABEL: clusters ---
+CREATE TABLE clusters (
+  id          UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name        TEXT NOT NULL,
+  description TEXT,
+  color       TEXT,           -- warna hex untuk peta & chart
+  created_at  TIMESTAMPTZ DEFAULT now(),
+  updated_at  TIMESTAMPTZ DEFAULT now()
+);
+
+Contoh data clusters:
+- 'Wisata Bahari, Pesisir & Pantai'         (#0ea5e9)
+- 'Wisata Alam, Konservasi & Edukasi'       (#22c55e)
+- 'Wisata Sejarah, Budaya & Heritage'       (#f59e0b)
+- 'Wisata Kreatif, Kuliner & Belanja'       (#8b5cf6)
+- 'Wisata MICE & Bisnis'                    (#ef4444)
+
+--- TABEL: alternatives ---
+CREATE TABLE alternatives (
+  id            UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  code          TEXT UNIQUE NOT NULL,     -- A1, A2, ... A40
+  name          TEXT NOT NULL,
+  cluster_id    UUID REFERENCES clusters(id) ON DELETE SET NULL,
+  description   TEXT,
+  address       TEXT,
+  latitude      DECIMAL(10, 8),
+  longitude     DECIMAL(11, 8),
+  image_url     TEXT,
+  is_active     BOOLEAN DEFAULT true,
+  created_at    TIMESTAMPTZ DEFAULT now(),
+  updated_at    TIMESTAMPTZ DEFAULT now()
+);
+
+--- TABEL: criteria ---
+CREATE TABLE criteria (
+  id          UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  code        TEXT UNIQUE NOT NULL,       -- K1, K2, K3, K4, K5, K6, K7
+  name        TEXT NOT NULL,
+  type        TEXT NOT NULL CHECK (type IN ('benefit', 'cost')),
+  description TEXT,
+  weight      DECIMAL(10, 6) DEFAULT 0,   -- bobot hasil AHP (diisi otomatis)
+  sort_order  INTEGER DEFAULT 0,
+  created_at  TIMESTAMPTZ DEFAULT now(),
+  updated_at  TIMESTAMPTZ DEFAULT now()
+);
+
+Daftar Kriteria (7 kriteria):
+  K1 - Aksesibilitas       (benefit)
+  K2 - Amenitas            (benefit)
+  K3 - Atraksi             (benefit)
+  K4 - Kelembagaan         (benefit)
+  K5 - Dampak Ekonomi      (benefit)
+  K6 - Kelestarian Lingk.  (benefit)
+  K7 - Relevansi IKN       (benefit)
+
+--- TABEL: sub_criteria ---
+CREATE TABLE sub_criteria (
+  id           UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  criteria_id  UUID REFERENCES criteria(id) ON DELETE CASCADE,
+  score_value  DECIMAL(4,2) NOT NULL,  -- 1.00, 2.00, 3.00, 4.00
+  label        TEXT NOT NULL,          -- Tidak Baik / Kurang Baik / Baik / Sangat Baik
+  description  TEXT,
+  created_at   TIMESTAMPTZ DEFAULT now()
+);
+
+--- TABEL: scores ---
+-- Menyimpan nilai/skor setiap alternatif terhadap setiap kriteria
+CREATE TABLE scores (
+  id              UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  alternative_id  UUID REFERENCES alternatives(id) ON DELETE CASCADE,
+  criteria_id     UUID REFERENCES criteria(id) ON DELETE CASCADE,
+  score_value     DECIMAL(4,2) NOT NULL,   -- nilai 1.00 - 4.00
+  notes           TEXT,
+  created_at      TIMESTAMPTZ DEFAULT now(),
+  updated_at      TIMESTAMPTZ DEFAULT now(),
+  UNIQUE(alternative_id, criteria_id)
+);
+
+--- TABEL: ahp_matrices ---
+-- Menyimpan matriks perbandingan berpasangan AHP
+CREATE TABLE ahp_matrices (
+  id              UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  session_name    TEXT NOT NULL DEFAULT 'Default',
+  criteria_i_id   UUID REFERENCES criteria(id) ON DELETE CASCADE,
+  criteria_j_id   UUID REFERENCES criteria(id) ON DELETE CASCADE,
+  value           DECIMAL(10, 6) NOT NULL,  -- nilai perbandingan (1/9 s/d 9)
+  created_at      TIMESTAMPTZ DEFAULT now(),
+  updated_at      TIMESTAMPTZ DEFAULT now(),
+  UNIQUE(session_name, criteria_i_id, criteria_j_id)
+);
+
+--- TABEL: ahp_results ---
+-- Menyimpan hasil kalkulasi AHP
+CREATE TABLE ahp_results (
+  id              UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  session_name    TEXT NOT NULL DEFAULT 'Default',
+  criteria_id     UUID REFERENCES criteria(id) ON DELETE CASCADE,
+  weight          DECIMAL(10, 8) NOT NULL,  -- bobot prioritas
+  lambda_max      DECIMAL(10, 8),
+  ci              DECIMAL(10, 8),           -- Consistency Index
+  cr              DECIMAL(10, 8),           -- Consistency Ratio
+  is_consistent   BOOLEAN,                  -- CR < 0.1
+  calculated_at   TIMESTAMPTZ DEFAULT now()
+);
+
+--- TABEL: topsis_results ---
+-- Menyimpan hasil kalkulasi TOPSIS per alternatif
+CREATE TABLE topsis_results (
+  id                    UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  session_name          TEXT NOT NULL DEFAULT 'Default',
+  alternative_id        UUID REFERENCES alternatives(id) ON DELETE CASCADE,
+  d_positive            DECIMAL(15, 10),   -- jarak ke solusi ideal positif
+  d_negative            DECIMAL(15, 10),   -- jarak ke solusi ideal negatif
+  preference_score      DECIMAL(10, 8),    -- nilai preferensi Ci (0-1)
+  rank                  INTEGER,
+  calculated_at         TIMESTAMPTZ DEFAULT now()
+);
+
+--- TABEL: topsis_normalized ---
+-- Menyimpan matriks normalisasi TOPSIS (opsional, untuk transparansi)
+CREATE TABLE topsis_normalized (
+  id              UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  session_name    TEXT NOT NULL DEFAULT 'Default',
+  alternative_id  UUID REFERENCES alternatives(id) ON DELETE CASCADE,
+  criteria_id     UUID REFERENCES criteria(id) ON DELETE CASCADE,
+  r_value         DECIMAL(15, 10),   -- nilai normalisasi
+  v_value         DECIMAL(15, 10),   -- nilai terbobot
+  calculated_at   TIMESTAMPTZ DEFAULT now()
+);
+
+--- TABEL: references_docs ---
+-- Menyimpan sumber referensi & regulasi
+CREATE TABLE references_docs (
+  id            UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  category      TEXT NOT NULL,  -- 'Peraturan Daerah' | 'Undang-Undang' |
+                                --  'Jurnal Ilmiah' | 'Buku' | 'Lainnya'
+  title         TEXT NOT NULL,
+  number        TEXT,           -- nomor perda/UU jika ada
+  year          INTEGER,
+  publisher     TEXT,
+  description   TEXT,
+  url           TEXT,
+  sort_order    INTEGER DEFAULT 0,
+  created_at    TIMESTAMPTZ DEFAULT now(),
+  updated_at    TIMESTAMPTZ DEFAULT now()
+);
+
+--- TABEL: app_settings ---
+CREATE TABLE app_settings (
+  id      UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  key     TEXT UNIQUE NOT NULL,
+  value   TEXT,
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+
+Contoh data app_settings:
+  'active_session'  → 'Default'
+  'app_title'       → 'SPK Pariwisata Balikpapan'
+  'app_subtitle'    → 'AHP-TOPSIS Prioritas Pengembangan Pariwisata'
+  'city'            → 'Kota Balikpapan'
+  'year'            → '2025'
+
+
+================================================================
+BAGIAN 4 — DATA AWAL (SEED DATA)
+================================================================
+
+--- ALTERNATIF WISATA (40 alternatif) ---
+
+KLASTER 1: Wisata Bahari, Pesisir & Pantai
+  A1  - Pantai Manggar Segarasari      (-1.2745, 116.9231)
+  A2  - Pantai Lamaru                  (-1.2890, 116.9401)
+  A3  - Pantai Kemala                  (-1.2634, 116.8832)
+  A4  - Pantai Nelayan                 (-1.2701, 116.8954)
+  A5  - Pantai Monpera                 (-1.2590, 116.8756)
+  A6  - Pasar Sore Manggar             (-1.2712, 116.9187)
+  A7  - Pasar Pringgodani              (-1.2801, 116.9042)
+  A8  - Pantai BSB                     (-1.2453, 116.8923)
+  A9  - Pantai Seraya                  (-1.2987, 116.9512)
+  A10 - Pantai Melawai                 (-1.2543, 116.8634)
+  A11 - Pantai Ambalat                 (-1.3012, 116.9623)
+
+KLASTER 2: Wisata Alam, Konservasi & Edukasi
+  A12 - Kws Wisata Pendidikan Lingk. Hidup Beruang Madu (-1.2123, 116.8234)
+  A13 - Kebun Raya Balikpapan          (-1.2234, 116.8345)
+  A14 - Bukit Kebo                     (-1.2456, 116.8567)
+  A15 - Bamboe Wanades                 (-1.2678, 116.8789)
+  A16 - Kawasan WisataMeranti          (-1.2890, 116.9012)
+  A17 - Mangrove Margomulyo            (-1.1890, 116.8234)
+  A18 - Waduk Manggar                  (-1.2634, 116.9123)
+  A19 - Hutan Lindung Sungai Wain      (-1.1234, 116.7890)
+  A20 - Mangrove Graha Indah           (-1.2012, 116.7901)
+  A21 - Teluk Balikpapan               (-1.2890, 116.8456)
+
+KLASTER 3: Wisata Sejarah, Budaya & Heritage
+  A22 - Kawasan Cagar Budaya Sumur Minyak Mathilda (-1.2678, 116.8234)
+  A23 - Kampung Warna Warni            (-1.2789, 116.8345)
+  A24 - Kampung Atas Air Margasari     (-1.2890, 116.8456)
+  A25 - Kampung Wisata Tenun Kampung Baru (-1.2901, 116.8567)
+  A26 - Museum Mulawarman Balikpapan   (-1.2456, 116.8123)
+  A27 - Monumen Perjuangan Balikpapan  (-1.2567, 116.8234)
+
+KLASTER 4: Wisata Kreatif, Kuliner & Belanja
+  A28 - Pasar Klandasan                (-1.2678, 116.8345)
+  A29 - Kawasan Kuliner Kebun Sayur    (-1.2789, 116.8456)
+  A30 - Kawasan Seni Budaya RIKO       (-1.2890, 116.8567)
+  A31 - Pusat Oleh-Oleh Balikpapan     (-1.2901, 116.8678)
+  A32 - Food Street Rapak              (-1.2567, 116.8234)
+  A33 - Batik Benang Bintik            (-1.2678, 116.8345)
+
+KLASTER 5: Wisata MICE & Bisnis
+  A34 - Balikpapan Sport & Convention Center (-1.2456, 116.8123)
+  A35 - Grand Senyiur Convention Hall  (-1.2567, 116.8234)
+  A36 - Trans Studio Balikpapan        (-1.2678, 116.8345)
+  A37 - Kawasan Wisata Edukatif IKN    (-1.1234, 116.7123)
+  A38 - Pelabuhan Feri Kariangau       (-1.2012, 116.7234)
+  A39 - Bandara Internasional SAMS     (-1.2678, 116.8901)
+  A40 - Kawasan Ekonomi Khusus Kariangau (-1.2123, 116.7345)
+
+--- SKOR ALTERNATIF TERHADAP KRITERIA ---
+
+(Sesuai data dari tabel pada penelitian, skala 1.00-4.00)
+
+A1  : K1=4, K2=4, K3=4, K4=3, K5=4, K6=3, K7=4
+A2  : K1=3, K2=3, K3=4, K4=3, K5=3, K6=3, K7=3
+A3  : K1=4, K2=4, K3=3, K4=3, K5=4, K6=2, K7=4
+A4  : K1=3, K2=4, K3=4, K4=4, K5=3, K6=4, K7=3
+A5  : K1=3, K2=3, K3=4, K4=3, K5=3, K6=3, K7=4
+A6  : K1=3, K2=4, K3=3, K4=4, K5=2, K6=4, K7=3
+A7  : K1=4, K2=3, K3=4, K4=3, K5=2, K6=4, K7=4
+A8  : K1=3, K2=4, K3=4, K4=4, K5=3, K6=3, K7=3
+A9  : K1=4, K2=3, K3=3, K4=2, K5=4, K6=4, K7=3
+A10 : K1=4, K2=4, K3=3, K4=3, K5=3, K6=4, K7=4
+A11 : K1=3, K2=3, K3=3, K4=3, K5=2, K6=3, K7=4
+A12 : K1=4, K2=4, K3=3, K4=2, K5=3, K6=4, K7=3
+A13 : K1=3, K2=3, K3=3, K4=4, K5=3, K6=3, K7=3
+A14 : K1=4, K2=4, K3=2, K4=4, K5=3, K6=4, K7=4
+A15 : K1=4, K2=3, K3=4, K4=3, K5=3, K6=3, K7=3
+A16 : K1=3, K2=3, K3=4, K4=4, K5=3, K6=3, K7=3
+A17 : K1=4, K2=2, K3=3, K4=4, K5=4, K6=3, K7=3
+A18 : K1=3, K2=4, K3=4, K4=3, K5=3, K6=4, K7=3
+A19 : K1=3, K2=3, K3=4, K4=4, K5=3, K6=3, K7=2
+A20 : K1=2, K2=4, K3=3, K4=3, K5=2, K6=4, K7=4
+A21 : K1=4, K2=4, K3=4, K4=3, K5=4, K6=4, K7=3
+A22 : K1=4, K2=2, K3=3, K4=3, K5=2, K6=4, K7=2
+A23 : K1=4, K2=4, K3=4, K4=3, K5=4, K6=4, K7=4
+A24 : K1=3, K2=3, K3=4, K4=3, K5=3, K6=3, K7=3
+A25 : K1=4, K2=4, K3=3, K4=3, K5=3, K6=4, K7=4
+A26 : K1=3, K2=3, K3=3, K4=4, K5=3, K6=3, K7=3
+A27 : K1=4, K2=3, K3=4, K4=3, K5=3, K6=3, K7=3
+A28 : K1=4, K2=4, K3=3, K4=3, K5=4, K6=2, K7=3
+A29 : K1=3, K2=4, K3=4, K4=4, K5=3, K6=3, K7=3
+A30 : K1=3, K2=3, K3=4, K4=3, K5=3, K6=4, K7=3
+A31 : K1=4, K2=4, K3=3, K4=3, K5=4, K6=3, K7=3
+A32 : K1=3, K2=4, K3=4, K4=3, K5=3, K6=3, K7=3
+A33 : K1=3, K2=3, K3=3, K4=4, K5=2, K6=4, K7=2
+A34 : K1=4, K2=4, K3=4, K4=4, K5=4, K6=3, K7=4
+A35 : K1=4, K2=4, K3=3, K4=4, K5=4, K6=3, K7=4
+A36 : K1=4, K2=4, K3=4, K4=3, K5=4, K6=3, K7=4
+A37 : K1=3, K2=3, K3=3, K4=3, K5=4, K6=4, K7=4
+A38 : K1=4, K2=3, K3=2, K4=4, K5=3, K6=3, K7=4
+A39 : K1=4, K2=4, K3=3, K4=4, K5=4, K6=2, K7=4
+A40 : K1=3, K2=3, K3=2, K4=3, K5=4, K6=3, K7=4
+
+--- MATRIKS PERBANDINGAN BERPASANGAN AHP (7x7) ---
+(Nilai awal dapat diubah melalui UI)
+
+     K1   K2   K3   K4   K5   K6   K7
+K1 [ 1,   2,   1/3, 3,   1/2, 3,   4  ]
+K2 [ 1/2, 1,   1/4, 2,   1/3, 2,   3  ]
+K3 [ 3,   4,   1,   5,   2,   5,   6  ]
+K4 [ 1/3, 1/2, 1/5, 1,   1/4, 1,   2  ]
+K5 [ 2,   3,   1/2, 4,   1,   4,   5  ]
+K6 [ 1/3, 1/2, 1/5, 1,   1/4, 1,   2  ]
+K7 [ 1/4, 1/3, 1/6, 1/2, 1/5, 1/2, 1  ]
+
+
+================================================================
+BAGIAN 5 — SPESIFIKASI HALAMAN & FITUR
+================================================================
+
+--------------------------------------------------------------
+5.1 LAYOUT GLOBAL
+--------------------------------------------------------------
+
+SIDEBAR (fixed, lebar 240px, collapsible ke 64px di mobile):
+  Header sidebar:
+    - Logo/ikon aplikasi
+    - Judul: "SPK Pariwisata"
+    - Subjudul: "Kota Balikpapan"
+
+  Menu UTAMA:
+    [icon dashboard]   Dashboard
+    [icon map-pin]     Objek Wisata
+    [icon sliders]     Kriteria
+
+  Menu ANALISIS:
+    [icon calculator]  Kalkulasi AHP
+    [icon chart-bar]   Kalkulasi TOPSIS
+    [icon trophy]      Ranking
+
+  Menu LAINNYA:
+    [icon file-text]   Laporan
+    [icon book-open]   Metodologi
+    [icon library]     Sumber Referensi
+
+  Footer sidebar:
+    - Versi sistem
+    - Tahun
+
+HEADER (sticky top, tinggi 60px):
+  - Tombol toggle sidebar (mobile)
+  - Breadcrumb halaman aktif
+  - Judul halaman aktif
+  - Chip/badge session aktif (mis: "Sesi: Default")
+
+KONTEN UTAMA:
+  - Padding 24px
+  - Background abu-abu terang
+  - Max-width 1400px, centered
+
+--------------------------------------------------------------
+5.2 HALAMAN: DASHBOARD (/dashboard)
+--------------------------------------------------------------
+
+LAYOUT: Grid responsif
+
+KOMPONEN 1 - HERO BANNER:
+  - Judul: "Sistem Pendukung Keputusan Prioritas Pengembangan
+    Pariwisata Kota Balikpapan"
+  - Subjudul metode: "AHP + TOPSIS"
+  - Konteks: "Mendukung Peran Balikpapan sebagai Superhub IKN"
+  - 2 tombol CTA: "Lihat Ranking" dan "Mulai Kalkulasi"
+  - Background: gradient biru tua dengan pattern/overlay
+
+KOMPONEN 2 - KARTU STATISTIK (4 kartu sejajar):
+  a. Total Alternatif        → jumlah dari tabel alternatives
+  b. Total Kriteria          → jumlah dari tabel criteria
+  c. Konsistensi AHP (CR)    → nilai CR dari ahp_results terbaru
+     - hijau jika CR < 0.1 (konsisten), merah jika tidak
+  d. Top Prioritas           → alternatif rank 1 dari topsis_results
+
+KOMPONEN 3 - TABEL TOP 5 RANKING:
+  - Tabel 5 baris teratas dari topsis_results
+  - Kolom: Rank, Kode, Nama Destinasi, Klaster, Skor Ci, Badge
+  - Tombol "Lihat Semua →" → ke halaman Ranking
+  - Badge warna: Emas=1, Perak=2, Perunggu=3, Biru=4-5
+
+KOMPONEN 4 - GRAFIK DISTRIBUSI KLASTER:
+  - Pie Chart / Donut Chart (Recharts)
+  - Jumlah alternatif per klaster
+  - Warna sesuai kolom `color` di tabel clusters
+
+KOMPONEN 5 - GRAFIK BOBOT KRITERIA:
+  - Bar Chart horizontal (Recharts)
+  - Menampilkan bobot AHP per kriteria (K1-K7)
+  - Tampilkan nilai bobot di ujung bar
+
+KOMPONEN 6 - PETA MINI (Leaflet):
+  - Peta Balikpapan dengan marker semua alternatif
+  - Warna marker = warna klaster
+  - Popup saat klik marker: nama, klaster, skor Ci
+  - Tombol "Lihat Peta Lengkap →" → ke halaman Objek Wisata
+
+KOMPONEN 7 - INFO SISTEM:
+  - Informasi metode yang digunakan
+  - Waktu kalkulasi terakhir
+  - Jumlah alternatif yang sudah dinilai
+
+--------------------------------------------------------------
+5.3 HALAMAN: OBJEK WISATA (/objek-wisata)
+--------------------------------------------------------------
+
+TABS/TOGGLE VIEW: "Tabel" | "Peta" | "Grid Kartu"
+
+--- VIEW TABEL ---
+FILTER & SEARCH BAR:
+  - Input search: nama destinasi
+  - Dropdown filter klaster (All, Bahari, Alam, Budaya, Kreatif, MICE)
+  - Dropdown filter aktif/nonaktif
+  - Tombol "+ Tambah Objek Wisata"
+
+TABEL (TanStack Table):
+  Kolom:
+  - No
+  - Kode (A1, A2, ...)
+  - Nama Destinasi Wisata
+  - Klaster (badge warna)
+  - Nilai Kriteria (K1-K7, mini badge angka)
+  - Status (Aktif / Nonaktif)
+  - Aksi (Edit | Hapus)
+
+  Fitur tabel:
+  - Sort tiap kolom
+  - Pagination (10, 25, 50 per halaman)
+  - Row highlight saat hover
+
+--- VIEW PETA (Leaflet Fullscreen) ---
+  - Peta Balikpapan interaktif
+  - Marker tiap destinasi, warna per klaster
+  - Cluster marker saat zoom out
+  - Popup klik marker: nama, klaster, alamat, skor K1-K7
+  - Filter sidebar kecil: toggle tampil/sembunyikan per klaster
+  - Koordinat GPS ditampilkan di popup
+
+--- VIEW GRID KARTU ---
+  - Kartu tiap destinasi (gambar, nama, klaster, kode)
+  - 3 kolom di desktop, 2 di tablet, 1 di mobile
+
+--- MODAL FORM TAMBAH/EDIT OBJEK WISATA ---
+  Field:
+  - Kode Alternatif (auto-generate, bisa diedit)
+  - Nama Destinasi Wisata *
+  - Klaster * (dropdown)
+  - Deskripsi singkat
+  - Alamat
+  - Latitude (decimal, -90 s/d 90)
+  - Longitude (decimal, -180 s/d 180)
+  - URL Gambar (input text atau upload)
+  - Status (Aktif / Nonaktif)
+  - Nilai Kriteria K1 - K7 *
+    → Tiap kriteria: dropdown (1=Tidak Baik, 2=Kurang Baik,
+      3=Baik, 4=Sangat Baik) + keterangan sub-kriteria muncul
+      sebagai tooltip/deskripsi di bawah dropdown
+
+  Validasi:
+  - Kode unik, tidak duplikat
+  - Nama wajib diisi
+  - Koordinat format desimal yang valid
+  - Semua nilai K1-K7 wajib diisi sebelum simpan
+
+  Tombol: Batal | Simpan
+
+--- KONFIRMASI HAPUS ---
+  - Dialog konfirmasi sebelum hapus
+  - Peringatan: "Data skor dan hasil kalkulasi terkait
+    akan ikut terhapus"
+
+--------------------------------------------------------------
+5.4 HALAMAN: KRITERIA (/kriteria)
+--------------------------------------------------------------
+
+LAYOUT: 2 bagian — Daftar Kriteria (kiri) + Detail Sub-Kriteria (kanan)
+
+--- BAGIAN KIRI: DAFTAR KRITERIA ---
+  Tabel/Card list 7 kriteria (K1-K7):
+  Kolom: Kode | Nama | Tipe | Bobot AHP | Urutan | Aksi
+
+  Tombol "+  Tambah Kriteria" (untuk penelitian selanjutnya)
+
+  MODAL FORM EDIT KRITERIA:
+    Field:
+    - Kode Kriteria (K1-K7)
+    - Nama Kriteria *
+    - Tipe: Benefit / Cost
+    - Deskripsi
+    - Urutan tampil
+    Catatan: Bobot diisi otomatis dari hasil kalkulasi AHP
+    Tombol: Batal | Simpan
+
+--- BAGIAN KANAN: SUB-KRITERIA ---
+  Saat klik salah satu kriteria, tampilkan tabel sub-kriteria:
+  Kolom: Nilai (1/2/3/4) | Label | Deskripsi | Aksi
+
+  MODAL FORM TAMBAH/EDIT SUB-KRITERIA:
+    Field:
+    - Nilai Score (1.00 / 2.00 / 3.00 / 4.00)
+    - Label (Tidak Baik / Kurang Baik / Baik / Sangat Baik)
+    - Deskripsi lengkap
+    Tombol: Batal | Simpan
+
+--- TABEL MATRIKS SKALA AHP ---
+  Tampilkan tabel referensi skala Saaty 1-9:
+  Nilai | Keterangan | Kebalikan
+  1     | Sama penting | 1
+  2     | Antara sama & sedikit lebih penting | 1/2
+  3     | Sedikit lebih penting | 1/3
+  ...s/d...
+  9     | Mutlak lebih penting | 1/9
+
+--------------------------------------------------------------
+5.5 HALAMAN: KALKULASI AHP (/kalkulasi-ahp)
+--------------------------------------------------------------
+
+TUJUAN: User memasukkan matriks perbandingan berpasangan,
+sistem menghitung bobot kriteria, CI, dan CR secara otomatis.
+
+LANGKAH-LANGKAH (Stepper/Tab):
+
+--- STEP 1: INPUT MATRIKS PERBANDINGAN ---
+  Tampilkan matriks 7x7 (NxN sesuai jumlah kriteria aktif)
+  - Header baris & kolom: kode + nama kriteria (K1-K7)
+  - Sel diagonal = 1 (tidak bisa diedit)
+  - Sel di atas diagonal: input dropdown pilihan nilai Saaty:
+    9, 8, 7, 6, 5, 4, 3, 2, 1, 1/2, 1/3, 1/4, 1/5, 1/6, 1/7, 1/8, 1/9
+  - Sel di bawah diagonal: otomatis terisi kebalikan (1/nilai)
+    dan ditampilkan dalam format pecahan (mis: "1/3")
+  - Warna sel: diagonal=abu, atas=putih (editable), bawah=abu muda (auto)
+
+  Tombol: "Hitung AHP →"
+
+--- STEP 2: HASIL KALKULASI AHP ---
+
+  TAMPILAN TRANSPARAN STEP-BY-STEP:
+
+  2a. Matriks Perbandingan Awal
+      → Tampilkan ulang matriks yang diinput (format desimal)
+
+  2b. Matriks Normalisasi
+      → Tiap sel dibagi jumlah kolom
+      → Tampilkan tabel matriks normalisasi
+
+  2c. Vektor Prioritas (Bobot Kriteria)
+      → Rata-rata tiap baris dari matriks normalisasi
+      → Tampilkan tabel: Kriteria | Bobot | Bobot (%)
+      → Bar chart horizontal sederhana
+
+  2d. Uji Konsistensi
+      → Tampilkan:
+         - λ_maks (Lambda Max)   = Σ (kolom sum × bobot)
+         - CI (Consistency Index) = (λ_maks - n) / (n - 1)
+         - RI (Random Index)      = nilai sesuai n (tabel Saaty)
+           n=7 → RI = 1.32
+         - CR (Consistency Ratio) = CI / RI
+      → Indikator visual:
+         - CR < 0.1  → Badge HIJAU "Konsisten ✓"
+         - CR ≥ 0.1  → Badge MERAH "Tidak Konsisten ✗"
+           + peringatan "Silakan revisi matriks perbandingan"
+
+  Tombol: "← Edit Matriks" | "Simpan Hasil AHP & Lanjut ke TOPSIS →"
+
+  Saat "Simpan":
+  - Simpan hasil ke tabel ahp_results
+  - Update kolom weight di tabel criteria
+  - Toast notifikasi sukses
+
+--- TABEL NILAI RI SAATY ---
+  Tampilkan tabel referensi nilai RI:
+  n  :  1    2    3    4    5    6    7    8    9    10
+  RI :  0.00 0.00 0.58 0.90 1.12 1.24 1.32 1.41 1.45 1.49
+
+--------------------------------------------------------------
+5.6 HALAMAN: KALKULASI TOPSIS (/kalkulasi-topsis)
+--------------------------------------------------------------
+
+TUJUAN: Menghitung ranking alternatif menggunakan metode TOPSIS
+berdasarkan skor alternatif dan bobot kriteria dari AHP.
+
+PRASYARAT: Tampilkan warning jika AHP belum dijalankan/disimpan.
+
+LANGKAH-LANGKAH (Stepper/Tab):
+
+--- STEP 1: DATA INPUT ---
+  Tampilkan tabel matriks keputusan (Decision Matrix):
+  - Baris: Alternatif (A1-A40)
+  - Kolom: K1, K2, K3, K4, K5, K6, K7
+  - Nilai dari tabel scores
+  - Tampilkan juga baris "Bobot Kriteria" di bawah header
+    (bobot dari hasil AHP, 4 desimal)
+  - Tampilkan kolom tipe kriteria (Benefit/Cost)
+
+  Tombol: "Jalankan Kalkulasi TOPSIS →"
+
+--- STEP 2: MATRIKS NORMALISASI ---
+  Formula: r_ij = x_ij / sqrt(Σ x_ij²) untuk setiap kolom j
+
+  Tampilkan:
+  - Tabel matriks normalisasi R (nilai 4 desimal)
+  - Penjelasan formula di atas tabel
+
+--- STEP 3: MATRIKS NORMALISASI TERBOBOT ---
+  Formula: v_ij = w_j × r_ij
+
+  Tampilkan:
+  - Tabel matriks terbobot V (nilai 6 desimal)
+  - Baris bobot kriteria di atas tabel
+
+--- STEP 4: SOLUSI IDEAL ---
+  Untuk kriteria Benefit:
+    A+ = max(v_ij), A- = min(v_ij)
+  Untuk kriteria Cost:
+    A+ = min(v_ij), A- = max(v_ij)
+
+  Tampilkan:
+  - Tabel 2 baris: Solusi Ideal Positif (A+) dan Negatif (A-)
+  - Per kolom K1-K7
+
+--- STEP 5: JARAK KE SOLUSI IDEAL ---
+  D+ = sqrt(Σ (v_ij - A+_j)²)
+  D- = sqrt(Σ (v_ij - A-_j)²)
+
+  Tampilkan:
+  - Tabel: Alternatif | D+ | D- | (4 desimal)
+
+--- STEP 6: NILAI PREFERENSI & RANKING ---
+  Ci = D- / (D+ + D-)
+
+  Tampilkan:
+  - Tabel: Alternatif | D+ | D- | Ci | Rank
+  - Sorted descending by Ci
+  - Highlight baris rank 1-3 (emas, perak, perunggu)
+  - Progress bar mini di kolom Ci
+
+  Tombol: "Simpan Hasil TOPSIS →"
+
+  Saat "Simpan":
+  - Simpan ke tabel topsis_results
+  - Simpan matriks normalisasi ke topsis_normalized
+  - Toast notifikasi sukses
+
+--------------------------------------------------------------
+5.7 HALAMAN: RANKING (/ranking)
+--------------------------------------------------------------
+
+LAYOUT: Full-page ranking dengan fitur visualisasi
+
+BAGIAN 1 - HEADER INFO:
+  - Waktu kalkulasi terakhir
+  - Nilai CR AHP
+  - Total alternatif yang dihitung
+  - Chip session aktif
+
+BAGIAN 2 - FILTER & TAMPILAN:
+  - Filter klaster (All + per klaster)
+  - Toggle tampil: "Semua" | "Top 10" | "Top 20"
+  - Tombol export: PDF | Excel
+
+BAGIAN 3 - TABEL RANKING UTAMA:
+  Kolom:
+  - Rank (medal icon untuk 1-3)
+  - Kode Alternatif
+  - Nama Destinasi Wisata
+  - Klaster (badge warna)
+  - Skor K1-K7 (7 kolom nilai, warna hijau=4, kuning=3, oranye=2, merah=1)
+  - D+ (jarak ideal positif)
+  - D- (jarak ideal negatif)
+  - Skor Ci (progress bar + angka)
+  - Ranking
+
+  Fitur:
+  - Sort semua kolom
+  - Pagination atau infinite scroll
+  - Klik baris → expand detail skor per kriteria
+
+BAGIAN 4 - GRAFIK VISUALISASI:
+  a. Bar Chart: Top 15 Alternatif vs Skor Ci
+     (horizontal, warna per klaster)
+
+  b. Radar Chart: Perbandingan profil 3 alternatif teratas
+     (K1-K7 pada satu grafik radar)
+
+  c. Scatter Plot: D+ vs D- semua alternatif
+     (titik warna per klaster, label kode alternatif)
+
+  d. Bar Chart Stacked: Distribusi ranking per klaster
+     (berapa alternatif per klaster yang masuk top 10)
+
+BAGIAN 5 - KARTU TOP 3 PRIORITAS:
+  - 3 kartu besar berdampingan
+  - Ikon mahkota/medali
+  - Nama, kode, klaster, skor Ci
+  - Profil radar chart mini
+  - Tombol "Detail →"
+
+--------------------------------------------------------------
+5.8 HALAMAN: LAPORAN (/laporan)
+--------------------------------------------------------------
+
+TUJUAN: Generate dan ekspor laporan hasil analisis.
+
+BAGIAN 1 - PILIH KONTEN LAPORAN:
+  Checklist konten yang akan disertakan:
+  ☑ Ringkasan Eksekutif
+  ☑ Daftar Alternatif & Skor
+  ☑ Matriks Perbandingan AHP
+  ☑ Hasil Bobot Kriteria & Uji Konsistensi
+  ☑ Matriks Normalisasi TOPSIS
+  ☑ Matriks Terbobot TOPSIS
+  ☑ Solusi Ideal (A+ dan A-)
+  ☑ Jarak D+ dan D-
+  ☑ Ranking Akhir & Skor Ci
+  ☑ Grafik Bar Chart Top 15
+  ☑ Kesimpulan & Rekomendasi
+
+BAGIAN 2 - PREVIEW LAPORAN:
+  - Preview laporan dalam format yang akan diekspor
+  - Scrollable preview area
+
+BAGIAN 3 - TOMBOL EKSPOR:
+  - [📄 Ekspor PDF] → generate PDF menggunakan jsPDF
+    Format PDF:
+    * Header: Logo, judul sistem, tanggal
+    * Cover page dengan judul penelitian
+    * Daftar Isi
+    * Setiap bagian yang dicentang
+    * Tabel dengan jspdf-autotable
+    * Footer: halaman x dari y
+
+  - [📊 Ekspor Excel] → generate XLSX menggunakan SheetJS
+    Sheet 1: Data Alternatif & Skor
+    Sheet 2: Matriks AHP & Bobot
+    Sheet 3: Matriks Normalisasi TOPSIS
+    Sheet 4: Matriks Terbobot
+    Sheet 5: Solusi Ideal, D+, D-, Ci
+    Sheet 6: Ranking Final
+
+BAGIAN 4 - RIWAYAT EKSPOR:
+  - Daftar ekspor terakhir (localStorage atau tabel Supabase)
+  - Tanggal, format, jumlah alternatif
+
+--------------------------------------------------------------
+5.9 HALAMAN: METODOLOGI (/metodologi)
+--------------------------------------------------------------
+
+TUJUAN: Penjelasan ilmiah metode AHP dan TOPSIS.
+
+LAYOUT: Artikel panjang dengan sidebar anchor navigation
+
+KONTEN:
+
+BAGIAN 1 - PENDAHULUAN
+  - Penjelasan Sistem Pendukung Keputusan (SPK/DSS)
+  - Alasan penggunaan metode gabungan AHP-TOPSIS
+  - Diagram alur sistem secara keseluruhan
+
+BAGIAN 2 - METODE AHP
+  - Pengertian AHP (Analytic Hierarchy Process)
+  - Sejarah singkat (Thomas Saaty, 1980)
+  - Prinsip dasar AHP:
+    * Dekomposisi
+    * Penilaian komparatif
+    * Sintesis prioritas
+    * Konsistensi logis
+  - Skala penilaian Saaty (tabel 1-9)
+  - Formula: Matriks perbandingan, normalisasi, vektor prioritas
+  - Formula uji konsistensi (CI, RI, CR)
+  - Diagram/flowchart langkah AHP
+
+BAGIAN 3 - METODE TOPSIS
+  - Pengertian TOPSIS
+  - Prinsip: solusi ideal positif dan negatif
+  - Langkah-langkah TOPSIS:
+    1. Matriks Keputusan
+    2. Normalisasi
+    3. Matriks Terbobot
+    4. Solusi Ideal (A+, A-)
+    5. Jarak D+, D-
+    6. Nilai Preferensi Ci
+    7. Ranking
+  - Formula lengkap tiap langkah (tampilkan dengan LaTeX/MathML
+    atau gambar formula)
+  - Diagram alur TOPSIS
+
+BAGIAN 4 - KRITERIA PENILAIAN
+  - Penjelasan 7 kriteria (K1-K7) beserta definisi dan skala
+  - Tabel sub-kriteria lengkap (seperti gambar tabel skoring)
+  - Dasar penentuan kriteria (konsep 4A pariwisata)
+
+BAGIAN 5 - DIAGRAM HIRARKI
+  - Tampilkan diagram hirarki AHP:
+    Goal → Kriteria (K1-K7) → Alternatif (contoh beberapa)
+  - Gunakan komponen visual/SVG
+
+--------------------------------------------------------------
+5.10 HALAMAN: SUMBER REFERENSI (/sumber-referensi)
+--------------------------------------------------------------
+
+TUJUAN: Menyimpan dan menampilkan dokumen referensi,
+regulasi, dan literatur yang digunakan.
+
+BAGIAN 1 - FILTER & SEARCH:
+  - Search bar (cari judul atau nomor regulasi)
+  - Filter kategori:
+    All | Peraturan Daerah | Undang-Undang | Peraturan Pemerintah |
+    Jurnal Ilmiah | Buku | Laporan Teknis | Lainnya
+  - Tombol "+ Tambah Referensi"
+
+BAGIAN 2 - DAFTAR REFERENSI:
+  Tampilkan sebagai card list per kategori:
+
+  [Kategori: Peraturan Daerah]
+    • Perda Kota Balikpapan No. 12 Tahun 2012 tentang RTRW
+    • Perda Kota Balikpapan No. 6 Tahun 2021 tentang RPJMD
+    • [Tambahkan referensi lainnya]
+
+  [Kategori: Undang-Undang]
+    • UU Nomor 3 Tahun 2022 tentang Ibu Kota Negara
+    • UU Nomor 10 Tahun 2009 tentang Kepariwisataan
+    • [Tambahkan referensi lainnya]
+
+  [Kategori: Peraturan Pemerintah]
+    • PP terkait RTRW Nasional
+    • [Tambahkan referensi lainnya]
+
+  [Kategori: Jurnal Ilmiah]
+    • Saaty, T.L. (1980). The Analytic Hierarchy Process.
+    • Hwang, C.L. & Yoon, K. (1981). Multiple Attribute
+      Decision Making: Methods and Applications.
+    • [Tambahkan referensi lainnya]
+
+  CARD REFERENSI berisi:
+  - Badge kategori (warna per kategori)
+  - Judul dokumen
+  - Nomor & tahun (jika ada)
+  - Penerbit/instansi
+  - Deskripsi singkat
+  - Tombol Link (jika ada URL) | Edit | Hapus
+
+BAGIAN 3 - MODAL FORM TAMBAH/EDIT REFERENSI:
+  Field:
+  - Kategori * (dropdown)
+  - Judul Dokumen/Referensi *
+  - Nomor (mis: "No. 12 Tahun 2012")
+  - Tahun
+  - Penerbit / Instansi
+  - Deskripsi
+  - URL / Link dokumen
+  - Urutan tampil
+  Tombol: Batal | Simpan
+
+BAGIAN 4 - EKSPOR DAFTAR REFERENSI:
+  Tombol ekspor daftar referensi ke PDF/Excel
+
+
+================================================================
+BAGIAN 6 — LOGIKA KALKULASI (TYPESCRIPT)
+================================================================
+
+FILE: /lib/calculations/ahp.ts
+
+```typescript
+// Fungsi utama kalkulasi AHP
+export function calculateAHP(matrix: number[][]): {
+  normalizedMatrix: number[][];
+  weights: number[];
+  lambdaMax: number;
+  ci: number;
+  cr: number;
+  isConsistent: boolean;
+}
+
+// Step 1: Normalisasi matriks
+// Tiap elemen dibagi jumlah kolomnya
+function normalizeMatrix(matrix: number[][]): number[][]
+
+// Step 2: Hitung vektor prioritas (bobot)
+// Rata-rata tiap baris dari matriks normalisasi
+function calculateWeights(normalizedMatrix: number[][]): number[]
+
+// Step 3: Hitung lambda max
+// λmax = Σ (sum kolom × bobot)
+function calculateLambdaMax(matrix: number[][], weights: number[]): number
+
+// Step 4: Hitung CI dan CR
+// CI = (λmax - n) / (n - 1)
+// RI values: {1:0, 2:0, 3:0.58, 4:0.90, 5:1.12, 6:1.24, 7:1.32, 8:1.41, 9:1.45, 10:1.49}
+// CR = CI / RI[n]
+function calculateConsistency(lambdaMax: number, n: number): { ci: number; cr: number; isConsistent: boolean }
+```
+
+FILE: /lib/calculations/topsis.ts
+
+```typescript
+// Fungsi utama kalkulasi TOPSIS
+export function calculateTOPSIS(
+  decisionMatrix: number[][],    // alternatif × kriteria
+  weights: number[],             // bobot dari AHP
+  criteriaTypes: ('benefit'|'cost')[]  // tipe tiap kriteria
+): {
+  normalizedMatrix: number[][];
+  weightedMatrix: number[][];
+  idealPositive: number[];
+  idealNegative: number[];
+  dPlus: number[];
+  dMinus: number[];
+  preferences: number[];        // Ci values
+  rankings: number[];
+}
+
+// Step 1: Normalisasi
+// r_ij = x_ij / sqrt(Σ x_ij²) untuk setiap kolom j
+function normalizeDecisionMatrix(matrix: number[][]): number[][]
+
+// Step 2: Matriks terbobot
+// v_ij = w_j × r_ij
+function applyWeights(normalizedMatrix: number[][], weights: number[]): number[][]
+
+// Step 3: Solusi ideal
+// Benefit: A+ = max, A- = min
+// Cost:    A+ = min, A- = max
+function calculateIdealSolutions(
+  weightedMatrix: number[][], 
+  criteriaTypes: ('benefit'|'cost')[]
+): { idealPositive: number[]; idealNegative: number[] }
+
+// Step 4: Jarak Euclidean
+// D+ = sqrt(Σ (v_ij - A+_j)²)
+// D- = sqrt(Σ (v_ij - A-_j)²)
+function calculateDistances(
+  weightedMatrix: number[][], 
+  idealPositive: number[], 
+  idealNegative: number[]
+): { dPlus: number[]; dMinus: number[] }
+
+// Step 5: Nilai preferensi
+// Ci = D- / (D+ + D-)
+function calculatePreferences(dPlus: number[], dMinus: number[]): number[]
+
+// Step 6: Ranking
+// Sort descending by Ci, return rank array
+function calculateRankings(preferences: number[]): number[]
+```
+
+================================================================
+BAGIAN 7 — ENVIRONMENT VARIABLES
+================================================================
+
+File .env.local (untuk development):
+
+NEXT_PUBLIC_SUPABASE_URL=https://[your-project].supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=[your-anon-key]
+SUPABASE_SERVICE_ROLE_KEY=[your-service-role-key]
+NEXT_PUBLIC_APP_NAME="SPK Pariwisata Balikpapan"
+NEXT_PUBLIC_APP_VERSION="1.0.0"
+
+Variabel yang ditambahkan di Vercel Dashboard:
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY
+- SUPABASE_SERVICE_ROLE_KEY
+(Jangan pernah expose SERVICE_ROLE_KEY ke client)
+
+
+================================================================
+BAGIAN 8 — SUPABASE SETUP
+================================================================
+
+ROW LEVEL SECURITY (RLS):
+Karena tidak ada auth, aktifkan akses publik penuh:
+
+  ALTER TABLE clusters       ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE alternatives   ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE criteria       ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE sub_criteria   ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE scores         ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE ahp_matrices   ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE ahp_results    ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE topsis_results ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE topsis_normalized ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE references_docs ENABLE ROW LEVEL SECURITY;
+  ALTER TABLE app_settings   ENABLE ROW LEVEL SECURITY;
+
+  -- Policy: izinkan semua operasi untuk semua user (publik)
+  CREATE POLICY "Allow all" ON [table_name]
+    FOR ALL USING (true) WITH CHECK (true);
+  -- Ulangi untuk semua tabel di atas.
+
+STORAGE (untuk gambar objek wisata):
+  - Buat bucket: "wisata-images"
+  - Policy: public read, allow upload/delete all
+  - URL format: [supabase_url]/storage/v1/object/public/wisata-images/[filename]
+
+REALTIME (opsional):
+  - Enable Realtime pada tabel: topsis_results, ahp_results
+  - Untuk update dashboard otomatis saat kalkulasi selesai
+
+
+================================================================
+BAGIAN 9 — DESAIN UI / PANDUAN VISUAL
+================================================================
+
+COLOR PALETTE:
+  Primary     : #1d4ed8  (biru utama)
+  Secondary   : #0f172a  (sidebar gelap)
+  Accent      : #f59e0b  (emas / highlight)
+  Success     : #16a34a
+  Warning     : #f59e0b
+  Danger      : #dc2626
+  Background  : #f8fafc  (halaman)
+  Surface     : #ffffff  (card/panel)
+  Text Primary: #0f172a
+  Text Muted  : #64748b
+
+CLUSTER COLORS:
+  Bahari & Pesisir     : #0ea5e9
+  Alam & Konservasi    : #22c55e
+  Sejarah & Budaya     : #f59e0b
+  Kreatif & Kuliner    : #a855f7
+  MICE & Bisnis        : #ef4444
+
+TIPOGRAFI:
+  Font utama : Inter (Google Fonts)
+  Font angka : JetBrains Mono (untuk nilai kalkulasi)
+  Heading    : font-bold, text-gray-900
+  Body       : text-sm, text-gray-700
+  Caption    : text-xs, text-gray-500
+
+KOMPONEN SHADCN/UI YANG DIGUNAKAN:
+  Button, Input, Select, Dialog, Sheet, Tabs,
+  Card, Badge, Table, Popover, Tooltip, Toast,
+  Progress, Skeleton, Separator, ScrollArea,
+  DropdownMenu, Checkbox, Switch, Textarea
+
+RESPONSIVE BREAKPOINTS (Tailwind):
+  sm: 640px   → mobile landscape
+  md: 768px   → tablet
+  lg: 1024px  → desktop
+  xl: 1280px  → wide desktop
+
+ANIMASI:
+  - Transisi sidebar: 300ms ease-in-out
+  - Fade-in kartu: opacity 0 → 1, 200ms
+  - Loading skeleton untuk data fetch
+  - Progress bar animasi untuk nilai Ci
+  - Confetti/highlight untuk rank #1 (opsional)
+
+
+================================================================
+BAGIAN 10 — INSTRUKSI PENGEMBANGAN
+================================================================
+
+PRIORITAS PENGEMBANGAN (urutan):
+1. Setup project: Next.js 14 + Tailwind + shadcn/ui
+2. Koneksi Supabase (client + server)
+3. Schema database + seed data
+4. Layout global: Sidebar + Header + routing
+5. Halaman Objek Wisata (CRUD lengkap + peta Leaflet)
+6. Halaman Kriteria (CRUD)
+7. Halaman Kalkulasi AHP (matriks input + kalkulasi + simpan)
+8. Halaman Kalkulasi TOPSIS (kalkulasi lengkap + simpan)
+9. Halaman Ranking (tabel + grafik)
+10. Halaman Dashboard (visualisasi agregat)
+11. Halaman Laporan (export PDF + Excel)
+12. Halaman Metodologi (konten statis)
+13. Halaman Sumber Referensi (CRUD)
+14. Optimasi: loading state, error handling, responsif
+15. Deploy ke Vercel + konfigurasi environment variables
+
+PERHATIAN KHUSUS:
+- Semua kalkulasi AHP dan TOPSIS harus dijalankan di
+  server-side (API Route) bukan di browser client untuk
+  akurasi dan keamanan data
+- Gunakan Supabase server client (dengan SERVICE_ROLE_KEY)
+  hanya di route handlers, bukan di client components
+- Tampilkan semua langkah kalkulasi secara transparan
+  dan mudah diaudit (sesuai kebutuhan penelitian ilmiah)
+- Angka desimal: gunakan toFixed(4) untuk bobot, toFixed(8)
+  untuk nilai matriks kalkulasi, toFixed(4) untuk Ci
+- Sertakan loading skeleton untuk setiap data fetch
+- Tangani error state dengan toast notification yang jelas
+- Sertakan tombol "Reset / Hapus Hasil Kalkulasi" jika
+  ingin mengulang kalkulasi dari awal
+
+================================================================
+BAGIAN 11 — HALAMAN 404 & ERROR
+================================================================
+
+HALAMAN NOT FOUND (/not-found.tsx):
+  - Pesan ramah: "Halaman tidak ditemukan"
+  - Tombol kembali ke Dashboard
+  - Ilustrasi sederhana
+
+ERROR BOUNDARY:
+  - Tangkap error API dengan try-catch
+  - Tampilkan pesan error yang informatif (bukan stack trace)
+  - Log error ke console (development) atau Supabase table
+
+================================================================
+BAGIAN 12 — CATATAN TAMBAHAN
+================================================================
+
+SESI KALKULASI:
+  Sistem mendukung konsep "sesi" (session_name) pada tabel
+  ahp_matrices, ahp_results, topsis_results, dan
+  topsis_normalized. Ini memungkinkan penyimpanan beberapa
+  skenario kalkulasi dengan bobot berbeda tanpa menghapus
+  data sebelumnya. Sesi aktif dapat dipilih di header sistem.
+
+KONSISTENSI DATA:
+  Saat alternatif atau skor diubah setelah kalkulasi selesai,
+  tampilkan banner peringatan: "Data input telah berubah.
+  Hasil kalkulasi mungkin tidak up-to-date. Silakan jalankan
+  ulang kalkulasi TOPSIS."
+
+FORMAT ANGKA INDONESIA:
+  Gunakan format angka Indonesia (koma sebagai pemisah desimal)
+  hanya untuk tampilan antarmuka, bukan untuk perhitungan.
+  Simpan semua nilai numerik di database menggunakan format
+  internasional (titik sebagai pemisah desimal).
+
+================================================================
+END OF SPECIFICATION
+================================================================
+SPK AHP-TOPSIS — Pemilihan Prioritas Pengembangan Pariwisata
+Kota Balikpapan | Dokumen Spesifikasi Sistem v1.0
+================================================================
