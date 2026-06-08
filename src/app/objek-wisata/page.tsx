@@ -222,7 +222,8 @@ export default function ObjekWisataPage() {
   });
 
   return (
-    <div className="space-y-6">
+    <>
+      <div className="space-y-6 animate-fade-in">
       {/* Search & Actions Bar */}
       <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         {/* Search & Filter Dropdowns */}
@@ -511,11 +512,12 @@ export default function ObjekWisataPage() {
           )}
         </>
       )}
+      </div>
 
       {/* MODAL DIALOG: TAMBAH/EDIT */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-slate-200 shadow-2xl w-full max-w-2xl overflow-hidden animate-scale-in">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-4 md:p-6">
+          <div className="bg-white rounded-xl border border-slate-200 shadow-2xl w-full max-w-2xl my-auto overflow-hidden animate-scale-in">
             {/* Header */}
             <div className="bg-slate-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
               <h2 className="text-base font-bold text-slate-900">
@@ -706,8 +708,8 @@ export default function ObjekWisataPage() {
 
       {/* CONFIRMATION DIALOG: HAPUS */}
       {isDeleteOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-2xl max-w-sm w-full animate-scale-in">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-2xl max-w-sm w-full my-auto animate-scale-in">
             <div className="flex items-center gap-3 text-red-600 mb-4">
               <div className="h-10 w-10 rounded-full bg-red-50 flex items-center justify-center">
                 <AlertTriangle className="h-5.5 w-5.5" />
@@ -737,6 +739,6 @@ export default function ObjekWisataPage() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

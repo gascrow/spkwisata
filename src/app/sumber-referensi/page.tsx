@@ -185,7 +185,8 @@ export default function SumberReferensiPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <>
+      <div className="space-y-6 animate-fade-in">
       {/* Search & Actions Bar */}
       <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 select-none">
         <div className="flex flex-1 flex-wrap items-center gap-3">
@@ -306,11 +307,12 @@ export default function SumberReferensiPage() {
           ))}
         </div>
       )}
+      </div>
 
       {/* FORM MODAL: ADD/EDIT REFERENCE */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-slate-200 shadow-2xl w-full max-w-md overflow-hidden animate-scale-in">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-4">
+          <div className="bg-white rounded-xl border border-slate-200 shadow-2xl w-full max-w-md my-auto overflow-hidden animate-scale-in">
             <div className="bg-slate-50 border-b border-slate-200 px-5 py-3.5 flex items-center justify-between">
               <h2 className="text-sm font-bold text-slate-900">
                 {editingReference ? "Edit Sumber Referensi" : "Tambah Referensi Baru"}
@@ -447,8 +449,8 @@ export default function SumberReferensiPage() {
 
       {/* CONFIRMATION DIALOG: DELETE */}
       {isDeleteOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xl max-w-xs w-full animate-scale-in">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xl max-w-xs w-full my-auto animate-scale-in">
             <div className="flex items-center gap-3 text-red-600 mb-3">
               <AlertTriangle className="h-5.5 w-5.5 shrink-0" />
               <h3 className="font-bold text-slate-950 text-sm">Hapus Referensi?</h3>
@@ -473,6 +475,6 @@ export default function SumberReferensiPage() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

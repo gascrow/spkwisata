@@ -161,7 +161,7 @@ export default function RankingPage() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       {/* 1. TOP 3 CARDS PRIORITAS */}
       {topsisResults.length >= 3 && filterCluster === "all" && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

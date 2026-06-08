@@ -23,7 +23,7 @@ export default function MetodologiPage() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 select-none font-sans">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 select-none font-sans animate-fade-in">
       {/* LEFT: FLOATING ANCHOR NAVIGATION */}
       <div className="lg:col-span-1">
         <div className="sticky top-20 bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm space-y-3">

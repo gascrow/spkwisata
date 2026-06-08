@@ -242,7 +242,7 @@ export default function KalkulasiAhpPage() {
   }));
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       {/* Stepper Header Navigation */}
       <div className="flex items-center justify-center border-b border-slate-200 bg-white p-3 rounded-xl shadow-sm">
         <div className="flex items-center gap-8">

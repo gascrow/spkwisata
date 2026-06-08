@@ -273,7 +273,7 @@ export default function LaporanPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* LEFT PANEL: CHECKLIST OPTIONS (1 column) */}
         <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm p-4 h-fit space-y-4">

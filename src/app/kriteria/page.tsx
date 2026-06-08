@@ -194,7 +194,8 @@ export default function KriteriaPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <>
+      <div className="space-y-6 animate-fade-in">
       {/* 2-Panel Layout Grid */}
       {loading ? (
         <div className="h-96 w-full flex flex-col items-center justify-center gap-3 text-slate-400">
@@ -373,11 +374,12 @@ export default function KriteriaPage() {
           ))}
         </div>
       </div>
+      </div>
 
       {/* MODAL DIALOG: EDIT/ADD CRITERIA */}
       {isCritModalOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-slate-200 shadow-2xl w-full max-w-md overflow-hidden animate-scale-in">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-4">
+          <div className="bg-white rounded-xl border border-slate-200 shadow-2xl w-full max-w-md my-auto overflow-hidden animate-scale-in">
             <div className="bg-slate-50 border-b border-slate-200 px-5 py-3.5 flex items-center justify-between">
               <h2 className="text-sm font-bold text-slate-900">
                 {editingCriteria ? `Edit Kriteria: ${editingCriteria.code}` : "Tambah Kriteria Baru"}
@@ -473,8 +475,8 @@ export default function KriteriaPage() {
 
       {/* MODAL DIALOG: EDIT SUB-CRITERIA */}
       {isSubModalOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl border border-slate-200 shadow-2xl w-full max-w-md overflow-hidden animate-scale-in">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-4">
+          <div className="bg-white rounded-xl border border-slate-200 shadow-2xl w-full max-w-md my-auto overflow-hidden animate-scale-in">
             <div className="bg-slate-50 border-b border-slate-200 px-5 py-3.5 flex items-center justify-between">
               <h2 className="text-sm font-bold text-slate-900">
                 Edit Keterangan Sub-Kriteria (Nilai: {editingSub?.score_value})
@@ -542,6 +544,6 @@ export default function KriteriaPage() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

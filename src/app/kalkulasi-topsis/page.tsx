@@ -242,7 +242,7 @@ export default function KalkulasiTopsisPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       {/* Topsi Calculation Status Banner */}
       {!hasTopsisSaved && (
         <div className="bg-amber-50/60 border border-amber-200 text-amber-800 p-4 rounded-xl flex items-start gap-3 shadow-sm animate-fade-in">
