@@ -1,10 +1,12 @@
 import { z } from "zod";
 
+const uuidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+
 export const alternativeSchema = z.object({
   id: z.string().optional(),
   code: z.string().min(2, "Kode minimal 2 karakter"),
   name: z.string().min(3, "Nama minimal 3 karakter"),
-  cluster_id: z.string().uuid("Klaster harus dipilih"),
+  cluster_id: z.string().regex(uuidRegex, "Klaster harus dipilih"),
   description: z.string().optional(),
   address: z.string().optional(),
   latitude: z.coerce.number().min(-90).max(90, "Latitude harus di antara -90 dan 90"),
@@ -25,7 +27,7 @@ export const criteriaSchema = z.object({
 
 export const subCriteriaSchema = z.object({
   id: z.string().optional(),
-  criteria_id: z.string().uuid(),
+  criteria_id: z.string().regex(uuidRegex, "ID Kriteria tidak valid"),
   score_value: z.coerce.number().min(1).max(4),
   label: z.string().min(2, "Label minimal 2 karakter"),
   description: z.string().optional(),

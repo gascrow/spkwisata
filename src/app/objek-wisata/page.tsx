@@ -23,6 +23,11 @@ import {
   AlertTriangle,
   Loader2,
 } from "lucide-react";
+// Dynamic load FullScreenMapPicker (Leaflet needs browser APIs)
+const FullScreenMapPicker = dynamic(
+  () => import("@/components/maps/FullScreenMapPicker"),
+  { ssr: false }
+);
 
 // Dynamic load Tourism Map with ssr disabled
 const TourismMap = dynamic(() => import("@/components/maps/TourismMap"), {
@@ -51,6 +56,7 @@ export default function ObjekWisataPage() {
   const [editingAlternative, setEditingAlternative] = useState<Alternative | null>(null);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [isMapPickerOpen, setIsMapPickerOpen] = useState(false);
 
   const [saving, setSaving] = useState(false);
 
@@ -183,6 +189,11 @@ export default function ObjekWisataPage() {
     } finally {
       setSaving(false);
     }
+  };
+
+  const onError = (errors: any) => {
+    console.error("Form Validation Errors:", errors);
+    toast.error("Form tidak valid. Harap periksa kembali semua inputan Anda.");
   };
 
   // Delete handler
@@ -532,7 +543,7 @@ export default function ObjekWisataPage() {
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-6">
+            <form onSubmit={handleSubmit(onSubmit, onError)} className="p-6 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Kode */}
                 <div className="space-y-1.5">
@@ -589,28 +600,19 @@ export default function ObjekWisataPage() {
                   </div>
                 </div>
 
-                {/* Latitude */}
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wide">Latitude GPS *</label>
-                  <input
-                    type="number"
-                    step="any"
-                    {...register("latitude")}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-200 outline-none text-sm focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono"
-                  />
-                  {errors.latitude && <p className="text-xs text-red-500">{errors.latitude.message}</p>}
-                </div>
-
-                {/* Longitude */}
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wide">Longitude GPS *</label>
-                  <input
-                    type="number"
-                    step="any"
-                    {...register("longitude")}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-200 outline-none text-sm focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono"
-                  />
-                  {errors.longitude && <p className="text-xs text-red-500">{errors.longitude.message}</p>}
+                {/* Map Picker Button */}
+                <div className="space-y-1.5 md:col-span-2">
+                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wide">Lokasi (Map)</label>
+                  <button
+                    type="button"
+                    onClick={() => setIsMapPickerOpen(true)}
+                    className="w-full h-12 px-4 rounded-lg border-2 border-dashed border-slate-300 hover:border-primary bg-slate-50 hover:bg-primary/5 text-sm font-semibold text-slate-600 hover:text-primary flex items-center justify-center gap-2 transition-all cursor-pointer"
+                  >
+                    <MapPin className="h-4.5 w-4.5" />
+                    {watch("latitude") && watch("longitude")
+                      ? `📍 ${Number(watch("latitude")).toFixed(5)}, ${Number(watch("longitude")).toFixed(5)}`
+                      : "Pilih Lokasi dari Maps"}
+                  </button>
                 </div>
 
                 {/* Alamat */}
@@ -738,6 +740,20 @@ export default function ObjekWisataPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* FULL-SCREEN MAP PICKER */}
+      {isMapPickerOpen && (
+        <FullScreenMapPicker
+          latitude={watch("latitude") as number | undefined}
+          longitude={watch("longitude") as number | undefined}
+          onSelect={({ latitude, longitude, address }) => {
+            setValue("latitude", latitude);
+            setValue("longitude", longitude);
+            setValue("address", address);
+          }}
+          onClose={() => setIsMapPickerOpen(false)}
+        />
       )}
     </>
   );

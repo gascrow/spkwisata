@@ -59,6 +59,8 @@
 }
 
 /* Leaflet overrides */
+@import "leaflet-geosearch/dist/geosearch.css";
+
 .leaflet-container {
   font-family: 'Inter', sans-serif !important;
   border-radius: 0.5rem;
