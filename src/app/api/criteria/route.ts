@@ -32,3 +32,26 @@ export async function POST(request: Request) {
     );
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json(
+        { success: false, data: null, error: "Missing criteria ID" },
+        { status: 400 }
+      );
+    }
+
+    const data = await db.deleteCriteria(id);
+    return NextResponse.json({ success: true, data, error: null });
+  } catch (error: any) {
+    return NextResponse.json(
+      { success: false, data: null, error: error.message || "Failed to delete criteria" },
+      { status: 500 }
+    );
+  }
+}
+

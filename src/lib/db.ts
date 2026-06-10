@@ -798,4 +798,40 @@ export const db = {
     saveLocalDb(localDb);
     return true;
   },
+
+  // --- DELETE CRITERIA ---
+  async deleteCriteria(id: string): Promise<boolean> {
+    if (isSupabaseConfigured()) {
+      // Delete the criterion (dependent tables will delete on cascade)
+      await supabaseAdmin.from("criteria").delete().eq("id", id);
+      
+      // Clear all AHP and TOPSIS results across all sessions
+      await supabaseAdmin.from("ahp_results").delete().neq("id", "00000000-0000-0000-0000-000000000000");
+      await supabaseAdmin.from("topsis_results").delete().neq("id", "00000000-0000-0000-0000-000000000000");
+      await supabaseAdmin.from("topsis_normalized").delete().neq("id", "00000000-0000-0000-0000-000000000000");
+      
+      // Reset all criteria weights to 0
+      await supabaseAdmin.from("criteria").update({ weight: 0 });
+      return true;
+    }
+
+    const localDb = getDb();
+    // Filter out the criterion and its sub-criteria/scores
+    localDb.criteria = localDb.criteria.filter((c) => c.id !== id);
+    localDb.sub_criteria = localDb.sub_criteria.filter((s) => s.criteria_id !== id);
+    localDb.scores = localDb.scores.filter((s) => s.criteria_id !== id);
+    localDb.ahp_matrices = localDb.ahp_matrices.filter((m) => m.criteria_i_id !== id && m.criteria_j_id !== id);
+    
+    // Reset weights of remaining criteria to 0
+    localDb.criteria = localDb.criteria.map((c) => ({ ...c, weight: 0 }));
+    
+    // Clear all calculations results
+    localDb.ahp_results = [];
+    localDb.topsis_results = [];
+    localDb.topsis_normalized = [];
+
+    saveLocalDb(localDb);
+    return true;
+  },
 };
+

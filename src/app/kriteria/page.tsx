@@ -17,6 +17,7 @@ import {
   X,
   Loader2,
   ListOrdered,
+  Trash2,
 } from "lucide-react";
 
 export default function KriteriaPage() {
@@ -142,6 +143,33 @@ export default function KriteriaPage() {
       toast.error("Terjadi kesalahan koneksi");
     } finally {
       setCritSaving(false);
+    }
+  };
+
+  // Delete criteria handler
+  const handleCritDelete = async (id: string, code: string, e: React.MouseEvent) => {
+    e.stopPropagation(); // Avoid selecting row
+    
+    const confirmed = window.confirm(
+      `Apakah Anda yakin ingin menghapus kriteria ${code}?\n\nTindakan ini bersifat PERMANEN dan akan MENGRESET seluruh kalkulasi AHP & TOPSIS pada semua sesi!`
+    );
+    
+    if (!confirmed) return;
+
+    try {
+      const response = await fetch(`/api/criteria?id=${id}`, {
+        method: "DELETE",
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success(`Kriteria ${code} berhasil dihapus! Kalkulasi direset.`);
+        triggerRefresh();
+      } else {
+        toast.error(result.error || "Gagal menghapus kriteria");
+      }
+    } catch (err) {
+      toast.error("Terjadi kesalahan koneksi");
     }
   };
 
@@ -276,14 +304,24 @@ export default function KriteriaPage() {
                           {formatNumberID(c.weight, 4)}
                         </td>
                         <td className="py-3.5 px-4 text-center" onClick={(e) => e.stopPropagation()}>
-                          <button
-                            onClick={(e) => handleCritEditOpen(c, e)}
-                            className="p-1 rounded hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors"
-                            title="Edit"
-                          >
-                            <Edit className="h-4 w-4" />
-                          </button>
+                          <div className="flex items-center justify-center gap-1.5">
+                            <button
+                              onClick={(e) => handleCritEditOpen(c, e)}
+                              className="p-1 rounded hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors"
+                              title="Edit"
+                            >
+                              <Edit className="h-4 w-4" />
+                            </button>
+                            <button
+                              onClick={(e) => handleCritDelete(c.id, c.code, e)}
+                              className="p-1 rounded hover:bg-red-50 text-red-500 hover:text-red-700 transition-colors"
+                              title="Hapus"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          </div>
                         </td>
+
                       </tr>
                     );
                   })}

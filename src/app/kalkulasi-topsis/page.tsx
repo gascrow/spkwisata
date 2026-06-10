@@ -336,7 +336,7 @@ export default function KalkulasiTopsisPage() {
                   </td>
                   {criteria.map((crit) => (
                     <td key={crit.id} className="p-3 border border-slate-200 text-center font-mono text-sm">
-                      {crit.weight.toFixed(4)}
+                      {Number(crit.weight).toFixed(4)}
                     </td>
                   ))}
                 </tr>
