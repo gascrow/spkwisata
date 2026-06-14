@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { calculateTOPSIS } from "@/lib/calculations/topsis";
+import { supabaseAdmin } from "@/lib/supabase/server";
 
 export async function GET(request: Request) {
   try {
@@ -22,7 +23,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { sessionName = "Skenario A" } = body;
 
-    // Fetch criteria and check weights
+    // Fetch criteria
     const criteriaList = await db.getCriteria();
     const activeAlternatives = (await db.getAlternatives()).filter((a) => a.is_active);
 
@@ -33,16 +34,29 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check if AHP weights are populated and non-zero
-    const hasWeights = criteriaList.some((c) => Number(c.weight) > 0);
+    // Fetch session-specific AHP weights from ahp_results (NOT shared criteria.weight)
+    const { data: ahpResults } = await supabaseAdmin
+      .from("ahp_results")
+      .select("criteria_id, weight")
+      .eq("session_name", sessionName);
+
+    // Build weights map from session-specific AHP results
+    const sessionWeights: Record<string, number> = {};
+    (ahpResults || []).forEach((r: any) => {
+      sessionWeights[r.criteria_id] = Number(r.weight);
+    });
+
+    // Check if this session has AHP weights calculated
+    const hasWeights = criteriaList.some((c) => (sessionWeights[c.id] || 0) > 0);
     if (!hasWeights) {
       return NextResponse.json(
-        { success: false, data: null, error: "Bobot kriteria belum dikalkulasi menggunakan AHP. Jalankan AHP terlebih dahulu." },
+        { success: false, data: null, error: `Bobot kriteria belum dikalkulasi untuk "${sessionName}". Jalankan AHP terlebih dahulu.` },
         { status: 400 }
       );
     }
 
-    const weights = criteriaList.map((c) => Number(c.weight));
+    // Use session-specific weights, fallback to criteria.weight for backward compat
+    const weights = criteriaList.map((c) => sessionWeights[c.id] || Number(c.weight));
     const criteriaTypes = criteriaList.map((c) => c.type);
 
     // Build Decision Matrix: alternatives (rows) x criteria (columns)

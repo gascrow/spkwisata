@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { useApp } from "@/components/shared/AppContext";
 import { Alternative, Criteria, TopsisResult } from "@/types";
 import { formatNumberID, getRankBadge } from "@/lib/utils";
@@ -23,6 +24,9 @@ import {
   X,
   Download,
   FileUp,
+  RotateCcw,
+  ChevronDown,
+  Trash2,
 } from "lucide-react";
 import Link from "next/link";
 import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
@@ -58,19 +62,48 @@ export default function DashboardPage() {
   const [importType, setImportType] = useState("clusters");
   const [importFile, setImportFile] = useState<File | null>(null);
   const [importing, setImporting] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [showResetDropdown, setShowResetDropdown] = useState(false);
+  const resetBtnRef = useRef<HTMLDivElement>(null);
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
+
+  useEffect(() => { setMounted(true); }, []);
+
+  // Close reset dropdown when clicking outside
+  useEffect(() => {
+    if (!showResetDropdown) return;
+    const close = () => setShowResetDropdown(false);
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
+  }, [showResetDropdown]);
 
   useEffect(() => {
     async function fetchDashboardData() {
       setLoading(true);
       try {
-        const [topsisRes, critRes, altRes] = await Promise.all([
+        const [topsisRes, critRes, altRes, ahpRes] = await Promise.all([
           fetch(`/api/topsis?session=${activeSession}`).then((r) => r.json()),
           fetch("/api/criteria").then((r) => r.json()),
           fetch("/api/alternatives").then((r) => r.json()),
+          fetch(`/api/ahp?session=${activeSession}`).then((r) => r.json()),
         ]);
 
         if (topsisRes.success) setTopsisResults(topsisRes.data);
-        if (critRes.success) setCriteria(critRes.data);
+        if (critRes.success) {
+          // Override criteria weights with session-specific AHP results
+          let critData = critRes.data;
+          if (ahpRes.success && ahpRes.data?.results?.length > 0) {
+            const weightMap: Record<string, number> = {};
+            ahpRes.data.results.forEach((r: any) => {
+              weightMap[r.criteria_id] = Number(r.weight);
+            });
+            critData = critData.map((c: any) => ({
+              ...c,
+              weight: weightMap[c.id] !== undefined ? weightMap[c.id] : c.weight,
+            }));
+          }
+          setCriteria(critData);
+        }
         if (altRes.success) setAlternatives(altRes.data.filter((a: any) => a.is_active));
       } catch (e) {
         toast.error("Gagal memuat statistik dashboard");
@@ -93,7 +126,11 @@ export default function DashboardPage() {
       formData.append("file", importFile);
       const res = await fetch("/api/import", { method: "POST", body: formData }).then((r) => r.json());
       if (res.success) {
-        toast.success(`Import berhasil! Data: ${JSON.stringify(res.data.imported)}`);
+        const imp = res.data.imported;
+        const msg = typeof imp === "object"
+          ? Object.entries(imp).map(([k, v]) => `${k}: ${v}`).join(", ")
+          : `${imp} rows`;
+        toast.success(`Import berhasil! ${msg}`);
         setShowImportModal(false);
         setImportFile(null);
         window.location.reload();
@@ -109,6 +146,41 @@ export default function DashboardPage() {
 
   const handleDownloadTemplate = () => {
     window.open(`/api/import/template?type=${importType}`, "_blank");
+  };
+
+  const handleResetCalculations = async () => {
+    if (!confirm(`Reset perhitungan AHP & TOPSIS untuk sesi "${activeSession}"?\n\nData objek wisata, kriteria, dan skor tidak akan terhapus.`)) return;
+    try {
+      const [topsisRes, ahpRes] = await Promise.all([
+        fetch(`/api/topsis?session=${encodeURIComponent(activeSession)}`, { method: "DELETE" }).then((r) => r.json()),
+        fetch(`/api/ahp?session=${encodeURIComponent(activeSession)}`, { method: "DELETE" }).then((r) => r.json()),
+      ]);
+      if (topsisRes.success && ahpRes.success) {
+        toast.success(`Perhitungan sesi "${activeSession}" berhasil direset!`);
+        window.location.reload();
+      } else {
+        toast.error(topsisRes.error || ahpRes.error || "Gagal mereset data");
+      }
+    } catch {
+      toast.error("Koneksi gagal");
+    }
+  };
+
+  const handleResetAll = async () => {
+    if (!confirm("PERINGATAN: Semua data akan dihapus permanen!\n\n• Objek wisata, Kriteria, Sub-kriteria\n• Skor penilaian\n• Perhitungan AHP & TOPSIS (semua sesi)\n• Klaster dan Referensi\n\nApakah Anda yakin?")) return;
+    try {
+      const res = await fetch("/api/import", { method: "DELETE" }).then((r) => r.json());
+      if (res.success) {
+        const d = res.data.deleted;
+        const msg = Object.entries(d).filter(([, v]) => (v as number) > 0).map(([k, v]) => `${k}: ${v}`).join(", ");
+        toast.success(`Semua data berhasil dihapus! ${msg || "(database kosong)"}`);
+        window.location.reload();
+      } else {
+        toast.error(res.error || "Gagal mereset data");
+      }
+    } catch {
+      toast.error("Koneksi gagal");
+    }
   };
 
   if (loading) {
@@ -194,6 +266,51 @@ export default function DashboardPage() {
             <Upload className="h-4 w-4" />
             Import Data CSV
           </button>
+          <div className="relative" ref={resetBtnRef}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!showResetDropdown && resetBtnRef.current) {
+                  const rect = resetBtnRef.current.getBoundingClientRect();
+                  setDropdownPos({ top: rect.bottom + 6, right: window.innerWidth - rect.right });
+                }
+                setShowResetDropdown((p) => !p);
+              }}
+              className="h-10 px-5 rounded-lg bg-red-500/80 hover:bg-red-500 border border-red-400/30 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-inner cursor-pointer"
+            >
+              <RotateCcw className="h-4 w-4" />
+              Reset Data
+              <ChevronDown className="h-3 w-3" />
+            </button>
+            {showResetDropdown && mounted && createPortal(
+              <div
+                className="fixed w-64 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden z-[9999]"
+                style={{ top: dropdownPos.top, right: dropdownPos.right }}
+              >
+                <button
+                  onClick={(e) => { e.stopPropagation(); setShowResetDropdown(false); handleResetCalculations(); }}
+                  className="w-full px-4 py-3 flex items-start gap-3 hover:bg-amber-50 transition-colors text-left border-b border-slate-100"
+                >
+                  <RotateCcw className="h-4 w-4 mt-0.5 text-amber-500 shrink-0" />
+                  <div>
+                    <p className="text-xs font-bold text-slate-800">Reset Perhitungan Saja</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">Hapus AHP & TOPSIS sesi ini. Kriteria, skor, dan objek wisata tetap ada.</p>
+                  </div>
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); setShowResetDropdown(false); handleResetAll(); }}
+                  className="w-full px-4 py-3 flex items-start gap-3 hover:bg-red-50 transition-colors text-left"
+                >
+                  <Trash2 className="h-4 w-4 mt-0.5 text-red-500 shrink-0" />
+                  <div>
+                    <p className="text-xs font-bold text-red-700">Hapus Semua Data</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">Hapus permanen semua data: objek wisata, kriteria, skor, perhitungan, klaster, referensi.</p>
+                  </div>
+                </button>
+              </div>,
+              document.body
+            )}
+          </div>
         </div>
       </div>
 
@@ -411,10 +528,10 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* CSV IMPORT MODAL */}
-      {showImportModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onClick={() => setShowImportModal(false)}>
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      {/* CSV IMPORT MODAL (Portal for full viewport coverage) */}
+      {showImportModal && mounted && createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-md" onClick={() => setShowImportModal(false)}>
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden animate-fade-in" onClick={(e) => e.stopPropagation()}>
             {/* Modal Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
               <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
@@ -516,7 +633,8 @@ export default function DashboardPage() {
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

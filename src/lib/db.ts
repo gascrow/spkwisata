@@ -434,10 +434,17 @@ export const db = {
   async resetCalculation(sessionName: string = "Skenario A"): Promise<boolean> {
     assertSupabaseConfigured();
 
+    // Delete all calculation data for this specific session
+    await supabaseAdmin.from("ahp_matrices").delete().eq("session_name", sessionName);
     await supabaseAdmin.from("ahp_results").delete().eq("session_name", sessionName);
     await supabaseAdmin.from("topsis_results").delete().eq("session_name", sessionName);
     await supabaseAdmin.from("topsis_normalized").delete().eq("session_name", sessionName);
-    await supabaseAdmin.from("criteria").update({ weight: 0 });
+
+    // Only reset criteria weights if BOTH sessions have no AHP results
+    const { data: remainingAhp } = await supabaseAdmin.from("ahp_results").select("id").limit(1);
+    if (!remainingAhp || remainingAhp.length === 0) {
+      await supabaseAdmin.from("criteria").update({ weight: 0 });
+    }
 
     return true;
   },
@@ -459,6 +466,36 @@ export const db = {
     await supabaseAdmin.from("criteria").update({ weight: 0 });
 
     return true;
+  },
+
+  // --- RESET ALL DATA ---
+  // Deletes EVERYTHING: calculations, scores, alternatives, sub_criteria, criteria, clusters, references
+  async resetAllData(): Promise<{ deleted: Record<string, number> }> {
+    assertSupabaseConfigured();
+    const allId = "00000000-0000-0000-0000-000000000000";
+    const deleted: Record<string, number> = {};
+
+    // Order matters due to foreign keys (children before parents)
+    const tables = [
+      "topsis_normalized",
+      "topsis_results",
+      "ahp_results",
+      "ahp_matrices",
+      "scores",
+      "sub_criteria",
+      "criteria",
+      "alternatives",
+      "clusters",
+      "references",
+    ];
+
+    for (const table of tables) {
+      const { count } = await supabaseAdmin.from(table).select("*", { count: "exact", head: true });
+      deleted[table] = count || 0;
+      await supabaseAdmin.from(table).delete().neq("id", allId);
+    }
+
+    return { deleted };
   },
 };
 

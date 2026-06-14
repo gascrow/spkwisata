@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/server";
+import { db } from "@/lib/db";
 
 // ─── CSV PARSER (handles quoted fields) ──────────────────────────
 function parseCSV(text: string): string[][] {
@@ -74,10 +75,25 @@ async function importClusters(rows: Record<string, string>[]) {
   let count = 0;
   for (const r of rows) {
     if (!r.name) continue;
-    await supabaseAdmin.from("clusters").upsert(
-      { name: r.name, description: r.description || null, color: r.color || "#3b82f6" },
-      { onConflict: "name" }
-    );
+    // Check if cluster with this name already exists
+    const { data: existing } = await supabaseAdmin
+      .from("clusters")
+      .select("id")
+      .eq("name", r.name)
+      .single();
+
+    if (existing) {
+      await supabaseAdmin.from("clusters").update({
+        description: r.description || null,
+        color: r.color || "#3b82f6",
+      }).eq("id", existing.id);
+    } else {
+      await supabaseAdmin.from("clusters").insert({
+        name: r.name,
+        description: r.description || null,
+        color: r.color || "#3b82f6",
+      });
+    }
     count++;
   }
   return count;
@@ -108,13 +124,17 @@ async function importSubCriteria(rows: Record<string, string>[]) {
   for (const r of rows) {
     const cid = critMap[r.criteria_code];
     if (!cid) continue;
-    await supabaseAdmin.from("sub_criteria").insert({
-      criteria_id: cid,
-      score_value: parseFloat(r.score_value) || 1,
-      label: r.label || "",
-      description: r.description || null,
-    });
-    count++;
+    try {
+      await supabaseAdmin.from("sub_criteria").insert({
+        criteria_id: cid,
+        score_value: parseFloat(r.score_value) || 1,
+        label: r.label || "",
+        description: r.description || null,
+      });
+      count++;
+    } catch {
+      // Skip duplicate or constraint errors gracefully
+    }
   }
   return count;
 }
@@ -194,30 +214,48 @@ async function importReferences(rows: Record<string, string>[]) {
   let count = 0;
   for (const r of rows) {
     if (!r.title) continue;
-    await supabaseAdmin.from("references_docs").insert({
-      category: r.category || "Lainnya",
-      title: r.title,
-      number: r.number || null,
-      year: r.year ? parseInt(r.year) : null,
-      publisher: r.publisher || null,
-      description: r.description || null,
-      url: r.url || null,
-      sort_order: parseInt(r.sort_order) || 0,
-    });
-    count++;
+    try {
+      await supabaseAdmin.from("references_docs").insert({
+        category: r.category || "Lainnya",
+        title: r.title,
+        number: r.number || null,
+        year: r.year ? parseInt(r.year) : null,
+        publisher: r.publisher || null,
+        description: r.description || null,
+        url: r.url || null,
+        sort_order: parseInt(r.sort_order) || 0,
+      });
+      count++;
+    } catch {
+      // Skip duplicate or constraint errors gracefully
+    }
   }
   return count;
 }
 
 async function importAll(jsonData: any) {
-  const results: Record<string, number> = {};
-  if (jsonData.clusters) results.clusters = await importClusters(jsonData.clusters);
-  if (jsonData.criteria) results.criteria = await importCriteria(jsonData.criteria);
-  if (jsonData.sub_criteria) results.sub_criteria = await importSubCriteria(jsonData.sub_criteria);
-  if (jsonData.alternatives) results.alternatives = await importAlternatives(jsonData.alternatives);
-  if (jsonData.scores) results.scores = await importScores(jsonData.scores);
-  if (jsonData.ahp_matrices) results.ahp_matrices = await importAhpMatrices(jsonData.ahp_matrices);
-  if (jsonData.references) results.references = await importReferences(jsonData.references);
+  const results: Record<string, number | string> = {};
+  if (jsonData.clusters) {
+    try { results.clusters = await importClusters(jsonData.clusters); } catch (e: any) { results.clusters = `error: ${e.message}`; }
+  }
+  if (jsonData.criteria) {
+    try { results.criteria = await importCriteria(jsonData.criteria); } catch (e: any) { results.criteria = `error: ${e.message}`; }
+  }
+  if (jsonData.sub_criteria) {
+    try { results.sub_criteria = await importSubCriteria(jsonData.sub_criteria); } catch (e: any) { results.sub_criteria = `error: ${e.message}`; }
+  }
+  if (jsonData.alternatives) {
+    try { results.alternatives = await importAlternatives(jsonData.alternatives); } catch (e: any) { results.alternatives = `error: ${e.message}`; }
+  }
+  if (jsonData.scores) {
+    try { results.scores = await importScores(jsonData.scores); } catch (e: any) { results.scores = `error: ${e.message}`; }
+  }
+  if (jsonData.ahp_matrices) {
+    try { results.ahp_matrices = await importAhpMatrices(jsonData.ahp_matrices); } catch (e: any) { results.ahp_matrices = `error: ${e.message}`; }
+  }
+  if (jsonData.references) {
+    try { results.references = await importReferences(jsonData.references); } catch (e: any) { results.references = `error: ${e.message}`; }
+  }
   return results;
 }
 
@@ -280,6 +318,19 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     return NextResponse.json(
       { success: false, error: error.message || "Import failed" },
+      { status: 500 }
+    );
+  }
+}
+
+// ─── DELETE: Reset all data ─────────────────────────────────────
+export async function DELETE() {
+  try {
+    const result = await db.resetAllData();
+    return NextResponse.json({ success: true, data: result });
+  } catch (error: any) {
+    return NextResponse.json(
+      { success: false, error: error.message || "Reset failed" },
       { status: 500 }
     );
   }

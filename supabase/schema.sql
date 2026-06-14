@@ -8,7 +8,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- 1. CLUSTERS
 CREATE TABLE IF NOT EXISTS clusters (
   id          UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  name        TEXT NOT NULL,
+  name        TEXT NOT NULL UNIQUE,
   description TEXT,
   color       TEXT,           -- warna hex untuk peta & chart
   created_at  TIMESTAMPTZ DEFAULT now(),
