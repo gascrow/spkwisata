@@ -230,7 +230,7 @@ export const db = {
   },
 
   // --- AHP MATRICES ---
-  async getAhpMatrices(sessionName: string = "Default"): Promise<AhpMatrix[]> {
+  async getAhpMatrices(sessionName: string = "Skenario A"): Promise<AhpMatrix[]> {
     assertSupabaseConfigured();
     const { data, error } = await supabaseAdmin.from("ahp_matrices").select("*").eq("session_name", sessionName);
     if (error) handleSupabaseError(error, "getAhpMatrices");
@@ -238,7 +238,7 @@ export const db = {
   },
 
   async saveAhpMatrices(
-    sessionName: string = "Default",
+    sessionName: string = "Skenario A",
     matrices: { criteria_i_id: string; criteria_j_id: string; value: number }[]
   ): Promise<boolean> {
     assertSupabaseConfigured();
@@ -261,7 +261,7 @@ export const db = {
   },
 
   // --- AHP RESULTS ---
-  async getAhpResults(sessionName: string = "Default"): Promise<AhpResult[]> {
+  async getAhpResults(sessionName: string = "Skenario A"): Promise<AhpResult[]> {
     assertSupabaseConfigured();
     const { data, error } = await supabaseAdmin
       .from("ahp_results")
@@ -272,7 +272,7 @@ export const db = {
   },
 
   async saveAhpResults(
-    sessionName: string = "Default",
+    sessionName: string = "Skenario A",
     weightsMap: Record<string, number>,
     lambdaMax: number,
     ci: number,
@@ -306,7 +306,7 @@ export const db = {
   },
 
   // --- TOPSIS RESULTS ---
-  async getTopsisResults(sessionName: string = "Default"): Promise<TopsisResult[]> {
+  async getTopsisResults(sessionName: string = "Skenario A"): Promise<TopsisResult[]> {
     assertSupabaseConfigured();
     const { data, error } = await supabaseAdmin
       .from("topsis_results")
@@ -326,7 +326,7 @@ export const db = {
   },
 
   async saveTopsisResults(
-    sessionName: string = "Default",
+    sessionName: string = "Skenario A",
     results: { alternative_id: string; d_positive: number; d_negative: number; preference_score: number; rank: number }[],
     normalized: { alternative_id: string; criteria_id: string; r_value: number; v_value: number }[]
   ): Promise<boolean> {
@@ -431,7 +431,7 @@ export const db = {
   },
 
   // --- RESET CALCULATIONS ---
-  async resetCalculation(sessionName: string = "Default"): Promise<boolean> {
+  async resetCalculation(sessionName: string = "Skenario A"): Promise<boolean> {
     assertSupabaseConfigured();
 
     await supabaseAdmin.from("ahp_results").delete().eq("session_name", sessionName);

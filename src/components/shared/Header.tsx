@@ -53,7 +53,7 @@ export default function Header() {
     return crumbs;
   };
 
-  const sessions = ["Default", "Skenario A", "Skenario B", "Alternatif IKN"];
+  const sessions = ["Skenario A", "Skenario B"];
 
   return (
     <header className="sticky top-0 z-30 h-16 w-full bg-white/80 backdrop-blur-md border-b border-slate-200/80 flex items-center justify-between px-6 shrink-0 shadow-sm transition-all duration-300">

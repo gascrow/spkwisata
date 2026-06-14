@@ -5,7 +5,7 @@ import { calculateAHP, buildMatrixFromUpperTriangle } from "@/lib/calculations/a
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const sessionName = searchParams.get("session") || "Default";
+    const sessionName = searchParams.get("session") || "Skenario A";
 
     const [matrices, results] = await Promise.all([
       db.getAhpMatrices(sessionName),
@@ -28,7 +28,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { sessionName = "Default", comparisons } = body; // comparisons is record of "criteria_i_id-criteria_j_id" -> value
+    const { sessionName = "Skenario A", comparisons } = body; // comparisons is record of "criteria_i_id-criteria_j_id" -> value
 
     if (!comparisons) {
       return NextResponse.json(

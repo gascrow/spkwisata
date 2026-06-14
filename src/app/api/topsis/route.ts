@@ -5,7 +5,7 @@ import { calculateTOPSIS } from "@/lib/calculations/topsis";
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const sessionName = searchParams.get("session") || "Default";
+    const sessionName = searchParams.get("session") || "Skenario A";
 
     const data = await db.getTopsisResults(sessionName);
     return NextResponse.json({ success: true, data, error: null });
@@ -20,7 +20,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { sessionName = "Default" } = body;
+    const { sessionName = "Skenario A" } = body;
 
     // Fetch criteria and check weights
     const criteriaList = await db.getCriteria();
@@ -108,7 +108,7 @@ export async function POST(request: Request) {
 export async function DELETE(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const sessionName = searchParams.get("session") || "Default";
+    const sessionName = searchParams.get("session") || "Skenario A";
 
     const success = await db.resetCalculation(sessionName);
     return NextResponse.json({ success, data: null, error: success ? null : "Failed to reset session data" });

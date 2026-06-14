@@ -19,6 +19,10 @@ import {
   AlertTriangle,
   HelpCircle,
   Loader2,
+  Upload,
+  X,
+  Download,
+  FileUp,
 } from "lucide-react";
 import Link from "next/link";
 import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
@@ -33,12 +37,27 @@ const TourismMap = dynamic(() => import("@/components/maps/TourismMap"), {
   ),
 });
 
+const IMPORT_TYPES = [
+  { value: "clusters", label: "Klaster" },
+  { value: "criteria", label: "Kriteria" },
+  { value: "sub_criteria", label: "Sub-Kriteria" },
+  { value: "alternatives", label: "Alternatif (Objek Wisata)" },
+  { value: "scores", label: "Skor Penilaian" },
+  { value: "ahp_matrices", label: "Matriks AHP" },
+  { value: "references", label: "Referensi" },
+  { value: "all", label: "Semua Data (JSON)" },
+];
+
 export default function DashboardPage() {
   const { activeSession, refreshKey } = useApp();
   const [topsisResults, setTopsisResults] = useState<TopsisResult[]>([]);
   const [criteria, setCriteria] = useState<Criteria[]>([]);
   const [alternatives, setAlternatives] = useState<Alternative[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showImportModal, setShowImportModal] = useState(false);
+  const [importType, setImportType] = useState("clusters");
+  const [importFile, setImportFile] = useState<File | null>(null);
+  const [importing, setImporting] = useState(false);
 
   useEffect(() => {
     async function fetchDashboardData() {
@@ -61,6 +80,36 @@ export default function DashboardPage() {
     }
     fetchDashboardData();
   }, [activeSession, refreshKey]);
+
+  const handleImport = async () => {
+    if (!importFile) {
+      toast.error("Pilih file terlebih dahulu");
+      return;
+    }
+    setImporting(true);
+    try {
+      const formData = new FormData();
+      formData.append("type", importType);
+      formData.append("file", importFile);
+      const res = await fetch("/api/import", { method: "POST", body: formData }).then((r) => r.json());
+      if (res.success) {
+        toast.success(`Import berhasil! Data: ${JSON.stringify(res.data.imported)}`);
+        setShowImportModal(false);
+        setImportFile(null);
+        window.location.reload();
+      } else {
+        toast.error(res.error || "Import gagal");
+      }
+    } catch {
+      toast.error("Koneksi gagal");
+    } finally {
+      setImporting(false);
+    }
+  };
+
+  const handleDownloadTemplate = () => {
+    window.open(`/api/import/template?type=${importType}`, "_blank");
+  };
 
   if (loading) {
     return (
@@ -111,7 +160,7 @@ export default function DashboardPage() {
           <div className="flex items-center gap-2">
             <span className="bg-white/15 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest text-white shadow-sm leading-none flex items-center gap-1">
               <Compass className="h-3.5 w-3.5 animate-spin-slow" />
-              Superhub Mitra IKN
+              Decision Support System
             </span>
           </div>
 
@@ -123,7 +172,7 @@ export default function DashboardPage() {
           </p>
         </div>
 
-        <div className="flex items-center gap-4.5 pt-5 relative z-10 select-none">
+        <div className="flex items-center gap-3 pt-5 relative z-10 select-none flex-wrap">
           <Link
             href="/ranking"
             className="h-10 px-5 rounded-lg bg-white text-blue-900 hover:bg-slate-50 font-bold text-xs flex items-center gap-1.5 transition-all shadow-lg"
@@ -138,6 +187,13 @@ export default function DashboardPage() {
             Mulai Kalkulasi AHP
             <ArrowRight className="h-4.5 w-4.5" />
           </Link>
+          <button
+            onClick={() => setShowImportModal(true)}
+            className="h-10 px-5 rounded-lg bg-emerald-500/90 hover:bg-emerald-500 border border-emerald-400/30 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-inner cursor-pointer"
+          >
+            <Upload className="h-4 w-4" />
+            Import Data CSV
+          </button>
         </div>
       </div>
 
@@ -354,6 +410,114 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
+
+      {/* CSV IMPORT MODAL */}
+      {showImportModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onClick={() => setShowImportModal(false)}>
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+              <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
+                <FileUp className="h-5 w-5 text-emerald-500" />
+                Import Data dari File
+              </h3>
+              <button onClick={() => setShowImportModal(false)} className="text-slate-400 hover:text-slate-600 transition-colors cursor-pointer">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6 space-y-4">
+              {/* Data Type Selector */}
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-slate-600 uppercase tracking-wide">Jenis Data</label>
+                <select
+                  value={importType}
+                  onChange={(e) => setImportType(e.target.value)}
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-slate-800 font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
+                >
+                  {IMPORT_TYPES.map((t) => (
+                    <option key={t.value} value={t.value}>{t.label}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* File Upload Dropzone */}
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-slate-600 uppercase tracking-wide">File {importType === "all" ? "JSON" : "CSV"}</label>
+                <div
+                  className={`border-2 border-dashed rounded-xl p-6 text-center transition-colors cursor-pointer ${
+                    importFile ? "border-emerald-400 bg-emerald-50/50" : "border-slate-300 hover:border-primary/40 hover:bg-slate-50"
+                  }`}
+                  onClick={() => document.getElementById("csv-file-input")?.click()}
+                  onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const file = e.dataTransfer.files[0];
+                    if (file) setImportFile(file);
+                  }}
+                >
+                  <input
+                    id="csv-file-input"
+                    type="file"
+                    accept={importType === "all" ? ".json" : ".csv"}
+                    className="hidden"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) setImportFile(file);
+                    }}
+                  />
+                  {importFile ? (
+                    <div className="flex items-center justify-center gap-2 text-emerald-600">
+                      <CheckCircle className="h-5 w-5" />
+                      <span className="text-sm font-semibold truncate max-w-[250px]">{importFile.name}</span>
+                    </div>
+                  ) : (
+                    <div className="space-y-1">
+                      <Upload className="h-8 w-8 mx-auto text-slate-400" />
+                      <p className="text-xs text-slate-500 font-medium">Klik atau seret file ke sini</p>
+                      <p className="text-[10px] text-slate-400">Format: {importType === "all" ? ".json" : ".csv"}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Download Template */}
+              {importType !== "all" && (
+                <button
+                  onClick={handleDownloadTemplate}
+                  className="flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-blue-700 transition-colors cursor-pointer"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  Download Template CSV
+                </button>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="flex items-center justify-end gap-2 px-6 py-4 border-t border-slate-200 bg-slate-50">
+              <button
+                onClick={() => setShowImportModal(false)}
+                className="px-4 py-2 rounded-lg text-xs font-bold text-slate-600 hover:bg-slate-200 transition-colors cursor-pointer"
+              >
+                Batal
+              </button>
+              <button
+                onClick={handleImport}
+                disabled={importing || !importFile}
+                className="px-5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+              >
+                {importing ? (
+                  <><Loader2 className="h-4 w-4 animate-spin" /> Mengimport...</>
+                ) : (
+                  <><Upload className="h-4 w-4" /> Import Data</>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
