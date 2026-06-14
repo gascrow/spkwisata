@@ -63,18 +63,21 @@ export default function KalkulasiAhpPage() {
             ahpRes.data.matrices.forEach((m: any) => {
               comps[`${m.criteria_i_id}-${m.criteria_j_id}`] = Number(m.value);
             });
-          } else {
-            // Default 1 for all pairs
-            for (let i = 0; i < list.length; i++) {
-              for (let j = i + 1; j < list.length; j++) {
-                comps[`${list[i].id}-${list[j].id}`] = 1;
+          }
+
+          // Ensure all pairs exist (even if some matrices were missing or new criteria were added)
+          for (let i = 0; i < list.length; i++) {
+            for (let j = i + 1; j < list.length; j++) {
+              const key = `${list[i].id}-${list[j].id}`;
+              if (comps[key] === undefined) {
+                comps[key] = 1;
               }
             }
           }
           setComparisons(comps);
 
-          // If results exist, display step 2 directly
-          if (ahpRes.success && ahpRes.data.results?.length > 0) {
+          // If results exist and match the current criteria list length, display step 2 directly
+          if (ahpRes.success && ahpRes.data.results?.length === list.length) {
             const res = ahpRes.data.results;
             const matrixN = list.length;
             const matrix: number[][] = Array.from({ length: matrixN }, () => new Array(matrixN).fill(1));
@@ -248,9 +251,8 @@ export default function KalkulasiAhpPage() {
         <div className="flex items-center gap-8">
           <button
             onClick={() => step === 2 && setStep(1)}
-            className={`flex items-center gap-2 pb-1 text-sm font-bold border-b-2 transition-all ${
-              step === 1 ? "border-primary text-primary" : "border-transparent text-slate-400 hover:text-slate-600"
-            }`}
+            className={`flex items-center gap-2 pb-1 text-sm font-bold border-b-2 transition-all ${step === 1 ? "border-primary text-primary" : "border-transparent text-slate-400 hover:text-slate-600"
+              }`}
           >
             <span className="h-5 w-5 rounded-full bg-slate-100 flex items-center justify-center text-xs">1</span>
             Input Matriks Perbandingan
@@ -259,9 +261,8 @@ export default function KalkulasiAhpPage() {
           <button
             disabled={!calcResults}
             onClick={() => step === 1 && calcResults && setStep(2)}
-            className={`flex items-center gap-2 pb-1 text-sm font-bold border-b-2 transition-all ${
-              step === 2 ? "border-primary text-primary" : "border-transparent text-slate-400 enabled:hover:text-slate-600 disabled:opacity-50"
-            }`}
+            className={`flex items-center gap-2 pb-1 text-sm font-bold border-b-2 transition-all ${step === 2 ? "border-primary text-primary" : "border-transparent text-slate-400 enabled:hover:text-slate-600 disabled:opacity-50"
+              }`}
           >
             <span className="h-5 w-5 rounded-full bg-slate-100 flex items-center justify-center text-xs">2</span>
             Hasil Kalkulasi & Bobot AHP
@@ -277,7 +278,7 @@ export default function KalkulasiAhpPage() {
             <div className="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Calculator className="h-5 w-5 text-primary" />
-                <h2 className="font-bold text-slate-900 text-sm">Matriks Perbandingan Berpasangan (7x7)</h2>
+                <h2 className="font-bold text-slate-900 text-sm">Matriks Perbandingan Berpasangan</h2>
               </div>
               <span className="text-xs text-slate-500 font-semibold italic">* Isilah sel di atas diagonal</span>
             </div>
@@ -377,11 +378,10 @@ export default function KalkulasiAhpPage() {
       {step === 2 && calcResults && (
         <div className="space-y-6">
           {/* Consistency Index Warning Banner */}
-          <div className={`p-4 rounded-xl border flex items-start gap-3 shadow-sm ${
-            calcResults.isConsistent
-              ? "bg-green-50/60 border-green-200 text-green-800"
-              : "bg-red-50/60 border-red-200 text-red-800 animate-pulse"
-          }`}>
+          <div className={`p-4 rounded-xl border flex items-start gap-3 shadow-sm ${calcResults.isConsistent
+            ? "bg-green-50/60 border-green-200 text-green-800"
+            : "bg-red-50/60 border-red-200 text-red-800 animate-pulse"
+            }`}>
             {calcResults.isConsistent ? (
               <CheckCircle className="h-6 w-6 text-green-600 shrink-0 mt-0.5" />
             ) : (
@@ -558,14 +558,13 @@ export default function KalkulasiAhpPage() {
 
               {/* Random Index */}
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-1.5 shadow-inner">
-                <span className="text-[10px] font-bold text-slate-400 uppercase">Random Index (RI - n=7)</span>
+                <span className="text-[10px] font-bold text-slate-400 uppercase">Random Index</span>
                 <p className="text-xl font-bold text-slate-800">1.32</p>
               </div>
 
               {/* Consistency Ratio */}
-              <div className={`border rounded-xl p-4 space-y-1.5 shadow ${
-                calcResults.isConsistent ? "bg-green-50/40 border-green-200 text-green-800" : "bg-red-50/40 border-red-200 text-red-800"
-              }`}>
+              <div className={`border rounded-xl p-4 space-y-1.5 shadow ${calcResults.isConsistent ? "bg-green-50/40 border-green-200 text-green-800" : "bg-red-50/40 border-red-200 text-red-800"
+                }`}>
                 <span className="text-[10px] font-bold opacity-60 uppercase">Consistency Ratio (CR)</span>
                 <p className="text-xl font-extrabold">{calcResults.cr.toFixed(6)}</p>
               </div>

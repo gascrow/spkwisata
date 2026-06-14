@@ -6,7 +6,7 @@ import { Alternative, Criteria, TopsisResult } from "@/types";
 import { formatNumberID, getRankBadge } from "@/lib/utils";
 import toast from "react-hot-toast";
 import jsPDF from "jspdf";
-import "jspdf-autotable";
+import autoTable from "jspdf-autotable";
 import * as XLSX from "xlsx";
 import {
   FileText,
@@ -108,7 +108,7 @@ export default function LaporanPage() {
       // Sheet 1: Alternatif & Skor
       if (checklist.alternatifSkor) {
         const data1 = alternatives.map((alt) => {
-          const row: any = { Kode: alt.code, Nama: alt.name, Klaster: alt.cluster?.name.split(",")[0] || "" };
+          const row: any = { Kode: alt.code, Nama: alt.name, Klaster: alt.cluster?.name?.split(",")[0] || "" };
           criteria.forEach((c) => {
             const sc = alt.scores?.find((s) => s.criteria_id === c.id);
             row[c.code] = sc ? Number(sc.score_value) : 3;
@@ -137,7 +137,7 @@ export default function LaporanPage() {
           Rank: r.rank,
           Kode: r.alternative?.code,
           Nama: r.alternative?.name,
-          Klaster: r.alternative?.cluster?.name.split(",")[0],
+          Klaster: r.alternative?.cluster?.name?.split(",")[0] || "",
           "Jarak Ideal Positif (D+)": r.d_positive,
           "Jarak Ideal Negatif (D-)": r.d_negative,
           "Skor Preferensi (Ci)": r.preference_score,
@@ -214,9 +214,9 @@ export default function LaporanPage() {
         yPos += 5;
 
         const headers = [["Kode", "Nama Kriteria", "Tipe", "Bobot AHP"]];
-        const rows = criteria.map((c) => [c.code, c.name, c.type, c.weight.toFixed(4)]);
+        const rows = criteria.map((c) => [c.code, c.name, c.type, Number(c.weight).toFixed(4)]);
 
-        (doc as any).autoTable({
+        autoTable(doc, {
           head: headers,
           body: rows,
           startY: yPos,
@@ -243,16 +243,16 @@ export default function LaporanPage() {
 
         const headers = [["Rank", "Kode", "Nama Destinasi Wisata", "Klaster", "D+", "D-", "Skor Ci"]];
         const rows = topsisResults.map((r) => [
-          r.rank,
-          r.alternative?.code,
-          r.alternative?.name,
-          r.alternative?.cluster?.name.split(",")[0],
-          r.d_positive?.toFixed(4),
-          r.d_negative?.toFixed(4),
-          r.preference_score?.toFixed(4),
+          r.rank !== undefined && r.rank !== null ? r.rank : "",
+          r.alternative?.code || "",
+          r.alternative?.name || "",
+          r.alternative?.cluster?.name?.split(",")[0] || "",
+          r.d_positive !== undefined && r.d_positive !== null ? Number(r.d_positive).toFixed(4) : "",
+          r.d_negative !== undefined && r.d_negative !== null ? Number(r.d_negative).toFixed(4) : "",
+          r.preference_score !== undefined && r.preference_score !== null ? Number(r.preference_score).toFixed(4) : "",
         ]);
 
-        (doc as any).autoTable({
+        autoTable(doc, {
           head: headers,
           body: rows,
           startY: yPos,
@@ -266,6 +266,7 @@ export default function LaporanPage() {
       toast.success("Laporan PDF Berhasil Diunduh!");
       addHistory("PDF");
     } catch (e) {
+      console.error("PDF Export Error:", e);
       toast.error("Gagal mengekspor PDF");
     } finally {
       setGeneratingPdf(false);
@@ -400,7 +401,7 @@ export default function LaporanPage() {
                           <tr key={alt.id} className="border-b border-slate-100">
                             <td className="p-2 border-r border-slate-200 font-bold font-mono">{alt.code}</td>
                             <td className="p-2 border-r border-slate-200 font-semibold">{alt.name}</td>
-                            <td className="p-2 border-r border-slate-200">{alt.cluster?.name.split(",")[0]}</td>
+                            <td className="p-2 border-r border-slate-200">{alt.cluster?.name?.split(",")[0] || ""}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -430,7 +431,7 @@ export default function LaporanPage() {
                           <tr key={c.id} className="border-b border-slate-100">
                             <td className="p-2 border-r border-slate-200 font-mono font-bold">{c.code}</td>
                             <td className="p-2 border-r border-slate-200 font-semibold">{c.name}</td>
-                            <td className="p-2 border-r border-slate-200 text-right font-mono">{c.weight.toFixed(4)}</td>
+                            <td className="p-2 border-r border-slate-200 text-right font-mono">{Number(c.weight).toFixed(4)}</td>
                           </tr>
                         ))}
                       </tbody>

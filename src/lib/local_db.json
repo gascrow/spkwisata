@@ -2592,275 +2592,198 @@
       "updated_at": "2026-06-05T12:02:34.081Z"
     },
     {
-      "id": "ahp-mat-Skenario A-0-1780898298814",
+      "id": "ahp-mat-Skenario A-0-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a1111111-1111-1111-1111-111111111111",
       "criteria_j_id": "a2222222-2222-2222-2222-222222222222",
       "value": 2,
-      "created_at": "2026-06-08T05:58:18.814Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-1-1780898298815",
+      "id": "ahp-mat-Skenario A-1-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a1111111-1111-1111-1111-111111111111",
       "criteria_j_id": "a3333333-3333-3333-3333-333333333333",
       "value": 3,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-2-1780898298815",
+      "id": "ahp-mat-Skenario A-2-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a1111111-1111-1111-1111-111111111111",
       "criteria_j_id": "a4444444-4444-4444-4444-444444444444",
       "value": 4,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-3-1780898298815",
+      "id": "ahp-mat-Skenario A-3-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a1111111-1111-1111-1111-111111111111",
       "criteria_j_id": "a5555555-5555-5555-5555-555555555555",
       "value": 2,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-4-1780898298815",
+      "id": "ahp-mat-Skenario A-4-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a1111111-1111-1111-1111-111111111111",
       "criteria_j_id": "a6666666-6666-6666-6666-666666666666",
       "value": 5,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-5-1780898298815",
+      "id": "ahp-mat-Skenario A-5-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a1111111-1111-1111-1111-111111111111",
       "criteria_j_id": "a7777777-7777-7777-7777-777777777777",
       "value": 0.5,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-6-1780898298815",
+      "id": "ahp-mat-Skenario A-6-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a2222222-2222-2222-2222-222222222222",
       "criteria_j_id": "a3333333-3333-3333-3333-333333333333",
       "value": 2,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-7-1780898298815",
+      "id": "ahp-mat-Skenario A-7-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a2222222-2222-2222-2222-222222222222",
       "criteria_j_id": "a4444444-4444-4444-4444-444444444444",
       "value": 3,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-8-1780898298815",
+      "id": "ahp-mat-Skenario A-8-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a2222222-2222-2222-2222-222222222222",
       "criteria_j_id": "a5555555-5555-5555-5555-555555555555",
       "value": 2,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-9-1780898298815",
+      "id": "ahp-mat-Skenario A-9-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a2222222-2222-2222-2222-222222222222",
       "criteria_j_id": "a6666666-6666-6666-6666-666666666666",
       "value": 4,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-10-1780898298815",
+      "id": "ahp-mat-Skenario A-10-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a2222222-2222-2222-2222-222222222222",
       "criteria_j_id": "a7777777-7777-7777-7777-777777777777",
       "value": 0.3333333333333333,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-11-1780898298815",
+      "id": "ahp-mat-Skenario A-11-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a3333333-3333-3333-3333-333333333333",
       "criteria_j_id": "a4444444-4444-4444-4444-444444444444",
       "value": 2,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-12-1780898298815",
+      "id": "ahp-mat-Skenario A-12-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a3333333-3333-3333-3333-333333333333",
       "criteria_j_id": "a5555555-5555-5555-5555-555555555555",
       "value": 0.5,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-13-1780898298815",
+      "id": "ahp-mat-Skenario A-13-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a3333333-3333-3333-3333-333333333333",
       "criteria_j_id": "a6666666-6666-6666-6666-666666666666",
       "value": 3,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-14-1780898298815",
+      "id": "ahp-mat-Skenario A-14-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a3333333-3333-3333-3333-333333333333",
       "criteria_j_id": "a7777777-7777-7777-7777-777777777777",
       "value": 0.25,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-15-1780898298815",
+      "id": "ahp-mat-Skenario A-15-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a4444444-4444-4444-4444-444444444444",
       "criteria_j_id": "a5555555-5555-5555-5555-555555555555",
       "value": 0.5,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-16-1780898298815",
+      "id": "ahp-mat-Skenario A-16-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a4444444-4444-4444-4444-444444444444",
       "criteria_j_id": "a6666666-6666-6666-6666-666666666666",
       "value": 2,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-17-1780898298815",
+      "id": "ahp-mat-Skenario A-17-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a4444444-4444-4444-4444-444444444444",
       "criteria_j_id": "a7777777-7777-7777-7777-777777777777",
       "value": 0.2,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-18-1780898298815",
+      "id": "ahp-mat-Skenario A-18-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a5555555-5555-5555-5555-555555555555",
       "criteria_j_id": "a6666666-6666-6666-6666-666666666666",
       "value": 3,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-19-1780898298815",
+      "id": "ahp-mat-Skenario A-19-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a5555555-5555-5555-5555-555555555555",
       "criteria_j_id": "a7777777-7777-7777-7777-777777777777",
       "value": 0.3333333333333333,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     },
     {
-      "id": "ahp-mat-Skenario A-20-1780898298815",
+      "id": "ahp-mat-Skenario A-20-1781017647381",
       "session_name": "Skenario A",
       "criteria_i_id": "a6666666-6666-6666-6666-666666666666",
       "criteria_j_id": "a7777777-7777-7777-7777-777777777777",
       "value": 0.14285714285714285,
-      "created_at": "2026-06-08T05:58:18.815Z",
-      "updated_at": "2026-06-08T05:58:18.815Z"
+      "created_at": "2026-06-09T15:07:27.381Z",
+      "updated_at": "2026-06-09T15:07:27.381Z"
     }
   ],
   "ahp_results": [
     {
-      "id": "ahp-res-Default-0-1780660954085",
-      "session_name": "Default",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "weight": 0.1549902191553647,
-      "lambda_max": 7.1856881362021445,
-      "ci": 0.03094802270035742,
-      "cr": 0.023445471742695016,
-      "is_consistent": true,
-      "calculated_at": "2026-06-05T12:02:34.085Z"
-    },
-    {
-      "id": "ahp-res-Default-1-1780660954085",
-      "session_name": "Default",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "weight": 0.09948271100170548,
-      "lambda_max": 7.1856881362021445,
-      "ci": 0.03094802270035742,
-      "cr": 0.023445471742695016,
-      "is_consistent": true,
-      "calculated_at": "2026-06-05T12:02:34.085Z"
-    },
-    {
-      "id": "ahp-res-Default-2-1780660954086",
-      "session_name": "Default",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "weight": 0.3489858454692012,
-      "lambda_max": 7.1856881362021445,
-      "ci": 0.03094802270035742,
-      "cr": 0.023445471742695016,
-      "is_consistent": true,
-      "calculated_at": "2026-06-05T12:02:34.086Z"
-    },
-    {
-      "id": "ahp-res-Default-3-1780660954086",
-      "session_name": "Default",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "weight": 0.061121264408859434,
-      "lambda_max": 7.1856881362021445,
-      "ci": 0.03094802270035742,
-      "cr": 0.023445471742695016,
-      "is_consistent": true,
-      "calculated_at": "2026-06-05T12:02:34.086Z"
-    },
-    {
-      "id": "ahp-res-Default-4-1780660954086",
-      "session_name": "Default",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "weight": 0.2351251712838984,
-      "lambda_max": 7.1856881362021445,
-      "ci": 0.03094802270035742,
-      "cr": 0.023445471742695016,
-      "is_consistent": true,
-      "calculated_at": "2026-06-05T12:02:34.086Z"
-    },
-    {
-      "id": "ahp-res-Default-5-1780660954086",
-      "session_name": "Default",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "weight": 0.061121264408859434,
-      "lambda_max": 7.1856881362021445,
-      "ci": 0.03094802270035742,
-      "cr": 0.023445471742695016,
-      "is_consistent": true,
-      "calculated_at": "2026-06-05T12:02:34.086Z"
-    },
-    {
-      "id": "ahp-res-Default-6-1780660954086",
-      "session_name": "Default",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "weight": 0.03917352427211137,
-      "lambda_max": 7.1856881362021445,
-      "ci": 0.03094802270035742,
-      "cr": 0.023445471742695016,
-      "is_consistent": true,
-      "calculated_at": "2026-06-05T12:02:34.086Z"
-    },
-    {
-      "id": "ahp-res-Skenario A-0-1780898298818",
+      "id": "ahp-res-Skenario A-0-1781017647384",
       "session_name": "Skenario A",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "weight": 0.2186585079187437,
@@ -2868,10 +2791,10 @@
       "ci": 0.029822567517539422,
       "cr": 0.022592854179954106,
       "is_consistent": true,
-      "calculated_at": "2026-06-08T05:58:18.818Z"
+      "calculated_at": "2026-06-09T15:07:27.384Z"
     },
     {
-      "id": "ahp-res-Skenario A-1-1780898298818",
+      "id": "ahp-res-Skenario A-1-1781017647384",
       "session_name": "Skenario A",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "weight": 0.15124999684276724,
@@ -2879,10 +2802,10 @@
       "ci": 0.029822567517539422,
       "cr": 0.022592854179954106,
       "is_consistent": true,
-      "calculated_at": "2026-06-08T05:58:18.818Z"
+      "calculated_at": "2026-06-09T15:07:27.384Z"
     },
     {
-      "id": "ahp-res-Skenario A-2-1780898298818",
+      "id": "ahp-res-Skenario A-2-1781017647384",
       "session_name": "Skenario A",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "weight": 0.08457071981059379,
@@ -2890,10 +2813,10 @@
       "ci": 0.029822567517539422,
       "cr": 0.022592854179954106,
       "is_consistent": true,
-      "calculated_at": "2026-06-08T05:58:18.818Z"
+      "calculated_at": "2026-06-09T15:07:27.384Z"
     },
     {
-      "id": "ahp-res-Skenario A-3-1780898298818",
+      "id": "ahp-res-Skenario A-3-1781017647384",
       "session_name": "Skenario A",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "weight": 0.056910349948939024,
@@ -2901,10 +2824,10 @@
       "ci": 0.029822567517539422,
       "cr": 0.022592854179954106,
       "is_consistent": true,
-      "calculated_at": "2026-06-08T05:58:18.818Z"
+      "calculated_at": "2026-06-09T15:07:27.384Z"
     },
     {
-      "id": "ahp-res-Skenario A-4-1780898298818",
+      "id": "ahp-res-Skenario A-4-1781017647384",
       "session_name": "Skenario A",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "weight": 0.11264717109708436,
@@ -2912,10 +2835,10 @@
       "ci": 0.029822567517539422,
       "cr": 0.022592854179954106,
       "is_consistent": true,
-      "calculated_at": "2026-06-08T05:58:18.818Z"
+      "calculated_at": "2026-06-09T15:07:27.384Z"
     },
     {
-      "id": "ahp-res-Skenario A-5-1780898298818",
+      "id": "ahp-res-Skenario A-5-1781017647384",
       "session_name": "Skenario A",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "weight": 0.0366867694420583,
@@ -2923,10 +2846,10 @@
       "ci": 0.029822567517539422,
       "cr": 0.022592854179954106,
       "is_consistent": true,
-      "calculated_at": "2026-06-08T05:58:18.818Z"
+      "calculated_at": "2026-06-09T15:07:27.384Z"
     },
     {
-      "id": "ahp-res-Skenario A-6-1780898298818",
+      "id": "ahp-res-Skenario A-6-1781017647384",
       "session_name": "Skenario A",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "weight": 0.3392764849398136,
@@ -2934,3953 +2857,1982 @@
       "ci": 0.029822567517539422,
       "cr": 0.022592854179954106,
       "is_consistent": true,
-      "calculated_at": "2026-06-08T05:58:18.818Z"
+      "calculated_at": "2026-06-09T15:07:27.384Z"
     }
   ],
   "topsis_results": [
     {
-      "id": "topsis-res-Default-0-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b1",
-      "d_positive": 0.00404786435416288,
-      "d_negative": 0.042854646488733675,
-      "preference_score": 0.913696211963545,
-      "rank": 4,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-1-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b2",
-      "d_positive": 0.014718218200880864,
-      "d_negative": 0.0351539258424606,
-      "preference_score": 0.7048809814935973,
-      "rank": 17,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-2-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b3",
-      "d_positive": 0.017195995308588237,
-      "d_negative": 0.03261850199882861,
-      "preference_score": 0.6547993809419023,
-      "rank": 22,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-3-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b4",
-      "d_positive": 0.013428612847704993,
-      "d_negative": 0.03667006155057281,
-      "preference_score": 0.7319567232268601,
-      "rank": 8,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-4-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b5",
-      "d_positive": 0.014605433743821786,
-      "d_negative": 0.03529476248153452,
-      "preference_score": 0.7073070879749331,
-      "rank": 15,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-5-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b6",
-      "d_positive": 0.02868142912154465,
-      "d_negative": 0.021240200867465107,
-      "preference_score": 0.42547090053231706,
-      "rank": 35,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-6-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b7",
-      "d_positive": 0.023340846746840633,
-      "d_negative": 0.035841789599214094,
-      "preference_score": 0.6056132644993839,
-      "rank": 27,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-7-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b8",
-      "d_positive": 0.013729613239051435,
-      "d_negative": 0.03633413689743616,
-      "preference_score": 0.7257573952885926,
-      "rank": 9,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-8-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b9",
-      "d_positive": 0.01763110222613542,
-      "d_negative": 0.03191854632079347,
-      "preference_score": 0.6441730114505887,
-      "rank": 24,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-9-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b10",
-      "d_positive": 0.019803322267175464,
-      "d_negative": 0.026630088710153012,
-      "preference_score": 0.5735113606699148,
-      "rank": 28,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-10-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b11",
-      "d_positive": 0.029250904743029917,
-      "d_negative": 0.018766272336172788,
-      "preference_score": 0.39082414830881157,
-      "rank": 38,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-11-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b12",
-      "d_positive": 0.020496598069658315,
-      "d_negative": 0.026287436144869423,
-      "preference_score": 0.5618890415548312,
-      "rank": 30,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-12-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b13",
-      "d_positive": 0.02152227954101393,
-      "d_negative": 0.022272197764001675,
-      "preference_score": 0.5085617898549717,
-      "rank": 31,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-13-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b14",
-      "d_positive": 0.033887171909361996,
-      "d_negative": 0.021886073046036382,
-      "preference_score": 0.39241168527200776,
-      "rank": 37,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-14-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b15",
-      "d_positive": 0.012991282501929515,
-      "d_negative": 0.037139683359294025,
-      "preference_score": 0.7408531378012345,
-      "rank": 6,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-15-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b16",
-      "d_positive": 0.01443659855573421,
-      "d_negative": 0.035502538072441525,
-      "preference_score": 0.7109161365118783,
-      "rank": 13,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-16-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b17",
-      "d_positive": 0.018599124180671618,
-      "d_negative": 0.031736396575906906,
-      "preference_score": 0.6304970346762364,
-      "rank": 25,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-17-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b18",
-      "d_positive": 0.013730921752120696,
-      "d_negative": 0.036332653449409086,
-      "preference_score": 0.7257302999866234,
-      "rank": 11,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-18-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b19",
-      "d_positive": 0.014776235459349751,
-      "d_negative": 0.035455929792089606,
-      "preference_score": 0.7058411600338819,
-      "rank": 16,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-19-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b20",
-      "d_positive": 0.03116224111535197,
-      "d_negative": 0.019712525357478725,
-      "preference_score": 0.38747156447403175,
-      "rank": 39,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-20-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b21",
-      "d_positive": 0.003393791583595884,
-      "d_negative": 0.04302467756096241,
-      "preference_score": 0.9268870420300419,
-      "rank": 3,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-21-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b22",
-      "d_positive": 0.029539068515990533,
-      "d_negative": 0.022070622068899454,
-      "preference_score": 0.42764492130788273,
-      "rank": 33,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-22-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b23",
-      "d_positive": 0.002865409071897699,
-      "d_negative": 0.04313982656102711,
-      "preference_score": 0.9377155875309331,
-      "rank": 2,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-23-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b24",
-      "d_positive": 0.014718218200880864,
-      "d_negative": 0.0351539258424606,
-      "preference_score": 0.7048809814935973,
-      "rank": 18,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-24-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b25",
-      "d_positive": 0.019803322267175464,
-      "d_negative": 0.026630088710153012,
-      "preference_score": 0.5735113606699148,
-      "rank": 29,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-25-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b26",
-      "d_positive": 0.02152227954101393,
-      "d_negative": 0.022272197764001675,
-      "preference_score": 0.5085617898549717,
-      "rank": 32,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Default-26-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b27",
-      "d_positive": 0.012991282501929515,
-      "d_negative": 0.037139683359294025,
-      "preference_score": 0.7408531378012345,
-      "rank": 7,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-res-Skenario A-0-1780898343462",
+      "id": "topsis-res-Skenario A-0-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b1",
       "d_positive": 0.00387721426895162,
       "d_negative": 0.05163909117559793,
       "preference_score": 0.930160801625673,
       "rank": 2,
-      "calculated_at": "2026-06-08T05:59:03.462Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-1-1780898343463",
+      "id": "topsis-res-Skenario A-1-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b2",
       "d_positive": 0.025624933129914925,
       "d_negative": 0.02723568459146875,
       "preference_score": 0.5152358365356581,
       "rank": 22,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-2-1780898343463",
+      "id": "topsis-res-Skenario A-2-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b3",
       "d_positive": 0.006970791770301894,
       "d_negative": 0.05097691448227942,
       "preference_score": 0.8797054754865059,
       "rank": 3,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-3-1780898343463",
+      "id": "topsis-res-Skenario A-3-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b4",
       "d_positive": 0.02389555891772064,
       "d_negative": 0.031602229366502414,
       "preference_score": 0.5694322304279343,
       "rank": 17,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-4-1780898343463",
+      "id": "topsis-res-Skenario A-4-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b5",
       "d_positive": 0.01663553571810664,
       "d_negative": 0.04337592607678362,
       "preference_score": 0.7227940259984953,
       "rank": 8,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-5-1780898343463",
+      "id": "topsis-res-Skenario A-5-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b6",
       "d_positive": 0.02717903691956094,
       "d_negative": 0.02976636668236916,
       "preference_score": 0.5227176347795744,
       "rank": 21,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-6-1780898343463",
+      "id": "topsis-res-Skenario A-6-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b7",
       "d_positive": 0.01663640083219013,
       "d_negative": 0.04766368881177723,
       "preference_score": 0.7412693990893844,
       "rank": 7,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-7-1780898343463",
+      "id": "topsis-res-Skenario A-7-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b8",
       "d_positive": 0.023981006554319763,
       "d_negative": 0.03140745266379972,
       "preference_score": 0.5670396524322391,
       "rank": 18,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-8-1780898343463",
+      "id": "topsis-res-Skenario A-8-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b9",
       "d_positive": 0.02270587048561917,
       "d_negative": 0.0353915138745012,
       "preference_score": 0.6091756843152288,
       "rank": 12,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-9-1780898343463",
+      "id": "topsis-res-Skenario A-9-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b10",
       "d_positive": 0.009001861360651207,
       "d_negative": 0.049684943242743536,
       "preference_score": 0.8466118334183338,
       "rank": 4,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-10-1780898343463",
+      "id": "topsis-res-Skenario A-10-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b11",
       "d_positive": 0.021081825360082084,
       "d_negative": 0.04205718306728146,
       "preference_score": 0.666104585973423,
       "rank": 9,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-11-1780898343463",
+      "id": "topsis-res-Skenario A-11-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b12",
       "d_positive": 0.02222060329060563,
       "d_negative": 0.036303764075681255,
       "preference_score": 0.6203187784750688,
       "rank": 11,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-12-1780898343463",
+      "id": "topsis-res-Skenario A-12-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b13",
       "d_positive": 0.02582598838586159,
       "d_negative": 0.02665987773009901,
       "preference_score": 0.5079439419213837,
       "rank": 24,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-13-1780898343463",
+      "id": "topsis-res-Skenario A-13-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b14",
       "d_positive": 0.01157370488552001,
       "d_negative": 0.04980093180934657,
       "preference_score": 0.8114252807220602,
       "rank": 6,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-14-1780898343463",
+      "id": "topsis-res-Skenario A-14-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b15",
       "d_positive": 0.022679085932424965,
       "d_negative": 0.034185834679189196,
       "preference_score": 0.6011761611816449,
       "rank": 14,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-15-1780898343463",
+      "id": "topsis-res-Skenario A-15-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b16",
       "d_positive": 0.02541053613746311,
       "d_negative": 0.027831781626835295,
       "preference_score": 0.5227379797785189,
       "rank": 20,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-16-1780898343463",
+      "id": "topsis-res-Skenario A-16-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b17",
       "d_positive": 0.02622403675458037,
       "d_negative": 0.034834568595964906,
       "preference_score": 0.5705103874544003,
       "rank": 16,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-17-1780898343463",
+      "id": "topsis-res-Skenario A-17-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b18",
       "d_positive": 0.024123424033697025,
       "d_negative": 0.031078535158130423,
       "preference_score": 0.5629969590414744,
       "rank": 19,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-18-1780898343463",
+      "id": "topsis-res-Skenario A-18-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b19",
       "d_positive": 0.04225380213242292,
       "d_negative": 0.019867358134378035,
       "preference_score": 0.3198162759525216,
       "rank": 27,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-19-1780898343463",
+      "id": "topsis-res-Skenario A-19-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b20",
       "d_positive": 0.02822471483038981,
       "d_negative": 0.04301863806284099,
       "preference_score": 0.6038266914151427,
       "rank": 13,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-20-1780898343463",
+      "id": "topsis-res-Skenario A-20-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b21",
       "d_positive": 0.01976962317302742,
       "d_negative": 0.039232385954633124,
       "preference_score": 0.6649330511736882,
       "rank": 10,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-21-1780898343463",
+      "id": "topsis-res-Skenario A-21-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b22",
       "d_positive": 0.045049536883351504,
       "d_negative": 0.024855119686577467,
       "preference_score": 0.3555574250152234,
       "rank": 26,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-22-1780898343463",
+      "id": "topsis-res-Skenario A-22-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b23",
       "d_positive": 0.0033078469008242985,
       "d_negative": 0.051757787390362076,
       "preference_score": 0.939929014831057,
       "rank": 1,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-23-1780898343463",
+      "id": "topsis-res-Skenario A-23-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b24",
       "d_positive": 0.025624933129914925,
       "d_negative": 0.02723568459146875,
       "preference_score": 0.5152358365356581,
       "rank": 23,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-24-1780898343463",
+      "id": "topsis-res-Skenario A-24-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b25",
       "d_positive": 0.009001861360651207,
       "d_negative": 0.049684943242743536,
       "preference_score": 0.8466118334183338,
       "rank": 5,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-25-1780898343463",
+      "id": "topsis-res-Skenario A-25-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b26",
       "d_positive": 0.02582598838586159,
       "d_negative": 0.02665987773009901,
       "preference_score": 0.5079439419213837,
       "rank": 25,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-res-Skenario A-26-1780898343463",
+      "id": "topsis-res-Skenario A-26-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b27",
       "d_positive": 0.022679085932424965,
       "d_negative": 0.034185834679189196,
       "preference_score": 0.6011761611816449,
       "rank": 15,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     }
   ],
   "topsis_normalized": [
     {
-      "id": "topsis-norm-Default-0-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b1",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-1-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b1",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-2-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b1",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-3-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b1",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-4-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b1",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.1933472978091327,
-      "v_value": 0.04546081651465124,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-5-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b1",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-6-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b1",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-7-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b2",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-8-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b2",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-9-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b2",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-10-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b2",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-11-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b2",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-12-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b2",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-13-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b2",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-14-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b3",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-15-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b3",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-16-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b3",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-17-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b3",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-18-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b3",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.1933472978091327,
-      "v_value": 0.04546081651465124,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-19-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b3",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.0935560539449976,
-      "v_value": 0.0057182643102217144,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-20-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b3",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-21-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b4",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-22-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b4",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-23-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b4",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-24-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b4",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-25-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b4",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-26-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b4",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-27-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b4",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-28-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b5",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-29-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b5",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-30-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b5",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-31-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b5",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-32-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b5",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-33-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b5",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-34-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b5",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-35-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b6",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-36-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b6",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-37-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b6",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-38-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b6",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-39-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b6",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.09667364890456635,
-      "v_value": 0.02273040825732562,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-40-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b6",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-41-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b6",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-42-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b7",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-43-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b7",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-44-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b7",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-45-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b7",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-46-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b7",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.09667364890456635,
-      "v_value": 0.02273040825732562,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-47-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b7",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-48-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b7",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-49-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b8",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-50-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b8",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-51-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b8",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-52-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b8",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-53-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b8",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-54-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b8",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-55-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b8",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-56-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b9",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-57-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b9",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-58-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b9",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-59-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b9",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.09376144618769908,
-      "v_value": 0.0057308181437954004,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-60-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b9",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.1933472978091327,
-      "v_value": 0.04546081651465124,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-61-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b9",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-62-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b9",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-63-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b10",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-64-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b10",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-65-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b10",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-66-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b10",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-67-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b10",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-68-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b10",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-69-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b10",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-70-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b11",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-71-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b11",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-72-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b11",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-73-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b11",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-74-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b11",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.09667364890456635,
-      "v_value": 0.02273040825732562,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-75-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b11",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-76-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b11",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-77-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b12",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-78-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b12",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-79-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b12",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-80-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b12",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.09376144618769908,
-      "v_value": 0.0057308181437954004,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-81-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b12",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-82-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b12",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-83-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b12",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-84-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b13",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-85-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b13",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-86-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b13",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-87-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b13",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-88-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b13",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-89-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b13",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-90-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b13",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-91-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b14",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-92-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b14",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-93-1780660962604",
-      "session_name": "Default",
-      "alternative_id": "b14",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.09147787074926965,
-      "v_value": 0.031924482065156176,
-      "calculated_at": "2026-06-05T12:02:42.604Z"
-    },
-    {
-      "id": "topsis-norm-Default-94-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b14",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-95-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b14",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-96-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b14",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-97-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b14",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-98-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b15",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-99-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b15",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-100-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b15",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-101-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b15",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-102-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b15",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-103-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b15",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-104-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b15",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-105-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b16",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-106-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b16",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-107-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b16",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-108-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b16",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-109-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b16",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-110-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b16",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-111-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b16",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-112-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b17",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-113-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b17",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.08971226080325131,
-      "v_value": 0.008924818914799482,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-114-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b17",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-115-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b17",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-116-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b17",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.1933472978091327,
-      "v_value": 0.04546081651465124,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-117-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b17",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-118-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b17",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-119-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b18",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-120-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b18",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-121-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b18",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-122-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b18",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-123-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b18",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-124-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b18",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-125-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b18",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-126-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b19",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-127-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b19",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-128-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b19",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-129-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b19",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-130-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b19",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-131-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b19",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-132-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b19",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.09284766908852593,
-      "v_value": 0.003637170418648335,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-133-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b20",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.08926436853549036,
-      "v_value": 0.013835104042080892,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-134-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b20",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-135-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b20",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-136-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b20",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-137-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b20",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.09667364890456635,
-      "v_value": 0.02273040825732562,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-138-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b20",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-139-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b20",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-140-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b21",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-141-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b21",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-142-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b21",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-143-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b21",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-144-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b21",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.1933472978091327,
-      "v_value": 0.04546081651465124,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-145-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b21",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-146-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b21",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-147-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b22",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-148-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b22",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.08971226080325131,
-      "v_value": 0.008924818914799482,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-149-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b22",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-150-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b22",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-151-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b22",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.09667364890456635,
-      "v_value": 0.02273040825732562,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-152-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b22",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-153-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b22",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.09284766908852593,
-      "v_value": 0.003637170418648335,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-154-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b23",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-155-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b23",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-156-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b23",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-157-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b23",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-158-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b23",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.1933472978091327,
-      "v_value": 0.04546081651465124,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-159-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b23",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-160-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b23",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-161-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b24",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-162-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b24",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-163-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b24",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-164-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b24",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-165-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b24",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-166-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b24",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-167-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b24",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-168-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b25",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-169-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b25",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.17942452160650263,
-      "v_value": 0.017849637829598964,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-170-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b25",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-171-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b25",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-172-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b25",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-173-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b25",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1871121078899952,
-      "v_value": 0.011436528620443429,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-174-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b25",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.18569533817705186,
-      "v_value": 0.00727434083729667,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-175-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b26",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.13389655280323554,
-      "v_value": 0.02075265606312134,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-176-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b26",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-177-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b26",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.13721680612390447,
-      "v_value": 0.047886723097734264,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-178-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b26",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.18752289237539815,
-      "v_value": 0.011461636287590801,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-179-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b26",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-180-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b26",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-181-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b26",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-182-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b27",
-      "criteria_id": "a1111111-1111-1111-1111-111111111111",
-      "r_value": 0.17852873707098071,
-      "v_value": 0.027670208084161783,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-183-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b27",
-      "criteria_id": "a2222222-2222-2222-2222-222222222222",
-      "r_value": 0.13456839120487699,
-      "v_value": 0.013387228372199224,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-184-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b27",
-      "criteria_id": "a3333333-3333-3333-3333-333333333333",
-      "r_value": 0.1829557414985393,
-      "v_value": 0.06384896413031235,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-185-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b27",
-      "criteria_id": "a4444444-4444-4444-4444-444444444444",
-      "r_value": 0.14064216928154863,
-      "v_value": 0.008596227215693102,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-186-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b27",
-      "criteria_id": "a5555555-5555-5555-5555-555555555555",
-      "r_value": 0.14501047335684952,
-      "v_value": 0.034095612385988426,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-187-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b27",
-      "criteria_id": "a6666666-6666-6666-6666-666666666666",
-      "r_value": 0.1403340809174964,
-      "v_value": 0.008577396465332574,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Default-188-1780660962605",
-      "session_name": "Default",
-      "alternative_id": "b27",
-      "criteria_id": "a7777777-7777-7777-7777-777777777777",
-      "r_value": 0.1392715036327889,
-      "v_value": 0.005455755627972503,
-      "calculated_at": "2026-06-05T12:02:42.605Z"
-    },
-    {
-      "id": "topsis-norm-Skenario A-0-1780898343463",
+      "id": "topsis-norm-Skenario A-0-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b1",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-1-1780898343463",
+      "id": "topsis-norm-Skenario A-1-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b1",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-2-1780898343463",
+      "id": "topsis-norm-Skenario A-2-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b1",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-3-1780898343463",
+      "id": "topsis-norm-Skenario A-3-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b1",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-4-1780898343463",
+      "id": "topsis-norm-Skenario A-4-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b1",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.24806946917841693,
       "v_value": 0.027944323938504028,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-5-1780898343463",
+      "id": "topsis-norm-Skenario A-5-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b1",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-6-1780898343463",
+      "id": "topsis-norm-Skenario A-6-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b1",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-7-1780898343463",
+      "id": "topsis-norm-Skenario A-7-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b2",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-8-1780898343463",
+      "id": "topsis-norm-Skenario A-8-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b2",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-9-1780898343463",
+      "id": "topsis-norm-Skenario A-9-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b2",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-10-1780898343463",
+      "id": "topsis-norm-Skenario A-10-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b2",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-11-1780898343463",
+      "id": "topsis-norm-Skenario A-11-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b2",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-12-1780898343463",
+      "id": "topsis-norm-Skenario A-12-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b2",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-13-1780898343463",
+      "id": "topsis-norm-Skenario A-13-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b2",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-14-1780898343463",
+      "id": "topsis-norm-Skenario A-14-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b3",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-15-1780898343463",
+      "id": "topsis-norm-Skenario A-15-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b3",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-16-1780898343463",
+      "id": "topsis-norm-Skenario A-16-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b3",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-17-1780898343463",
+      "id": "topsis-norm-Skenario A-17-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b3",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-18-1780898343463",
+      "id": "topsis-norm-Skenario A-18-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b3",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.24806946917841693,
       "v_value": 0.027944323938504028,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-19-1780898343463",
+      "id": "topsis-norm-Skenario A-19-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b3",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.11026356928399425,
       "v_value": 0.004045214144180319,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-20-1780898343463",
+      "id": "topsis-norm-Skenario A-20-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b3",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-21-1780898343463",
+      "id": "topsis-norm-Skenario A-21-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b4",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-22-1780898343463",
+      "id": "topsis-norm-Skenario A-22-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b4",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-23-1780898343463",
+      "id": "topsis-norm-Skenario A-23-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b4",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-24-1780898343463",
+      "id": "topsis-norm-Skenario A-24-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b4",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-25-1780898343463",
+      "id": "topsis-norm-Skenario A-25-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b4",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-26-1780898343463",
+      "id": "topsis-norm-Skenario A-26-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b4",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-27-1780898343463",
+      "id": "topsis-norm-Skenario A-27-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b4",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-28-1780898343463",
+      "id": "topsis-norm-Skenario A-28-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b5",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-29-1780898343463",
+      "id": "topsis-norm-Skenario A-29-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b5",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-30-1780898343463",
+      "id": "topsis-norm-Skenario A-30-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b5",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-31-1780898343463",
+      "id": "topsis-norm-Skenario A-31-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b5",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-32-1780898343463",
+      "id": "topsis-norm-Skenario A-32-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b5",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-33-1780898343463",
+      "id": "topsis-norm-Skenario A-33-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b5",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-34-1780898343463",
+      "id": "topsis-norm-Skenario A-34-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b5",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-35-1780898343463",
+      "id": "topsis-norm-Skenario A-35-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b6",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-36-1780898343463",
+      "id": "topsis-norm-Skenario A-36-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b6",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-37-1780898343463",
+      "id": "topsis-norm-Skenario A-37-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b6",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-38-1780898343463",
+      "id": "topsis-norm-Skenario A-38-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b6",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-39-1780898343463",
+      "id": "topsis-norm-Skenario A-39-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b6",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.12403473458920847,
       "v_value": 0.013972161969252014,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-40-1780898343463",
+      "id": "topsis-norm-Skenario A-40-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b6",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-41-1780898343463",
+      "id": "topsis-norm-Skenario A-41-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b6",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-42-1780898343463",
+      "id": "topsis-norm-Skenario A-42-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b7",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-43-1780898343463",
+      "id": "topsis-norm-Skenario A-43-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b7",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-44-1780898343463",
+      "id": "topsis-norm-Skenario A-44-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b7",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-45-1780898343463",
+      "id": "topsis-norm-Skenario A-45-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b7",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-46-1780898343463",
+      "id": "topsis-norm-Skenario A-46-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b7",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.12403473458920847,
       "v_value": 0.013972161969252014,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-47-1780898343463",
+      "id": "topsis-norm-Skenario A-47-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b7",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-48-1780898343463",
+      "id": "topsis-norm-Skenario A-48-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b7",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-49-1780898343463",
+      "id": "topsis-norm-Skenario A-49-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b8",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-50-1780898343463",
+      "id": "topsis-norm-Skenario A-50-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b8",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-51-1780898343463",
+      "id": "topsis-norm-Skenario A-51-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b8",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-52-1780898343463",
+      "id": "topsis-norm-Skenario A-52-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b8",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-53-1780898343463",
+      "id": "topsis-norm-Skenario A-53-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b8",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-54-1780898343463",
+      "id": "topsis-norm-Skenario A-54-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b8",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-55-1780898343463",
+      "id": "topsis-norm-Skenario A-55-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b8",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-56-1780898343463",
+      "id": "topsis-norm-Skenario A-56-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b9",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-57-1780898343463",
+      "id": "topsis-norm-Skenario A-57-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b9",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-58-1780898343463",
+      "id": "topsis-norm-Skenario A-58-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b9",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-59-1780898343463",
+      "id": "topsis-norm-Skenario A-59-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b9",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.11624763874381928,
       "v_value": 0.006615693801648598,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-60-1780898343463",
+      "id": "topsis-norm-Skenario A-60-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b9",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.24806946917841693,
       "v_value": 0.027944323938504028,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-61-1780898343463",
+      "id": "topsis-norm-Skenario A-61-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b9",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-62-1780898343463",
+      "id": "topsis-norm-Skenario A-62-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b9",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-63-1780898343463",
+      "id": "topsis-norm-Skenario A-63-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b10",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-64-1780898343463",
+      "id": "topsis-norm-Skenario A-64-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b10",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-65-1780898343463",
+      "id": "topsis-norm-Skenario A-65-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b10",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-66-1780898343463",
+      "id": "topsis-norm-Skenario A-66-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b10",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-67-1780898343463",
+      "id": "topsis-norm-Skenario A-67-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b10",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-68-1780898343463",
+      "id": "topsis-norm-Skenario A-68-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b10",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-69-1780898343463",
+      "id": "topsis-norm-Skenario A-69-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b10",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-70-1780898343463",
+      "id": "topsis-norm-Skenario A-70-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b11",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-71-1780898343463",
+      "id": "topsis-norm-Skenario A-71-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b11",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-72-1780898343463",
+      "id": "topsis-norm-Skenario A-72-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b11",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-73-1780898343463",
+      "id": "topsis-norm-Skenario A-73-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b11",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-74-1780898343463",
+      "id": "topsis-norm-Skenario A-74-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b11",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.12403473458920847,
       "v_value": 0.013972161969252014,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-75-1780898343463",
+      "id": "topsis-norm-Skenario A-75-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b11",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-76-1780898343463",
+      "id": "topsis-norm-Skenario A-76-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b11",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-77-1780898343463",
+      "id": "topsis-norm-Skenario A-77-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b12",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-78-1780898343463",
+      "id": "topsis-norm-Skenario A-78-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b12",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-79-1780898343463",
+      "id": "topsis-norm-Skenario A-79-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b12",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-80-1780898343463",
+      "id": "topsis-norm-Skenario A-80-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b12",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.11624763874381928,
       "v_value": 0.006615693801648598,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-81-1780898343463",
+      "id": "topsis-norm-Skenario A-81-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b12",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-82-1780898343463",
+      "id": "topsis-norm-Skenario A-82-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b12",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-83-1780898343463",
+      "id": "topsis-norm-Skenario A-83-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b12",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-84-1780898343463",
+      "id": "topsis-norm-Skenario A-84-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b13",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-85-1780898343463",
+      "id": "topsis-norm-Skenario A-85-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b13",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-86-1780898343463",
+      "id": "topsis-norm-Skenario A-86-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b13",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-87-1780898343463",
+      "id": "topsis-norm-Skenario A-87-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b13",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-88-1780898343463",
+      "id": "topsis-norm-Skenario A-88-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b13",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-89-1780898343463",
+      "id": "topsis-norm-Skenario A-89-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b13",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-90-1780898343463",
+      "id": "topsis-norm-Skenario A-90-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b13",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-91-1780898343463",
+      "id": "topsis-norm-Skenario A-91-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b14",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-92-1780898343463",
+      "id": "topsis-norm-Skenario A-92-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b14",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-93-1780898343463",
+      "id": "topsis-norm-Skenario A-93-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b14",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1091089451179962,
       "v_value": 0.009227422026403512,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-94-1780898343463",
+      "id": "topsis-norm-Skenario A-94-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b14",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-95-1780898343463",
+      "id": "topsis-norm-Skenario A-95-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b14",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-96-1780898343463",
+      "id": "topsis-norm-Skenario A-96-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b14",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-97-1780898343463",
+      "id": "topsis-norm-Skenario A-97-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b14",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-98-1780898343463",
+      "id": "topsis-norm-Skenario A-98-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b15",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-99-1780898343463",
+      "id": "topsis-norm-Skenario A-99-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b15",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-100-1780898343463",
+      "id": "topsis-norm-Skenario A-100-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b15",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-101-1780898343463",
+      "id": "topsis-norm-Skenario A-101-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b15",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-102-1780898343463",
+      "id": "topsis-norm-Skenario A-102-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b15",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-103-1780898343463",
+      "id": "topsis-norm-Skenario A-103-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b15",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-104-1780898343463",
+      "id": "topsis-norm-Skenario A-104-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b15",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-105-1780898343463",
+      "id": "topsis-norm-Skenario A-105-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b16",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-106-1780898343463",
+      "id": "topsis-norm-Skenario A-106-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b16",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-107-1780898343463",
+      "id": "topsis-norm-Skenario A-107-1781017656657",
       "session_name": "Skenario A",
       "alternative_id": "b16",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.657Z"
     },
     {
-      "id": "topsis-norm-Skenario A-108-1780898343463",
+      "id": "topsis-norm-Skenario A-108-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b16",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-109-1780898343463",
+      "id": "topsis-norm-Skenario A-109-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b16",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-110-1780898343463",
+      "id": "topsis-norm-Skenario A-110-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b16",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-111-1780898343463",
+      "id": "topsis-norm-Skenario A-111-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b16",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-112-1780898343463",
+      "id": "topsis-norm-Skenario A-112-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b17",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-113-1780898343463",
+      "id": "topsis-norm-Skenario A-113-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b17",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.1111111111111111,
       "v_value": 0.016805555204751917,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-114-1780898343463",
+      "id": "topsis-norm-Skenario A-114-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b17",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-115-1780898343463",
+      "id": "topsis-norm-Skenario A-115-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b17",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-116-1780898343463",
+      "id": "topsis-norm-Skenario A-116-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b17",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.24806946917841693,
       "v_value": 0.027944323938504028,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-117-1780898343463",
+      "id": "topsis-norm-Skenario A-117-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b17",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-118-1780898343463",
+      "id": "topsis-norm-Skenario A-118-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b17",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-119-1780898343463",
+      "id": "topsis-norm-Skenario A-119-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b18",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-120-1780898343463",
+      "id": "topsis-norm-Skenario A-120-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b18",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-121-1780898343463",
+      "id": "topsis-norm-Skenario A-121-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b18",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-122-1780898343463",
+      "id": "topsis-norm-Skenario A-122-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b18",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-123-1780898343463",
+      "id": "topsis-norm-Skenario A-123-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b18",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-124-1780898343463",
+      "id": "topsis-norm-Skenario A-124-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b18",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-125-1780898343463",
+      "id": "topsis-norm-Skenario A-125-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b18",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-126-1780898343463",
+      "id": "topsis-norm-Skenario A-126-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b19",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-127-1780898343463",
+      "id": "topsis-norm-Skenario A-127-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b19",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-128-1780898343463",
+      "id": "topsis-norm-Skenario A-128-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b19",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-129-1780898343463",
+      "id": "topsis-norm-Skenario A-129-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b19",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-130-1780898343463",
+      "id": "topsis-norm-Skenario A-130-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b19",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-131-1780898343463",
+      "id": "topsis-norm-Skenario A-131-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b19",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-132-1780898343463",
+      "id": "topsis-norm-Skenario A-132-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b19",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1148969979242852,
       "v_value": 0.038981849585888545,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-133-1780898343463",
+      "id": "topsis-norm-Skenario A-133-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b20",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1091089451179962,
       "v_value": 0.023857599140089142,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-134-1780898343463",
+      "id": "topsis-norm-Skenario A-134-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b20",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-135-1780898343463",
+      "id": "topsis-norm-Skenario A-135-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b20",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-136-1780898343463",
+      "id": "topsis-norm-Skenario A-136-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b20",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-137-1780898343463",
+      "id": "topsis-norm-Skenario A-137-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b20",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.12403473458920847,
       "v_value": 0.013972161969252014,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-138-1780898343463",
+      "id": "topsis-norm-Skenario A-138-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b20",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-139-1780898343463",
+      "id": "topsis-norm-Skenario A-139-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b20",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-140-1780898343463",
+      "id": "topsis-norm-Skenario A-140-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b21",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-141-1780898343463",
+      "id": "topsis-norm-Skenario A-141-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b21",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-142-1780898343463",
+      "id": "topsis-norm-Skenario A-142-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b21",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-143-1780898343463",
+      "id": "topsis-norm-Skenario A-143-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b21",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-144-1780898343463",
+      "id": "topsis-norm-Skenario A-144-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b21",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.24806946917841693,
       "v_value": 0.027944323938504028,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-145-1780898343463",
+      "id": "topsis-norm-Skenario A-145-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b21",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-146-1780898343463",
+      "id": "topsis-norm-Skenario A-146-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b21",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-147-1780898343463",
+      "id": "topsis-norm-Skenario A-147-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b22",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-148-1780898343463",
+      "id": "topsis-norm-Skenario A-148-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b22",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.1111111111111111,
       "v_value": 0.016805555204751917,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-149-1780898343463",
+      "id": "topsis-norm-Skenario A-149-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b22",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-150-1780898343463",
+      "id": "topsis-norm-Skenario A-150-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b22",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-151-1780898343463",
+      "id": "topsis-norm-Skenario A-151-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b22",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.12403473458920847,
       "v_value": 0.013972161969252014,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-152-1780898343463",
+      "id": "topsis-norm-Skenario A-152-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b22",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-153-1780898343463",
+      "id": "topsis-norm-Skenario A-153-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b22",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1148969979242852,
       "v_value": 0.038981849585888545,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-154-1780898343463",
+      "id": "topsis-norm-Skenario A-154-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b23",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-155-1780898343463",
+      "id": "topsis-norm-Skenario A-155-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b23",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-156-1780898343463",
+      "id": "topsis-norm-Skenario A-156-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b23",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-157-1780898343463",
+      "id": "topsis-norm-Skenario A-157-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b23",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-158-1780898343463",
+      "id": "topsis-norm-Skenario A-158-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b23",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.24806946917841693,
       "v_value": 0.027944323938504028,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-159-1780898343463",
+      "id": "topsis-norm-Skenario A-159-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b23",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-160-1780898343463",
+      "id": "topsis-norm-Skenario A-160-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b23",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-161-1780898343463",
+      "id": "topsis-norm-Skenario A-161-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b24",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-162-1780898343463",
+      "id": "topsis-norm-Skenario A-162-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b24",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-163-1780898343463",
+      "id": "topsis-norm-Skenario A-163-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b24",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-164-1780898343463",
+      "id": "topsis-norm-Skenario A-164-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b24",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-165-1780898343463",
+      "id": "topsis-norm-Skenario A-165-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b24",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-166-1780898343463",
+      "id": "topsis-norm-Skenario A-166-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b24",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-167-1780898343463",
+      "id": "topsis-norm-Skenario A-167-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b24",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-168-1780898343463",
+      "id": "topsis-norm-Skenario A-168-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b25",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-169-1780898343463",
+      "id": "topsis-norm-Skenario A-169-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b25",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.2222222222222222,
       "v_value": 0.03361111040950383,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-170-1780898343463",
+      "id": "topsis-norm-Skenario A-170-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b25",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-171-1780898343463",
+      "id": "topsis-norm-Skenario A-171-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b25",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-172-1780898343463",
+      "id": "topsis-norm-Skenario A-172-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b25",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-173-1780898343463",
+      "id": "topsis-norm-Skenario A-173-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b25",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.2205271385679885,
       "v_value": 0.008090428288360638,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-174-1780898343463",
+      "id": "topsis-norm-Skenario A-174-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b25",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.2297939958485704,
       "v_value": 0.07796369917177709,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-175-1780898343463",
+      "id": "topsis-norm-Skenario A-175-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b26",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.1636634176769943,
       "v_value": 0.03578639871013371,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-176-1780898343463",
+      "id": "topsis-norm-Skenario A-176-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b26",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-177-1780898343463",
+      "id": "topsis-norm-Skenario A-177-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b26",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.1636634176769943,
       "v_value": 0.013841133039605267,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-178-1780898343463",
+      "id": "topsis-norm-Skenario A-178-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b26",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.23249527748763857,
       "v_value": 0.013231387603297196,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-179-1780898343463",
+      "id": "topsis-norm-Skenario A-179-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b26",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-180-1780898343463",
+      "id": "topsis-norm-Skenario A-180-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b26",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-181-1780898343463",
+      "id": "topsis-norm-Skenario A-181-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b26",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-182-1780898343463",
+      "id": "topsis-norm-Skenario A-182-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b27",
       "criteria_id": "a1111111-1111-1111-1111-111111111111",
       "r_value": 0.2182178902359924,
       "v_value": 0.047715198280178284,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-183-1780898343463",
+      "id": "topsis-norm-Skenario A-183-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b27",
       "criteria_id": "a2222222-2222-2222-2222-222222222222",
       "r_value": 0.16666666666666666,
       "v_value": 0.02520833280712787,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-184-1780898343463",
+      "id": "topsis-norm-Skenario A-184-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b27",
       "criteria_id": "a3333333-3333-3333-3333-333333333333",
       "r_value": 0.2182178902359924,
       "v_value": 0.018454844052807024,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-185-1780898343463",
+      "id": "topsis-norm-Skenario A-185-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b27",
       "criteria_id": "a4444444-4444-4444-4444-444444444444",
       "r_value": 0.17437145811572893,
       "v_value": 0.009923540702472897,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-186-1780898343463",
+      "id": "topsis-norm-Skenario A-186-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b27",
       "criteria_id": "a5555555-5555-5555-5555-555555555555",
       "r_value": 0.1860521018838127,
       "v_value": 0.02095824295387802,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-187-1780898343463",
+      "id": "topsis-norm-Skenario A-187-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b27",
       "criteria_id": "a6666666-6666-6666-6666-666666666666",
       "r_value": 0.1653953539259914,
       "v_value": 0.006067821216270478,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     },
     {
-      "id": "topsis-norm-Skenario A-188-1780898343463",
+      "id": "topsis-norm-Skenario A-188-1781017656658",
       "session_name": "Skenario A",
       "alternative_id": "b27",
       "criteria_id": "a7777777-7777-7777-7777-777777777777",
       "r_value": 0.1723454968864278,
       "v_value": 0.05847277437883282,
-      "calculated_at": "2026-06-08T05:59:03.463Z"
+      "calculated_at": "2026-06-09T15:07:36.658Z"
     }
   ],
   "references_docs": [
