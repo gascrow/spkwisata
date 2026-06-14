@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppProvider } from "@/components/shared/AppContext";
-import Sidebar from "@/components/shared/Sidebar";
-import Header from "@/components/shared/Header";
-import MainLayoutContent from "./MainLayoutContent";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
@@ -20,21 +17,7 @@ export default function RootLayout({
     <html lang="en" className="h-full scroll-smooth">
       <body className="h-full bg-slate-50 antialiased font-sans text-slate-800">
         <AppProvider>
-          <div className="flex h-full w-full overflow-hidden">
-            {/* Sidebar Navigation */}
-            <Sidebar />
-
-            {/* Content Container */}
-            <MainLayoutContent>
-              {/* Sticky Top Header */}
-              <Header />
-
-              {/* Main Content Area */}
-              <main className="flex-1 overflow-y-auto p-6 lg:p-8 max-w-[1400px] mx-auto w-full">
-                {children}
-              </main>
-            </MainLayoutContent>
-          </div>
+          {children}
           <Toaster
             position="top-right"
             toastOptions={{

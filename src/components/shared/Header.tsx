@@ -1,9 +1,10 @@
 "use client";
 
 import { useApp } from "./AppContext";
-import { usePathname } from "next/navigation";
-import { Menu, Layers, ChevronRight, Settings } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, Layers, ChevronRight, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const pageTitles: Record<string, string> = {
   "/dashboard": "Dashboard Utama",
@@ -19,7 +20,20 @@ const pageTitles: Record<string, string> = {
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const { sidebarOpen, setSidebarOpen, activeSession, setActiveSession } = useApp();
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  const handleLogout = async () => {
+    setLoggingOut(true);
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+      router.push("/login");
+      router.refresh();
+    } catch {
+      setLoggingOut(false);
+    }
+  };
 
   const currentTitle = pageTitles[pathname] || "Sistem Pendukung Keputusan";
 
@@ -89,9 +103,14 @@ export default function Header() {
           </select>
         </div>
 
-        <div className="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200">
-          <Settings className="h-4 w-4 text-slate-500 hover:text-slate-800 cursor-pointer transition-colors" />
-        </div>
+        <button
+          onClick={handleLogout}
+          disabled={loggingOut}
+          className="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200 hover:bg-red-50 hover:border-red-200 transition-colors group"
+          title="Logout"
+        >
+          <LogOut className="h-4 w-4 text-slate-500 group-hover:text-red-500 transition-colors" />
+        </button>
       </div>
     </header>
   );
