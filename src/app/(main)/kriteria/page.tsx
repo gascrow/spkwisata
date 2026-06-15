@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 export default function KriteriaPage() {
-  const { refreshKey, triggerRefresh } = useApp();
+  const { refreshKey, triggerRefresh, activeSession } = useApp();
   const [criteria, setCriteria] = useState<Criteria[]>([]);
   const [selectedCriteria, setSelectedCriteria] = useState<Criteria | null>(null);
   const [loading, setLoading] = useState(true);
@@ -69,19 +69,33 @@ export default function KriteriaPage() {
     },
   });
 
-  // Fetch criteria data
+  // Fetch criteria data + session-specific AHP weights
   useEffect(() => {
     async function fetchCriteria() {
       setLoading(true);
       try {
-        const res = await fetch("/api/criteria").then((r) => r.json());
-        if (res.success) {
-          setCriteria(res.data);
+        const [critRes, ahpRes] = await Promise.all([
+          fetch("/api/criteria").then((r) => r.json()),
+          fetch(`/api/ahp?session=${encodeURIComponent(activeSession)}`).then((r) => r.json()),
+        ]);
+        if (critRes.success) {
+          // Override criteria weights with session-specific AHP results
+          let critData = critRes.data;
+          if (ahpRes.success && ahpRes.data?.results?.length > 0) {
+            const weightMap: Record<string, number> = {};
+            ahpRes.data.results.forEach((r: any) => {
+              weightMap[r.criteria_id] = Number(r.weight);
+            });
+            critData = critData.map((c: any) => ({
+              ...c,
+              weight: weightMap[c.id] !== undefined ? weightMap[c.id] : c.weight,
+            }));
+          }
+          setCriteria(critData);
           // Auto select first criteria if none selected
-          if (res.data.length > 0) {
-            // Check if previously selected still exists
-            const stillExists = res.data.find((c: any) => c.id === selectedCriteria?.id);
-            setSelectedCriteria(stillExists || res.data[0]);
+          if (critData.length > 0) {
+            const stillExists = critData.find((c: any) => c.id === selectedCriteria?.id);
+            setSelectedCriteria(stillExists || critData[0]);
           }
         }
       } catch (err) {
@@ -91,7 +105,7 @@ export default function KriteriaPage() {
       }
     }
     fetchCriteria();
-  }, [refreshKey]);
+  }, [refreshKey, activeSession]);
 
   // Open criteria modal for create
   const handleCritCreateOpen = () => {

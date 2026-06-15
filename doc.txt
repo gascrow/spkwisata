@@ -1,0 +1,1254 @@
+================================================================================
+         DOKUMENTASI TEKNIS LENGKAP
+         SISTEM PENDUKUNG KEPUTUSAN PEMILIHAN OBJEK WISATA
+         (SPK WISATA - KOTA BALIKPAPAN)
+         Metode AHP (Analytic Hierarchy Process) & TOPSIS
+================================================================================
+
+DAFTAR ISI
+────────────────────────────────────────────────────────────────────────────────
+1. Gambaran Umum Aplikasi
+2. Fitur dan Fungsi Aplikasi
+3. Arsitektur dan Teknologi
+4. Alur Data dalam Sistem
+5. Skema Database
+6. Metode Perhitungan AHP
+7. Metode Perhitungan TOPSIS
+8. Manajemen Skenario (Session)
+9. Sistem Autentikasi
+10. Import/Export Data
+11. Dokumentasi API
+12. Struktur Direktori
+13. Konfigurasi dan Environment
+================================================================================
+
+
+1. GAMBARAN UMUM APLIKASI
+────────────────────────────────────────────────────────────────────────────────
+
+Aplikasi SPK Wisata adalah Sistem Pendukung Keputusan (Decision Support System)
+berbasis web yang dirancang untuk membantu pemerintah daerah dan pemangku
+kepentingan dalam memprioritaskan objek wisata di Kota Balikpapan untuk
+pengembangan dan investasi.
+
+Aplikasi ini menggunakan dua metode ilmiah:
+  - AHP (Analytic Hierarchy Process): Untuk menentukan bobot kriteria
+    berdasarkan perbandingan berpasangan dari para ahli/pengambil keputusan.
+  - TOPSIS (Technique for Order Preference by Similarity to Ideal Solution):
+    Untuk meranking alternatif objek wisata berdasarkan kriteria yang telah
+    diberi bobot.
+
+Sistem menyediakan dua skenario analisis ("Skenario A" dan "Skenario B") yang
+memungkinkan pengambil keputusan membandingkan hasil dari set prioritas kriteria
+yang berbeda.
+
+
+2. FITUR DAN FUNGSI APLIKASI
+────────────────────────────────────────────────────────────────────────────────
+
+2.1 Dashboard
+    - Menampilkan statistik ringkas: jumlah objek wisata, kriteria, klaster,
+      dan status perhitungan.
+    - Hero banner dengan aksi cepat ke halaman AHP dan TOPSIS.
+    - Tombol Import Data CSV dengan modal dialog lengkap.
+    - Ringkasan hasil ranking teratas (Top 5).
+    - Visualisasi chart: distribusi klaster, skor kriteria.
+
+2.2 Manajemen Objek Wisata
+    - CRUD (Create, Read, Update, Delete) data objek wisata.
+    - Tiga mode tampilan: Tabel, Peta, dan Grid.
+    - Form lengkap dengan validasi zod: kode, nama, klaster, deskripsi,
+      alamat, koordinat (latitude/longitude), gambar URL, status aktif.
+    - Penilaian skor per kriteria (skala 1-4) dalam accordion form.
+    - Peta interaktif dengan Leaflet untuk memilih lokasi.
+    - Filter berdasarkan pencarian teks, klaster, dan status aktif/inaktif.
+    - Marker peta berwarna berdasarkan klaster objek wisata.
+
+2.3 Manajemen Kriteria
+    - Layout dua panel: kiri = daftar kriteria, kanan = detail sub-kriteria.
+    - CRUD kriteria: kode, nama, tipe (benefit/cost), urutan, deskripsi.
+    - Sub-kriteria otomatis dibuat (4 level: skor 1-4) saat kriteria baru.
+    - CRUD sub-kriteria: nilai skor (1-4), label, deskripsi.
+    - Menghapus kriteria akan mereset semua hasil perhitungan AHP dan TOPSIS.
+
+2.4 Perhitungan AHP (Kalkulasi AHP)
+    - Stepper 2 langkah:
+      Step 1: Input matriks perbandingan berpasangan (pairwise comparison).
+              Segitiga atas dapat diedit, segitiga bawah otomatis resiprokal.
+              Dropdown menggunakan Skala Saaty (9, 8, ..., 1, ..., 1/8, 1/9).
+      Step 2: Hasil perhitungan — matriks desimal, matriks normalisasi,
+              tabel bobot + chart, uji konsistensi (λmax, CI, RI, CR).
+    - Konsistensi ditentukan oleh CR < 0.1.
+    - Hasil disimpan per skenario (session_name).
+    - Bobot kriteria otomatis diupdate ke tabel criteria.
+
+2.5 Perhitungan TOPSIS (Kalkulasi TOPSIS)
+    - Stepper 6 langkah yang transparan menampilkan setiap tahap:
+      Step 1: Matriks Keputusan (X) — alternatif × kriteria.
+      Step 2: Normalisasi Matriks (R) — vector normalization.
+      Step 3: Matriks Terbobot (V) — R × bobot AHP.
+      Step 4: Solusi Ideal Positif (A+) dan Negatif (A-).
+      Step 5: Jarak: D+ (ke ideal positif), D- (ke ideal negatif).
+      Step 6: Skor Preferensi (Ci) dan Ranking akhir.
+    - Membutuhkan bobot AHP sudah dihitung terlebih dahulu.
+    - Semua rumus ditampilkan inline di setiap langkah.
+
+2.6 Ranking
+    - Kartu Top 3 prioritas dengan gambar objek wisata.
+    - Tabel ranking lengkap dengan baris accordion untuk detail.
+    - 4 visualisasi chart:
+      (a) Bar Chart: Skor Ci untuk Top 15.
+      (b) Radar Chart: Profil kriteria Top 3.
+      (c) Scatter Plot: D+ vs D- semua alternatif.
+      (d) Pie Chart: Distribusi klaster di Top 10.
+    - Filter: klaster, jumlah tampilan (semua/top 10/top 20).
+
+2.7 Laporan
+    - Generator laporan berbasis checklist (10 bagian yang dapat dipilih).
+    - Export ke PDF (jsPDF + autotable) dan Excel (SheetJS/xlsx).
+    - Panel preview langsung (live preview).
+    - Riwayat export tersimpan di localStorage.
+
+2.8 Metodologi
+    - Halaman statis yang menjelaskan metodologi AHP dan TOPSIS.
+    - Referensi akademis dan penjelasan skala Saaty.
+
+2.9 Referensi
+    - CRUD dokumen referensi: kategori, judul, nomor, tahun, penerbit,
+      deskripsi, URL, urutan.
+    - Digunakan sebagai dasar ilmiah dalam pengambilan keputusan.
+
+2.10 Import Data CSV
+    - Modal import di Dashboard dengan:
+      (a) Selector tipe data: Klaster, Kriteria, Sub-Kriteria, Alternatif,
+          Skor, Matriks AHP, Referensi, Semua Data (JSON).
+      (b) Dropzone file dengan drag-and-drop.
+      (c) Tombol download template CSV per tipe data.
+      (d) Tombol import dengan loading state.
+      (e) Notifikasi toast sukses/error.
+
+2.11 Peta Interaktif
+    - Peta Leaflet berpusat di Balikpapan (-1.24, 116.86), zoom 12.
+    - Marker kustom (divIcon) berwarna berdasarkan klaster.
+    - Popup menampilkan kode, nama, alamat, dan grid skor kriteria.
+
+
+3. ARSITEKTUR DAN TEKNOLOGI
+────────────────────────────────────────────────────────────────────────────────
+
+3.1 Stack Teknologi
+
+    Frontend:
+    - Next.js 14.2.35 (App Router)
+    - React 18
+    - Tailwind CSS (desain kustom)
+    - Recharts (bar, pie, radar, scatter charts)
+    - react-leaflet + Leaflet (peta interaktif)
+    - jsPDF + jspdf-autotable (export PDF)
+    - SheetJS/xlsx (export Excel)
+    - react-hook-form + zod (validasi form)
+    - lucide-react (ikon)
+    - react-hot-toast (notifikasi)
+
+    Backend:
+    - Next.js 14 API Routes (App Router)
+    - Supabase (@supabase/supabase-js)
+      - Client-side: anon key (untuk browser)
+      - Server-side: service role key (untuk API routes)
+
+    Authentication:
+    - Cookie-based HMAC-SHA256 session tokens
+    - 7-day session duration
+    - Middleware auth check di semua route non-public
+
+3.2 Arsitektur Sistem
+
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │                         BROWSER (CLIENT)                             │
+    │  ┌─────────┐ ┌──────────┐ ┌─────────┐ ┌──────────┐ ┌───────────┐ │
+    │  │Dashboard│ │Obj.Wisata│ │ Kriteria │ │  AHP     │ │  TOPSIS   │ │
+    │  └────┬────┘ └────┬─────┘ └────┬────┘ └────┬─────┘ └─────┬─────┘ │
+    │       │           │            │            │             │        │
+    │  ┌────┴───────────┴────────────┴────────────┴─────────────┴────┐  │
+    │  │              React Components + State Management             │  │
+    │  │         (AppContext: session, sidebar, refreshKey)           │  │
+    │  └────────────────────────┬────────────────────────────────────┘  │
+    └───────────────────────────┼───────────────────────────────────────┘
+                                │ HTTP (fetch/axios)
+    ┌───────────────────────────┼───────────────────────────────────────┐
+    │                    NEXT.JS API ROUTES                              │
+    │  ┌────────┐ ┌─────────┐ ┌──────┐ ┌────────┐ ┌───────┐ ┌───────┐ │
+    │  │/api/ahp│ │/api/    │ │/api/ │ │/api/   │ │/api/  │ │/api/  │ │
+    │  │        │ │topsis   │ │alt.  │ │criteria│ │import │ │seed   │ │
+    │  └───┬────┘ └────┬────┘ └──┬───┘ └───┬────┘ └──┬────┘ └──┬────┘ │
+    │      │           │         │          │         │         │      │
+    │  ┌───┴───────────┴─────────┴──────────┴─────────┴─────────┴────┐ │
+    │  │              Calculation Engines (Pure TypeScript)            │ │
+    │  │         ahp.ts: calculateAHP()                               │ │
+    │  │         topsis.ts: calculateTOPSIS()                         │ │
+    │  └────────────────────────┬────────────────────────────────────┘ │
+    │                           │                                      │
+    │  ┌────────────────────────┴────────────────────────────────────┐ │
+    │  │                    Database Layer (db.ts)                     │ │
+    │  │         Supabase admin client (service role key)             │ │
+    │  └────────────────────────┬────────────────────────────────────┘ │
+    └───────────────────────────┼───────────────────────────────────────┘
+                                │ HTTPS (Supabase REST API)
+    ┌───────────────────────────┼───────────────────────────────────────┐
+    │                    SUPABASE CLOUD                                  │
+    │  ┌────────────────────────┴────────────────────────────────────┐ │
+    │  │  Tables: clusters, alternatives, criteria, sub_criteria,    │ │
+    │  │  scores, ahp_matrices, ahp_results, topsis_results,         │ │
+    │  │  topsis_normalized, references_docs, app_settings           │ │
+    │  │  (RLS enabled, public policies)                             │ │
+    │  └─────────────────────────────────────────────────────────────┘ │
+    └───────────────────────────────────────────────────────────────────┘
+
+
+4. ALUR DATA DALAM SISTEM
+────────────────────────────────────────────────────────────────────────────────
+
+4.1 Alur Utama Penggunaan Aplikasi
+
+    (1) Login → Autentikasi HMAC → Cookie session 7 hari
+    (2) Setup Data: Input/Import klaster, kriteria, sub-kriteria, alternatif
+    (3) Penilaian: Beri skor (1-4) setiap alternatif terhadap setiap kriteria
+    (4) Perhitungan AHP: Input perbandingan berpasangan → Bobot kriteria
+    (5) Perhitungan TOPSIS: Matriks keputusan × bobot → Ranking
+    (6) Analisis: Lihat ranking, visualisasi chart, peta
+    (7) Export: Generate laporan PDF/Excel
+
+4.2 Alur Data Perhitungan AHP
+
+    User Input:
+      Perbandingan berpasangan antar kriteria (skala Saaty 1-9)
+           │
+           ▼
+    API Route POST /api/ahp:
+      - Menerima object `comparisons` {criteria_i_id-criteria_j_id: value}
+      - Membangun matriks NxN (buildMatrixFromUpperTriangle)
+      - Segitiga bawah = 1/value (resiprokal)
+      - Diagonal = 1
+           │
+           ▼
+    Calculation Engine (ahp.ts):
+      calculateAHP(matrix) →
+        1. normalizeMatrix(): setiap kolom dibagi jumlah kolom
+        2. calculateWeights(): rata-rata baris dari matriks normalisasi
+        3. calculateLambdaMax(): λmax = Σ(w×A) / Σ(w) per kolom
+        4. calculateConsistency(): CI = (λmax-n)/(n-1), CR = CI/RI[n]
+           │
+           ▼
+    Database Layer (db.ts):
+      - saveAhpMatrices(): Simpan matriks ke tabel ahp_matrices
+      - saveAhpResults(): Simpan bobot + konsistensi ke ahp_results
+      - Update kolom weight di tabel criteria dengan bobot baru
+           │
+           ▼
+    Frontend:
+      Tampilkan hasil: matriks, normalisasi, bobot, uji konsistensi
+
+4.3 Alur Data Perhitungan TOPSIS
+
+    Prasyarat: Bobot AHP sudah dihitung.
+
+    API Route POST /api/topsis:
+      - Fetch semua alternatif + skor dari database
+      - Fetch bobot kriteria dari hasil AHP
+      - Bangun matriks keputusan (alternatives × criteria)
+           │
+           ▼
+    Calculation Engine (topsis.ts):
+      calculateTOPSIS(decisionMatrix, weights, criteriaTypes) →
+        1. normalizeDecisionMatrix(): r_ij = x_ij / √(Σ x_kj²)
+        2. applyWeights(): v_ij = w_j × r_ij
+        3. calculateIdealSolutions():
+           - Benefit: A+ = max, A- = min
+           - Cost: A+ = min, A- = max
+        4. calculateDistances():
+           - D+ = √(Σ(v_ij - A+_j)²)
+           - D- = √(Σ(v_ij - A-_j)²)
+        5. calculatePreferences(): Ci = D- / (D+ + D-)
+        6. calculateRankings(): Urut berdasarkan Ci descending
+           │
+           ▼
+    Database Layer (db.ts):
+      - saveTopsisResults(): Simpan D+, D-, Ci, rank ke topsis_results
+      - saveTopsisNormalized(): Simpan nilai normalisasi ke topsis_normalized
+           │
+           ▼
+    Frontend:
+      Tampilkan 6 langkah secara transparan + ranking + visualisasi
+
+4.4 Alur Data Import CSV
+
+    User:
+      Pilih tipe data → Upload file CSV → Klik Import
+           │
+           ▼
+    Frontend (Dashboard Modal):
+      FormData { type: string, file: File }
+           │
+           ▼
+    API Route POST /api/import:
+      - Parse multipart form data
+      - Custom CSV parser (handle quoted fields, commas, newlines)
+      - Resolve foreign keys via lookupMap():
+        - cluster_name → cluster_id
+        - criteria_code → criteria_id
+        - alternative_code → alternative_id
+      - Upsert ke Supabase
+           │
+           ▼
+    Response:
+      { success: true, imported: number } atau { error: string }
+
+4.5 Alur Data CRUD Objek Wisata
+
+    Form Input:
+      react-hook-form → zod validation → submit
+           │
+           ▼
+    API Route POST /api/alternatives:
+      - Validasi zod schema
+      - Upsert alternatif ke tabel alternatives
+      - Upsert skor ke tabel scores (per kriteria)
+           │
+           ▼
+    Database:
+      - alternatif + skor tersimpan
+      - Jika TOPSIS sudah dihitung, perlu hitung ulang
+
+
+5. SKEMA DATABASE
+────────────────────────────────────────────────────────────────────────────────
+
+5.1 Daftar Tabel (11 tabel)
+
+    ┌─────────────────────┐
+    │     clusters         │
+    ├─────────────────────┤
+    │ id (UUID, PK)       │
+    │ name (TEXT UNIQUE)   │
+    │ description (TEXT)   │
+    │ color (TEXT)         │
+    │ created_at           │
+    │ updated_at           │
+    └──────────┬──────────┘
+               │ 1:N
+    ┌──────────┴──────────────────┐
+    │       alternatives           │
+    ├─────────────────────────────┤
+    │ id (UUID, PK)               │
+    │ code (TEXT UNIQUE)          │
+    │ name (TEXT NOT NULL)        │
+    │ cluster_id (UUID → clusters)│
+    │ description (TEXT)          │
+    │ address (TEXT)              │
+    │ latitude (DOUBLE)           │
+    │ longitude (DOUBLE)          │
+    │ image_url (TEXT)            │
+    │ is_active (BOOLEAN)         │
+    │ created_at / updated_at     │
+    └──────────┬──────────────────┘
+               │ 1:N
+    ┌──────────┴──────────┐     ┌─────────────────────┐
+    │      scores          │     │     criteria         │
+    ├─────────────────────┤     ├─────────────────────┤
+    │ id (UUID, PK)       │     │ id (UUID, PK)       │
+    │ alternative_id (FK) │     │ code (TEXT UNIQUE)   │
+    │ criteria_id (FK)    │     │ name (TEXT)          │
+    │ score_value (INT)   │     │ type (benefit/cost)  │
+    │                     │     │ weight (DOUBLE)      │
+    │ UNIQUE(alternative, │     │ sort_order (INT)     │
+    │        criteria)    │     │ description (TEXT)   │
+    └─────────────────────┘     │ created_at/updated_at│
+            N:1 ────────────────└──────────┬───────────┘
+                                           │ 1:N
+                                ┌──────────┴──────────────┐
+                                │    sub_criteria          │
+                                ├─────────────────────────┤
+                                │ id (UUID, PK)           │
+                                │ criteria_id (FK)        │
+                                │ score_value (INT 1-4)   │
+                                │ label (TEXT)            │
+                                │ description (TEXT)      │
+                                └─────────────────────────┘
+
+    ┌─────────────────────────────────┐
+    │        ahp_matrices             │
+    ├─────────────────────────────────┤
+    │ id (UUID, PK)                   │
+    │ session_name (TEXT)             │
+    │ criteria_i_id (FK → criteria)   │
+    │ criteria_j_id (FK → criteria)   │
+    │ value (DOUBLE)                  │
+    │                                 │
+    │ UNIQUE(session, ci, cj)         │
+    └─────────────────────────────────┘
+
+    ┌─────────────────────────────────┐
+    │        ahp_results              │
+    ├─────────────────────────────────┤
+    │ id (UUID, PK)                   │
+    │ session_name (TEXT UNIQUE)      │
+    │ criteria_id (FK → criteria)     │
+    │ weight (DOUBLE)                 │
+    │ lambda_max (DOUBLE)             │
+    │ ci (DOUBLE)                     │
+    │ cr (DOUBLE)                     │
+    │ is_consistent (BOOLEAN)         │
+    └─────────────────────────────────┘
+
+    ┌─────────────────────────────────┐
+    │        topsis_results           │
+    ├─────────────────────────────────┤
+    │ id (UUID, PK)                   │
+    │ session_name (TEXT)             │
+    │ alternative_id (FK)             │
+    │ d_positive (DOUBLE)             │
+    │ d_negative (DOUBLE)             │
+    │ preference_score (DOUBLE)       │
+    │ rank (INT)                      │
+    │                                 │
+    │ UNIQUE(session, alternative)    │
+    └─────────────────────────────────┘
+
+    ┌─────────────────────────────────┐
+    │       topsis_normalized         │
+    ├─────────────────────────────────┤
+    │ id (UUID, PK)                   │
+    │ session_name (TEXT)             │
+    │ alternative_id (FK)             │
+    │ criteria_id (FK)                │
+    │ normalized_value (DOUBLE)       │
+    │ weighted_value (DOUBLE)         │
+    │                                 │
+    │ UNIQUE(session, alt, criteria)  │
+    └─────────────────────────────────┘
+
+    ┌─────────────────────────────────┐
+    │       references_docs           │
+    ├─────────────────────────────────┤
+    │ id (UUID, PK)                   │
+    │ category (TEXT)                 │
+    │ title (TEXT)                    │
+    │ number (TEXT)                   │
+    │ year (INT)                      │
+    │ publisher (TEXT)                │
+    │ description (TEXT)              │
+    │ url (TEXT)                      │
+    │ sort_order (INT)               │
+    │ created_at / updated_at         │
+    └─────────────────────────────────┘
+
+    ┌─────────────────────────────────┐
+    │        app_settings             │
+    ├─────────────────────────────────┤
+    │ id (UUID, PK)                   │
+    │ key (TEXT UNIQUE)               │
+    │ value (TEXT)                    │
+    │ updated_at                      │
+    └─────────────────────────────────┘
+
+5.2 Relasi Antar Tabel
+
+    clusters 1────N alternatives
+    criteria 1────N scores N────1 alternatives
+    criteria 1────N sub_criteria
+    criteria 1────N ahp_matrices (sebagai criteria_i dan criteria_j)
+    criteria 1────N ahp_results
+    criteria 1────N topsis_normalized
+    alternatives 1────N scores
+    alternatives 1────N topsis_results
+    alternatives 1────N topsis_normalized
+
+5.3 Row Level Security (RLS)
+
+    Semua tabel memiliki RLS enabled dengan policy "Allow all public"
+    (akses penuh untuk semua authenticated dan anonymous user).
+    Keamanan dijaga di level aplikasi melalui middleware auth.
+
+5.4 Constraints Penting
+
+    - alternatives.code: UNIQUE (tidak boleh duplikat kode objek wisata)
+    - criteria.code: UNIQUE (tidak boleh duplikat kode kriteria)
+    - scores: UNIQUE(alternative_id, criteria_id) — satu skor per pasangan
+    - ahp_matrices: UNIQUE(session_name, criteria_i_id, criteria_j_id)
+    - ahp_results: UNIQUE(session_name) — satu set hasil per skenario
+    - topsis_results: UNIQUE(session_name, alternative_id)
+    - topsis_normalized: UNIQUE(session_name, alternative_id, criteria_id)
+    - CASCADE delete pada foreign key alternatives→cluster, scores→alt/criteria
+    - SET NULL pada foreign key ahp_matrices→criteria
+
+
+6. METODE PERHITUNGAN AHP (Analytic Hierarchy Process)
+────────────────────────────────────────────────────────────────────────────────
+
+6.1 Konsep Dasar
+
+    AHP dikembangkan oleh Thomas L. Saaty untuk menyelesaikan masalah
+    pengambilan keputusan multikriteria. Metode ini menggunakan matriks
+    perbandingan berpasangan (pairwise comparison matrix) untuk menentukan
+    bobot relatif setiap kriteria.
+
+6.2 Skala Saaty (Skala Perbandingan)
+
+    Nilai  │  Keterangan
+    ───────┼─────────────────────────────────────────────────
+      9    │  Mutlak lebih penting (absolutely more important)
+      8    │  Sangat kuat lebih penting
+      7    │  Sangat kuat lebih penting (very strongly)
+      6    │  Kuat lebih penting
+      5    │  Lebih penting (strongly more important)
+      4    │  Moderat ke kuat lebih penting
+      3    │  Moderat lebih penting (moderately more important)
+      2    │  Sama ke moderat lebih penting
+      1    │  Sama penting (equally important)
+     1/2   │  Kebalikan dari 2
+     1/3   │  Kebalikan dari 3
+     1/4   │  Kebalikan dari 4
+     1/5   │  Kebalikan dari 5
+     1/6   │  Kebalikan dari 6
+     1/7   │  Kebalikan dari 7
+     1/8   │  Kebalikan dari 8
+     1/9   │  Kebalikan dari 9
+
+6.3 Langkah-Langkah Perhitungan
+
+    Misalkan terdapat n kriteria: C1, C2, ..., Cn.
+
+    LANGKAH 1: Bangun Matriks Perbandingan Berpasangan (A)
+
+        A = [a_ij] berukuran n × n
+
+        Dimana:
+        - a_ij = nilai perbandingan kepentingan Ci terhadap Cj
+        - a_ji = 1 / a_ij (sifat resiprokal)
+        - a_ii = 1 (diagonal selalu 1)
+
+        Contoh untuk 3 kriteria (K1, K2, K3):
+
+              K1    K2    K3
+        K1  [ 1     3     5   ]
+        K2  [ 1/3   1     2   ]
+        K3  [ 1/5   1/2   1   ]
+
+        Implementasi di kode:
+        - User hanya mengisi segitiga atas (upper triangle)
+        - Segitiga bawah otomatis dihitung sebagai 1/value
+        - Fungsi: buildMatrixFromUpperTriangle(upperTriangle, n)
+
+    LANGKAH 2: Hitung Jumlah Setiap Kolom
+
+        sum_j = Σ(i=1 to n) a_ij    untuk setiap kolom j
+
+        Contoh:
+        Kolom K1: 1 + 1/3 + 1/5 = 1.533
+        Kolom K2: 3 + 1 + 1/2 = 4.500
+        Kolom K3: 5 + 2 + 1 = 8.000
+
+    LANGKAH 3: Normalisasi Matriks
+
+        Setiap elemen dibagi jumlah kolomnya:
+
+        r_ij = a_ij / sum_j
+
+        Contoh normalisasi:
+              K1       K2       K3
+        K1  [ 0.652   0.667    0.625  ]
+        K2  [ 0.217   0.222    0.250  ]
+        K3  [ 0.130   0.111    0.125  ]
+
+    LANGKAH 4: Hitung Bobot (Weight)
+
+        Bobot setiap kriteria = rata-rata baris dari matriks normalisasi:
+
+        w_i = (1/n) × Σ(j=1 to n) r_ij
+
+        Contoh:
+        w_K1 = (0.652 + 0.667 + 0.625) / 3 = 0.648
+        w_K2 = (0.217 + 0.222 + 0.250) / 3 = 0.230
+        w_K3 = (0.130 + 0.111 + 0.125) / 3 = 0.122
+
+        Σ w_i = 1.000 (bobot selalu berjumlah 1)
+
+    LANGKAH 5: Hitung Lambda Maksimum (λmax)
+
+        Pertama, hitung vektor Aw (A × w):
+
+        (Aw)_i = Σ(j=1 to n) a_ij × w_j
+
+        Kemudian:
+        λmax = (1/n) × Σ(i=1 to n) (Aw)_i / w_i
+
+        Untuk matriks yang konsisten sempurna: λmax = n
+
+    LANGKAH 6: Hitung Consistency Index (CI)
+
+        CI = (λmax - n) / (n - 1)
+
+        CI = 0 berarti konsisten sempurna.
+
+    LANGKAH 7: Hitung Consistency Ratio (CR)
+
+        CR = CI / RI[n]
+
+        Dimana RI (Random Index) berdasarkan ukuran matriks:
+
+        n  │  1    2    3     4     5     6     7     8     9     10
+        ───┼──────────────────────────────────────────────────────────
+        RI │  0    0   0.58  0.90  1.12  1.24  1.32  1.41  1.45  1.49
+
+    LANGKAH 8: Uji Konsistensi
+
+        Jika CR < 0.1 (10%), matriks dianggap KONSISTEN → bobot valid.
+        Jika CR ≥ 0.1, matriks dianggap TIDAK KONSISTEN → perlu revisi.
+
+6.4 Implementasi Kode
+
+    File: src/lib/calculations/ahp.ts
+
+    Fungsi utama:
+      calculateAHP(matrix: number[][]): AhpCalculationResult
+
+    Return type:
+      {
+        normalizedMatrix: number[][],  // Matriks hasil normalisasi
+        weights: number[],             // Bobot setiap kriteria
+        lambdaMax: number,             // Nilai lambda maksimum
+        ci: number,                    // Consistency Index
+        cr: number,                    // Consistency Ratio
+        isConsistent: boolean          // true jika cr < 0.1
+      }
+
+    Fungsi pendukung:
+      - buildMatrixFromUpperTriangle(upperTriangle, n): Membangun matriks
+        NxN dari input segitiga atas
+      - getColumnSums(matrix): Menghitung jumlah setiap kolom
+
+6.5 Contoh Perhitungan Lengkap (3 Kriteria)
+
+    Input perbandingan:
+      K1 vs K2 = 3 (K1 moderat lebih penting dari K2)
+      K1 vs K3 = 5 (K1 kuat lebih penting dari K3)
+      K2 vs K3 = 2 (K2 sedikit lebih penting dari K3)
+
+    Matriks A:
+          K1      K2      K3
+    K1 [ 1.000   3.000   5.000 ]
+    K2 [ 0.333   1.000   2.000 ]
+    K3 [ 0.200   0.500   1.000 ]
+
+    Jumlah kolom: [ 1.533, 4.500, 8.000 ]
+
+    Matriks Normalisasi:
+          K1      K2      K3
+    K1 [ 0.652   0.667   0.625 ]
+    K2 [ 0.217   0.222   0.250 ]
+    K3 [ 0.130   0.111   0.125 ]
+
+    Bobot: w = [ 0.648, 0.230, 0.122 ]
+
+    λmax = 3.007
+    CI = (3.007 - 3) / (3 - 1) = 0.0035
+    CR = 0.0035 / 0.58 = 0.006
+
+    CR = 0.006 < 0.1 → KONSISTEN ✓
+
+
+7. METODE PERHITUNGAN TOPSIS
+────────────────────────────────────────────────────────────────────────────────
+
+7.1 Konsep Dasar
+
+    TOPSIS (Technique for Order Preference by Similarity to Ideal Solution)
+    dikembangkan oleh Hwang dan Yoon (1981). Prinsip dasarnya: alternatif
+    terbaik adalah yang paling dekat dengan solusi ideal positif dan paling
+    jauh dari solusi ideal negatif.
+
+7.2 Langkah-Langkah Perhitungan
+
+    Misalkan:
+    - m = jumlah alternatif (objek wisata)
+    - n = jumlah kriteria
+    - x_ij = nilai alternatif ke-i pada kriteria ke-j
+    - w_j = bobot kriteria ke-j (dari AHP)
+
+    LANGKAH 1: Bangun Matriks Keputusan (X)
+
+        X = [x_ij] berukuran m × n
+
+              C1    C2    ...   Cn
+        A1  [ x11   x12   ...   x1n ]
+        A2  [ x21   x22   ...   x2n ]
+        ..  [ ...   ...   ...   ...  ]
+        Am  [ xm1   xm2   ...   xmn ]
+
+        Nilai x_ij diambil dari tabel scores (score_value, skala 1-4).
+
+    LANGKAH 2: Normalisasi Matriks Keputusan (R)
+
+        Menggunakan normalisasi vektor:
+
+        r_ij = x_ij / √(Σ(k=1 to m) x_kj²)
+
+        Setiap kolom dinormalisasi secara independen.
+
+        Contoh untuk 1 kolom dengan 3 alternatif [4, 3, 2]:
+          √(4² + 3² + 2²) = √(16 + 9 + 4) = √29 = 5.385
+          r_1 = 4/5.385 = 0.743
+          r_2 = 3/5.385 = 0.557
+          r_3 = 2/5.385 = 0.371
+
+    LANGKAH 3: Matriks Normalisasi Terbobot (V)
+
+        v_ij = w_j × r_ij
+
+        Dimana w_j adalah bobot dari hasil AHP.
+
+        Contoh: jika w_K1 = 0.35, maka:
+          v_11 = 0.35 × r_11
+          v_21 = 0.35 × r_21
+          dst.
+
+    LANGKAH 4: Tentukan Solusi Ideal Positif (A+) dan Negatif (A-)
+
+        Untuk setiap kriteria j:
+
+        Jika tipe kriteria = BENEFIT (semakin tinggi semakin baik):
+          A+_j = max(v_1j, v_2j, ..., v_mj)    ← nilai maksimum
+          A-_j = min(v_1j, v_2j, ..., v_mj)    ← nilai minimum
+
+        Jika tipe kriteria = COST (semakin rendah semakin baik):
+          A+_j = min(v_1j, v_2j, ..., v_mj)    ← nilai minimum
+          A-_j = max(v_1j, v_2j, ..., v_mj)    ← nilai maksimum
+
+        Hasil: vektor A+ = [A+_1, A+_2, ..., A+_n]
+               vektor A- = [A-_1, A-_2, ..., A-_n]
+
+    LANGKAH 5: Hitung Jarak ke Solusi Ideal
+
+        Jarak ke solusi ideal positif (D+):
+          D+_i = √(Σ(j=1 to n) (v_ij - A+_j)²)
+
+        Jarak ke solusi ideal negatif (D-):
+          D-_i = √(Σ(j=1 to n) (v_ij - A-_j)²)
+
+        Semakin kecil D+ dan semakin besar D-, semakin baik alternatif.
+
+    LANGKAH 6: Hitung Skor Preferensi (Ci)
+
+        Ci = D-_i / (D+_i + D-_i)
+
+        Range: 0 ≤ Ci ≤ 1
+        - Ci = 1: alternatif = solusi ideal positif (terbaik)
+        - Ci = 0: alternatif = solusi ideal negatif (terburuk)
+
+    LANGKAH 7: Ranking
+
+        Urutkan alternatif berdasarkan Ci dari tertinggi ke terendah.
+        Alternatif dengan Ci tertinggi adalah prioritas utama.
+
+7.3 Implementasi Kode
+
+    File: src/lib/calculations/topsis.ts
+
+    Fungsi utama:
+      calculateTOPSIS(
+        decisionMatrix: number[][],
+        weights: number[],
+        criteriaTypes: ('benefit' | 'cost')[]
+      ): TopsisCalculationResult
+
+    Return type:
+      {
+        normalizedMatrix: number[][],      // R: matriks normalisasi
+        weightedNormalizedMatrix: number[][],  // V: matriks terbobot
+        idealPositive: number[],           // A+
+        idealNegative: number[],           // A-
+        dPositive: number[],               // D+ (jarak ke ideal positif)
+        dNegative: number[],               // D- (jarak ke ideal negatif)
+        preferenceScores: number[],        // Ci (skor preferensi)
+        rankings: {index,score,rank}[]     // Ranking terurut
+      }
+
+    Sub-fungsi (private):
+      - normalizeDecisionMatrix(matrix)
+      - applyWeights(normalized, weights)
+      - calculateIdealSolutions(weighted, types)
+      - calculateDistances(weighted, idealPos, idealNeg)
+      - calculatePreferences(dPos, dNeg)
+      - calculateRankings(scores)
+
+7.4 Contoh Perhitungan Lengkap
+
+    3 alternatif (A1, A2, A3) dan 2 kriteria (K1=benefit, K2=benefit)
+    Bobot: w1 = 0.6, w2 = 0.4
+
+    Step 1 - Matriks Keputusan:
+          K1   K2
+    A1  [ 4     3  ]
+    A2  [ 3     4  ]
+    A3  [ 2     2  ]
+
+    Step 2 - Normalisasi:
+      √K1 = √(16+9+4) = √29 = 5.385
+      √K2 = √(9+16+4) = √29 = 5.385
+
+           K1      K2
+    A1  [ 0.743   0.557 ]
+    A2  [ 0.557   0.743 ]
+    A3  [ 0.371   0.371 ]
+
+    Step 3 - Terbobot:
+           K1      K2
+    A1  [ 0.446   0.223 ]
+    A2  [ 0.334   0.297 ]
+    A3  [ 0.223   0.149 ]
+
+    Step 4 - Solusi Ideal (semua benefit):
+      A+ = [ max(K1), max(K2) ] = [ 0.446, 0.297 ]
+      A- = [ min(K1), min(K2) ] = [ 0.223, 0.149 ]
+
+    Step 5 - Jarak:
+      D+_A1 = √((0.446-0.446)² + (0.223-0.297)²) = √(0+0.00548) = 0.074
+      D+_A2 = √((0.334-0.446)² + (0.297-0.297)²) = √(0.01254+0) = 0.112
+      D+_A3 = √((0.223-0.446)² + (0.149-0.297)²) = √(0.04973+0.02190) = 0.268
+
+      D-_A1 = √((0.446-0.223)² + (0.223-0.149)²) = √(0.04973+0.00548) = 0.235
+      D-_A2 = √((0.334-0.223)² + (0.297-0.149)²) = √(0.01232+0.02190) = 0.185
+      D-_A3 = √((0.223-0.223)² + (0.149-0.149)²) = √(0+0) = 0.000
+
+    Step 6 - Skor Preferensi:
+      C_A1 = 0.235 / (0.074 + 0.235) = 0.760
+      C_A2 = 0.185 / (0.112 + 0.185) = 0.623
+      C_A3 = 0.000 / (0.268 + 0.000) = 0.000
+
+    Step 7 - Ranking:
+      1. A1 (Ci = 0.760) — TERBAIK
+      2. A2 (Ci = 0.623)
+      3. A3 (Ci = 0.000)
+
+
+8. MANAJEMEN SKENARIO (SESSION)
+────────────────────────────────────────────────────────────────────────────────
+
+8.1 Konsep
+
+    Aplikasi menyediakan 2 skenario analisis:
+    - "Skenario A" — set perbandingan AHP pertama
+    - "Skenario B" — set perbandingan AHP kedua (nilai berbeda)
+
+    Setiap skenario menyimpan:
+    - Matriks perbandingan AHP sendiri (ahp_matrices)
+    - Hasil AHP sendiri (ahp_results)
+    - Hasil TOPSIS sendiri (topsis_results, topsis_normalized)
+
+    Data yang BERBAGI antar skenario:
+    - Klaster, Alternatif, Kriteria, Sub-Kriteria, Skor
+
+8.2 Implementasi
+
+    - Session disimpan di React Context (AppContext) sebagai `activeSession`.
+    - Default: "Skenario A".
+    - Persisted ke localStorage key "spk_active_session".
+    - Dropdown selector ada di Header component.
+    - Setiap API call menyertakan parameter session_name.
+
+8.3 Cara Penggunaan
+
+    1. Pilih "Skenario A" → lakukan perhitungan AHP → hitung TOPSIS → ranking
+    2. Switch ke "Skenario B" → lakukan AHP dengan nilai berbeda → TOPSIS
+    3. Bandingkan hasil ranking kedua skenario untuk analisis sensitivitas.
+
+
+9. SISTEM AUTENTIKASI
+────────────────────────────────────────────────────────────────────────────────
+
+9.1 Mekanisme Login
+
+    - User mengirim username + password via POST /api/auth/login.
+    - Server memvalidasi terhadap ADMIN_USERNAME dan ADMIN_PASSWORD (env vars).
+    - Jika valid, server membuat token HMAC-SHA256.
+
+9.2 Format Token
+
+    Token = username.createdAt.expiresAt.signature
+
+    Dimana:
+    - username: nama user
+    - createdAt: timestamp pembuatan (ms)
+    - expiresAt: createdAt + 7 hari (ms)
+    - signature: HMAC-SHA256(username.createdAt.expiresAt, AUTH_SECRET)
+
+    Token disimpan dalam cookie "spk_session" dengan:
+    - httpOnly: true (tidak bisa dibaca JavaScript)
+    - secure: true di production (HTTPS only)
+    - sameSite: 'lax'
+    - maxAge: 7 hari
+
+9.3 Middleware Auth
+
+    File: src/middleware.ts
+
+    - Mengecek cookie "spk_session" di setiap request.
+    - Public paths (tidak perlu auth): /login, /api/auth/*
+    - Static files dan Next.js internals di-skip.
+    - Jika tidak ada cookie valid → redirect ke /login.
+
+9.4 Logout
+
+    POST /api/auth/logout → menghapus cookie "spk_session".
+
+
+10. IMPORT/EXPORT DATA
+────────────────────────────────────────────────────────────────────────────────
+
+10.1 Import CSV
+
+    Endpoint: POST /api/import
+    Content-Type: multipart/form-data
+    Body: { type: string, file: File }
+
+    Tipe import dan format CSV:
+
+    (a) clusters
+        Headers: name, description, color
+        Contoh:  "Pantai","Wisata pantai","#3B82F6"
+
+    (b) criteria
+        Headers: code, name, type, description, sort_order
+        Contoh:  "K1","Daya Tarik","benefit","Keunikan objek",1
+
+    (c) sub_criteria
+        Headers: criteria_code, score_value, label, description
+        Contoh:  "K1",4,"Sangat Tinggi","Objek sangat unik"
+
+    (d) alternatives
+        Headers: code, name, cluster_name, description, address,
+                 latitude, longitude, image_url, is_active
+        Contoh:  "W01","Pantai Kemala","Pantai","...","Jl. Pantai",
+                 -1.23,116.85,"/img.jpg",true
+
+    (e) scores
+        Headers: alternative_code, K1, K2, K3, K4, K5, K6, K7
+        (K1-K7 adalah kode kriteria, nilai 1-4)
+        Contoh:  "W01",4,3,2,4,3,2,1
+
+    (f) ahp_matrices
+        Headers: session_name, criteria_i_code, criteria_j_code, value
+        Contoh:  "Skenario A","K1","K2",3
+
+    (g) references
+        Headers: category, title, number, year, publisher, description,
+                 url, sort_order
+        Contoh:  "Buku","Metode AHP","ISBN-123",2020,"Penerbit X","...",
+                 "https://...",1
+
+    (h) all (JSON)
+        Format: JSON object dengan keys:
+        { clusters, criteria, sub_criteria, alternatives, scores,
+          ahp_matrices, references }
+
+10.2 Custom CSV Parser
+
+    Aplikasi menggunakan custom CSV parser (bukan library eksternal) yang:
+    - Menangani field yang di-quote ("...")
+    - Menangani comma di dalam quoted field
+    - Menangani newline di dalam quoted field
+    - Menangani escaped quotes ("" → ")
+    - Split baris dan kolom dengan benar
+
+10.3 Foreign Key Resolution
+
+    Saat import data yang memiliki relasi, kode diresolve ke ID:
+    - cluster_name → SELECT id FROM clusters WHERE name = ?
+    - criteria_code → SELECT id FROM criteria WHERE code = ?
+    - alternative_code → SELECT id FROM alternatives WHERE code = ?
+
+    Menggunakan helper function lookupMap() yang membuat cache map.
+
+10.4 Download Template
+
+    Endpoint: GET /api/import/template?type={type}
+    Response: File CSV dengan headers + 1 baris contoh.
+    Content-Type: text/csv
+    Content-Disposition: attachment; filename="template_{type}.csv"
+
+10.5 Export Laporan
+
+    (a) PDF Export
+        Library: jsPDF + jspdf-autotable
+        Fitur: Header, tabel data, chart embed, multi-page.
+
+    (b) Excel Export
+        Library: SheetJS (xlsx)
+        Fitur: Multiple sheets, formatting, auto-width columns.
+
+    (c) Sections yang dapat diekspor (checklist):
+        1. Ringkasan Hasil
+        2. Data Kriteria
+        3. Data Alternatif
+        4. Hasil AHP
+        5. Matriks Keputusan
+        6. Normalisasi TOPSIS
+        7. Hasil TOPSIS
+        8. Ranking Akhir
+        9. Analisis Sensitivitas
+        10. Rekomendasi
+
+
+11. DOKUMENTASI API
+────────────────────────────────────────────────────────────────────────────────
+
+11.1 Authentication
+
+    POST /api/auth/login
+    Body: { username: string, password: string }
+    Response: { success: boolean }
+    Sets cookie: spk_session
+
+    POST /api/auth/logout
+    Response: { success: boolean }
+    Clears cookie: spk_session
+
+11.2 AHP
+
+    GET /api/ahp?session={session_name}
+    Response: {
+      matrices: AhpMatrix[],
+      results: AhpResult[],
+      criteria: Criteria[]
+    }
+
+    POST /api/ahp
+    Body: {
+      session?: string,  // default "Skenario A"
+      comparisons: { "criteria_i_id-criteria_j_id": number }
+    }
+    Response: {
+      success: boolean,
+      results: AhpResult[],
+      isConsistent: boolean,
+      cr: number
+    }
+
+11.3 TOPSIS
+
+    GET /api/topsis?session={session_name}
+    Response: { results: TopsisResult[], alternatives: Alternative[] }
+
+    POST /api/topsis
+    Body: { session?: string }
+    Response: {
+      success: boolean,
+      results: TopsisResult[],
+      rankings: { alternative_id, rank, preference_score }[]
+    }
+
+    DELETE /api/topsis?session={session_name}
+    Response: { success: boolean }
+
+11.4 Alternatives
+
+    GET /api/alternatives
+    Response: Alternative[] (with cluster, scores)
+
+    POST /api/alternatives
+    Body: {
+      id?: string,  // jika ada = update, jika tidak = create
+      code, name, cluster_id, description, address,
+      latitude, longitude, image_url, is_active,
+      scores: { criteria_id: score_value }
+    }
+    Response: { success: boolean, data: Alternative }
+
+    DELETE /api/alternatives
+    Body: { id: string }
+    Response: { success: boolean }
+
+11.5 Criteria
+
+    GET /api/criteria
+    Response: Criteria[] (with sub_criteria)
+
+    POST /api/criteria
+    Body: {
+      id?: string,
+      code, name, type, description, sort_order
+    }
+    Response: { success: boolean, data: Criteria }
+
+    POST /api/criteria?mode=sub_criteria
+    Body: {
+      id?: string,
+      criteria_id, score_value, label, description
+    }
+    Response: { success: boolean, data: SubCriteria }
+
+    DELETE /api/criteria
+    Body: { id: string }
+    Response: { success: boolean }
+    Catatan: Menghapus kriteria juga mereset semua hasil AHP & TOPSIS.
+
+11.6 Clusters
+
+    GET /api/clusters
+    Response: Cluster[]
+
+11.7 References
+
+    GET /api/references
+    Response: ReferenceDoc[]
+
+    POST /api/references
+    Body: {
+      id?: string,
+      category, title, number, year, publisher,
+      description, url, sort_order
+    }
+    Response: { success: boolean, data: ReferenceDoc }
+
+    DELETE /api/references
+    Body: { id: string }
+    Response: { success: boolean }
+
+11.8 Seed
+
+    POST /api/seed
+    Response: { success: boolean, message: string }
+    Catatan: Seed data awal (klaster, kriteria, alternatif, skor, dll).
+             Menggunakan upsert sehingga aman dipanggil berulang.
+
+11.9 Import
+
+    POST /api/import
+    Content-Type: multipart/form-data
+    Body: { type: string, file: File }
+    Response: { success: boolean, imported: number }
+
+    GET /api/import/template?type={type}
+    Response: CSV file download
+
+
+12. STRUKTUR DIREKTORI
+────────────────────────────────────────────────────────────────────────────────
+
+spkwisata/
+├── public/                          # Static assets
+│   └── ...
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx               # Root layout (AppProvider, Toaster)
+│   │   ├── login/
+│   │   │   └── page.tsx             # Halaman login
+│   │   ├── (main)/                  # Layout group (auth required)
+│   │   │   ├── layout.tsx           # Sidebar + Header + main content
+│   │   │   ├── dashboard/
+│   │   │   │   └── page.tsx         # Dashboard + CSV import modal
+│   │   │   ├── objek-wisata/
+│   │   │   │   └── page.tsx         # CRUD objek wisata (tabel/peta/grid)
+│   │   │   ├── kriteria/
+│   │   │   │   └── page.tsx         # CRUD kriteria + sub-kriteria
+│   │   │   ├── kalkulasi-ahp/
+│   │   │   │   └── page.tsx         # Perhitungan AHP (2 step)
+│   │   │   ├── kalkulasi-topsis/
+│   │   │   │   └── page.tsx         # Perhitungan TOPSIS (6 step)
+│   │   │   ├── ranking/
+│   │   │   │   └── page.tsx         # Ranking + visualisasi chart
+│   │   │   ├── laporan/
+│   │   │   │   └── page.tsx         # Generator laporan PDF/Excel
+│   │   │   ├── metodologi/
+│   │   │   │   └── page.tsx         # Penjelasan metodologi
+│   │   │   └── referensi/
+│   │   │       └── page.tsx         # CRUD dokumen referensi
+│   │   └── api/
+│   │       ├── auth/
+│   │       │   ├── login/route.ts   # POST login
+│   │       │   └── logout/route.ts  # POST logout
+│   │       ├── ahp/route.ts         # GET/POST AHP
+│   │       ├── topsis/route.ts      # GET/POST/DELETE TOPSIS
+│   │       ├── alternatives/route.ts # GET/POST/DELETE alternatif
+│   │       ├── criteria/route.ts    # GET/POST/DELETE kriteria
+│   │       ├── clusters/route.ts    # GET klaster
+│   │       ├── references/route.ts  # GET/POST/DELETE referensi
+│   │       ├── seed/route.ts        # POST seed data awal
+│   │       └── import/
+│   │           ├── route.ts         # POST import CSV
+│   │           └── template/route.ts # GET download template
+│   ├── components/
+│   │   ├── shared/
+│   │   │   ├── AppContext.tsx        # Global state (session, sidebar)
+│   │   │   ├── Header.tsx           # Header + session selector
+│   │   │   └── Sidebar.tsx          # Navigation sidebar
+│   │   └── maps/
+│   │       └── TourismMap.tsx        # Leaflet map component
+│   ├── lib/
+│   │   ├── calculations/
+│   │   │   ├── ahp.ts              # AHP calculation engine
+│   │   │   └── topsis.ts           # TOPSIS calculation engine
+│   │   ├── supabase/
+│   │   │   ├── client.ts           # Browser Supabase client (anon)
+│   │   │   └── server.ts           # Server Supabase client (admin)
+│   │   ├── validations/
+│   │   │   └── index.ts            # Zod validation schemas
+│   │   ├── db.ts                   # Database abstraction layer
+│   │   ├── utils.ts                # Utility functions + constants
+│   │   ├── auth.ts                 # HMAC-SHA256 auth helpers
+│   │   └── initialData.ts          # Seed data constants
+│   ├── types/
+│   │   └── index.ts                # All TypeScript interfaces
+│   └── middleware.ts               # Auth middleware
+├── supabase/
+│   └── schema.sql                  # Database schema + RLS policies
+├── package.json                    # Dependencies + scripts
+├── tsconfig.json                   # TypeScript config
+├── tailwind.config.ts              # Tailwind CSS config
+├── next.config.mjs                 # Next.js config
+└── .env.local                      # Environment variables (not committed)
+
+
+13. KONFIGURASI DAN ENVIRONMENT
+────────────────────────────────────────────────────────────────────────────────
+
+13.1 Environment Variables (.env.local)
+
+    # Supabase
+    NEXT_PUBLIC_SUPABASE_URL=<your-project-url>
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
+    SUPABASE_SERVICE_ROLE_KEY=<your-service-role-key>
+
+    # Authentication
+    AUTH_SECRET=<random-secret-key-for-hmac>
+    ADMIN_USERNAME=<admin-username>
+    ADMIN_PASSWORD=<admin-password>
+
+13.2 Scripts (package.json)
+
+    npm run dev      → Menjalankan development server (port 3000)
+    npm run build    → Build production
+    npm run start    → Menjalankan production server
+    npm run lint     → ESLint check
+
+13.3 Database Setup
+
+    1. Buat project di supabase.com
+    2. Jalankan supabase/schema.sql di SQL Editor
+    3. Set environment variables di .env.local
+    4. Buka aplikasi → POST /api/seed (atau klik "Seed Data" di dashboard)
+    5. Atau gunakan fitur Import CSV untuk mengisi data
+
+13.4 Deployment
+
+    Aplikasi dapat di-deploy ke:
+    - Vercel (recommended, native Next.js support)
+    - Netlify
+    - Any Node.js hosting (VPS, Docker, etc.)
+
+    Pastikan semua environment variables di-set di platform deployment.
+
+
+================================================================================
+                         AKHIR DOKUMENTASI TEKNIS
+================================================================================

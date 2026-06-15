@@ -1,0 +1,13 @@
+code,name,cluster_name,description,address,latitude,longitude,image_url,is_active
+W01,Pantai Manggar,Wisata Bahari,"Pantai populer dengan pemandangan matahari terbit","Kec. Balikpapan Timur",-1.2745,116.9231,,true
+W02,Pantai Kemala,Wisata Bahari,"Pantai di tengah kota dengan fasilitas lengkap","Kec. Balikpapan Selatan",-1.2612,116.8312,,true
+W03,Hutan Mangrove Margomulyo,Wisata Alam,"Hutan mangrove dengan jalur tracking dan konservasi","Kec. Balikpapan Barat",-1.2483,116.8112,,true
+W04,Bukit Bangkirai,Wisata Alam,"Wisata alam dengan canopy bridge dan hutan hujan tropis","Kec. Samboja",  -1.0312,116.9843,,true
+W05,Museum Balikpapan,Wisata Budaya,"Museum sejarah kota Balikpapan dan industri minyak","Kec. Balikpapan Kota",-1.2650,116.8316,,true
+W06,Taman Bekapai,Wisata Buatan,"Taman kota dengan air mancur dan area bermain anak","Kec. Balikpapan Kota",-1.2671,116.8284,,true
+W07,Pasar Kampung Baru,Wisata Kuliner,"Pasar tradisional dengan kuliner khas Balikpapan","Kec. Balikpapan Kota",-1.2623,116.8273,,true
+W08,Pantai Lamaru,Wisata Bahari,"Pantai tenang cocok untuk keluarga","Kec. Balikpapan Timur",-1.2897,116.9412,,true
+W09,Kebun Raya Balikpapan,Wisata Alam,"Kebun raya dengan koleksi tanaman tropis Kalimantan","Kec. Balikpapan Utara",-1.2134,116.8567,,true
+W10,Monumen Jepang,Wisata Budaya,"Monumen peninggalan Perang Dunia II","Kec. Balikpapan Kota",-1.2605,116.8301,,true
+W11,Transmart Balikpapan,Wisata Buatan,"Pusat perbelanjaan dengan wahana indoor","Kec. Balikpapan Selatan",-1.2578,116.8345,,true
+W12,Kampoeng Atas Air,Wisata Kuliner,"Wisata kuliner seafood di atas air","Kec. Balikpapan Barat",-1.2512,116.8134,,true

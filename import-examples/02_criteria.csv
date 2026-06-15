@@ -1,0 +1,8 @@
+code,name,type,description,sort_order
+K1,Daya Tarik,benefit,"Keunikan dan daya tarik objek wisata",1
+K2,Aksesibilitas,benefit,"Kemudahan akses dan transportasi menuju lokasi",2
+K3,Fasilitas,benefit,"Ketersediaan fasilitas pendukung wisata",3
+K4,Lingkungan,benefit,"Kondisi kebersihan dan kelestarian lingkungan",4
+K5,Keamanan,benefit,"Tingkat keamanan dan kenyamanan pengunjung",5
+K6,Ekonomi,benefit,"Kontribusi terhadap perekonomian masyarakat sekitar",6
+K7,Infrastruktur,cost,"Biaya infrastruktur dan pengembangan yang diperlukan",7

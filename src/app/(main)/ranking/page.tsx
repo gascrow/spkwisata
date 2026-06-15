@@ -58,14 +58,28 @@ export default function RankingPage() {
     async function fetchData() {
       setLoading(true);
       try {
-        const [topsisRes, critRes, clustRes] = await Promise.all([
+        const [topsisRes, critRes, clustRes, ahpRes] = await Promise.all([
           fetch(`/api/topsis?session=${activeSession}`).then((r) => r.json()),
           fetch("/api/criteria").then((r) => r.json()),
-          fetch("/api/clusters").then((r) => r.json()),
+          fetch("/api/clusters", { cache: "no-store" }).then((r) => r.json()),
+          fetch(`/api/ahp?session=${activeSession}`).then((r) => r.json()),
         ]);
 
         if (topsisRes.success) setTopsisResults(topsisRes.data);
-        if (critRes.success) setCriteria(critRes.data);
+        if (critRes.success) {
+          let critData = critRes.data;
+          if (ahpRes.success && ahpRes.data?.results?.length > 0) {
+            const weightMap: Record<string, number> = {};
+            ahpRes.data.results.forEach((r: any) => {
+              weightMap[r.criteria_id] = Number(r.weight);
+            });
+            critData = critData.map((c: any) => ({
+              ...c,
+              weight: weightMap[c.id] !== undefined ? weightMap[c.id] : c.weight,
+            }));
+          }
+          setCriteria(critData);
+        }
         if (clustRes.success) setClusters(clustRes.data);
       } catch (e) {
         toast.error("Gagal memuat ranking");

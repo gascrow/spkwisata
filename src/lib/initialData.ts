@@ -272,7 +272,7 @@ export const INITIAL_REFERENCES: ReferenceDoc[] = [
 ];
 
 export const INITIAL_SETTINGS: AppSetting[] = [
-  { id: "s_1", key: "active_session", value: "Default", updated_at: new Date().toISOString() },
+  { id: "s_1", key: "active_session", value: "Skenario A", updated_at: new Date().toISOString() },
   { id: "s_2", key: "app_title", value: "SPK Pariwisata Balikpapan", updated_at: new Date().toISOString() },
   { id: "s_3", key: "app_subtitle", value: "AHP-TOPSIS Prioritas Pengembangan Pariwisata", updated_at: new Date().toISOString() },
   { id: "s_4", key: "city", value: "Kota Balikpapan", updated_at: new Date().toISOString() },
@@ -280,36 +280,71 @@ export const INITIAL_SETTINGS: AppSetting[] = [
 ];
 
 export const INITIAL_AHP_MATRICES_LIST: Omit<AhpMatrix, "id" | "created_at" | "updated_at">[] = [
+  // === SKENARIO A (prioritas balanced: Atraksi > Aksesibilitas > Dampak Ekonomi) ===
   // K1 vs K2 = 2
-  { session_name: "Default", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a2222222-2222-2222-2222-222222222222", value: 2 },
-  { session_name: "Default", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a3333333-3333-3333-3333-333333333333", value: 0.333333 },
-  { session_name: "Default", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 3 },
-  { session_name: "Default", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.5 },
-  { session_name: "Default", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 3 },
-  { session_name: "Default", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 4 },
+  { session_name: "Skenario A", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a2222222-2222-2222-2222-222222222222", value: 2 },
+  { session_name: "Skenario A", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a3333333-3333-3333-3333-333333333333", value: 0.333333 },
+  { session_name: "Skenario A", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 3 },
+  { session_name: "Skenario A", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.5 },
+  { session_name: "Skenario A", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 3 },
+  { session_name: "Skenario A", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 4 },
 
   // K2
-  { session_name: "Default", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a3333333-3333-3333-3333-333333333333", value: 0.25 },
-  { session_name: "Default", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 2 },
-  { session_name: "Default", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.333333 },
-  { session_name: "Default", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 2 },
-  { session_name: "Default", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 3 },
+  { session_name: "Skenario A", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a3333333-3333-3333-3333-333333333333", value: 0.25 },
+  { session_name: "Skenario A", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 2 },
+  { session_name: "Skenario A", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.333333 },
+  { session_name: "Skenario A", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 2 },
+  { session_name: "Skenario A", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 3 },
 
   // K3
-  { session_name: "Default", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 5 },
-  { session_name: "Default", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 2 },
-  { session_name: "Default", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 5 },
-  { session_name: "Default", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 6 },
+  { session_name: "Skenario A", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 5 },
+  { session_name: "Skenario A", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 2 },
+  { session_name: "Skenario A", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 5 },
+  { session_name: "Skenario A", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 6 },
 
   // K4
-  { session_name: "Default", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.25 },
-  { session_name: "Default", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 1 },
-  { session_name: "Default", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 2 },
+  { session_name: "Skenario A", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.25 },
+  { session_name: "Skenario A", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 1 },
+  { session_name: "Skenario A", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 2 },
 
   // K5
-  { session_name: "Default", criteria_i_id: "a5555555-5555-5555-5555-555555555555", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 4 },
-  { session_name: "Default", criteria_i_id: "a5555555-5555-5555-5555-555555555555", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 5 },
+  { session_name: "Skenario A", criteria_i_id: "a5555555-5555-5555-5555-555555555555", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 4 },
+  { session_name: "Skenario A", criteria_i_id: "a5555555-5555-5555-5555-555555555555", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 5 },
 
   // K6
-  { session_name: "Default", criteria_i_id: "a6666666-6666-6666-6666-666666666666", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 2 },
+  { session_name: "Skenario A", criteria_i_id: "a6666666-6666-6666-6666-666666666666", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 2 },
+
+  // === SKENARIO B (prioritas ekonomi & kelembagaan: Dampak Ekonomi > Kelembagaan > Amenitas) ===
+  // K1 vs others
+  { session_name: "Skenario B", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a2222222-2222-2222-2222-222222222222", value: 0.5 },
+  { session_name: "Skenario B", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a3333333-3333-3333-3333-333333333333", value: 0.333333 },
+  { session_name: "Skenario B", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 0.5 },
+  { session_name: "Skenario B", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.25 },
+  { session_name: "Skenario B", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 2 },
+  { session_name: "Skenario B", criteria_i_id: "a1111111-1111-1111-1111-111111111111", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 3 },
+
+  // K2 vs others
+  { session_name: "Skenario B", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a3333333-3333-3333-3333-333333333333", value: 0.5 },
+  { session_name: "Skenario B", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 0.5 },
+  { session_name: "Skenario B", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.333333 },
+  { session_name: "Skenario B", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 3 },
+  { session_name: "Skenario B", criteria_i_id: "a2222222-2222-2222-2222-222222222222", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 4 },
+
+  // K3 vs others
+  { session_name: "Skenario B", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a4444444-4444-4444-4444-444444444444", value: 0.5 },
+  { session_name: "Skenario B", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.25 },
+  { session_name: "Skenario B", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 3 },
+  { session_name: "Skenario B", criteria_i_id: "a3333333-3333-3333-3333-333333333333", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 4 },
+
+  // K4 vs others
+  { session_name: "Skenario B", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a5555555-5555-5555-5555-555555555555", value: 0.333333 },
+  { session_name: "Skenario B", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 3 },
+  { session_name: "Skenario B", criteria_i_id: "a4444444-4444-4444-4444-444444444444", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 4 },
+
+  // K5 vs others
+  { session_name: "Skenario B", criteria_i_id: "a5555555-5555-5555-5555-555555555555", criteria_j_id: "a6666666-6666-6666-6666-666666666666", value: 5 },
+  { session_name: "Skenario B", criteria_i_id: "a5555555-5555-5555-5555-555555555555", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 6 },
+
+  // K6 vs others
+  { session_name: "Skenario B", criteria_i_id: "a6666666-6666-6666-6666-666666666666", criteria_j_id: "a7777777-7777-7777-7777-777777777777", value: 2 },
 ];

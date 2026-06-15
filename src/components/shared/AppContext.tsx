@@ -15,7 +15,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [activeSession, setActiveSession] = useState("Default");
+  const [activeSession, setActiveSession] = useState("Skenario A");
   const [refreshKey, setRefreshKey] = useState(0);
 
   // Load initial session on client mount

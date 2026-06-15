@@ -92,9 +92,9 @@ export default function ObjekWisataPage() {
       setLoading(true);
       try {
         const [altRes, clustRes, critRes] = await Promise.all([
-          fetch("/api/alternatives").then((r) => r.json()),
-          fetch("/api/clusters").then((r) => r.json()),
-          fetch("/api/criteria").then((r) => r.json()),
+          fetch("/api/alternatives", { cache: "no-store" }).then((r) => r.json()),
+          fetch("/api/clusters", { cache: "no-store" }).then((r) => r.json()),
+          fetch("/api/criteria", { cache: "no-store" }).then((r) => r.json()),
         ]);
 
         if (altRes.success) setAlternatives(altRes.data);
