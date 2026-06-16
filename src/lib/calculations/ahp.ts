@@ -146,10 +146,12 @@ export function buildMatrixFromUpperTriangle(
         matrix[i][j] = 1;
       } else if (i < j) {
         const key = `${i}-${j}`;
-        matrix[i][j] = upperTriangle[key] || 1;
+        const val = upperTriangle[key] || 1;
+        matrix[i][j] = Math.round(val * 100) / 100;
       } else {
         const key = `${j}-${i}`;
-        matrix[i][j] = 1 / (upperTriangle[key] || 1);
+        const val = 1 / (upperTriangle[key] || 1);
+        matrix[i][j] = Math.round(val * 100) / 100;
       }
     }
   }

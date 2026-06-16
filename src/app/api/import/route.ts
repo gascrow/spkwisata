@@ -57,6 +57,21 @@ function csvToObjects(text: string): Record<string, string>[] {
 }
 
 // ─── HELPERS ─────────────────────────────────────────────────────
+function parseNumericValue(val: string): number {
+  if (!val) return 0;
+  const trimmed = val.trim();
+  if (trimmed.includes("/")) {
+    const [num, den] = trimmed.split("/");
+    const n = parseFloat(num);
+    const d = parseFloat(den);
+    if (!isNaN(n) && !isNaN(d) && d !== 0) {
+      return n / d;
+    }
+  }
+  const parsed = parseFloat(trimmed);
+  return isNaN(parsed) ? 0 : parsed;
+}
+
 async function lookupMap(
   table: string,
   keyCol: string,
@@ -124,13 +139,28 @@ async function importSubCriteria(rows: Record<string, string>[]) {
   for (const r of rows) {
     const cid = critMap[r.criteria_code];
     if (!cid) continue;
+    const scoreVal = parseFloat(r.score_value) || 1;
     try {
-      await supabaseAdmin.from("sub_criteria").insert({
-        criteria_id: cid,
-        score_value: parseFloat(r.score_value) || 1,
-        label: r.label || "",
-        description: r.description || null,
-      });
+      const { data: existing } = await supabaseAdmin
+        .from("sub_criteria")
+        .select("id")
+        .eq("criteria_id", cid)
+        .eq("score_value", scoreVal)
+        .maybeSingle();
+
+      if (existing) {
+        await supabaseAdmin.from("sub_criteria").update({
+          label: r.label || "",
+          description: r.description || null,
+        }).eq("id", existing.id);
+      } else {
+        await supabaseAdmin.from("sub_criteria").insert({
+          criteria_id: cid,
+          score_value: scoreVal,
+          label: r.label || "",
+          description: r.description || null,
+        });
+      }
       count++;
     } catch {
       // Skip duplicate or constraint errors gracefully
@@ -201,7 +231,7 @@ async function importAhpMatrices(rows: Record<string, string>[]) {
         session_name: r.session_name || "Skenario A",
         criteria_i_id: ci,
         criteria_j_id: cj,
-        value: parseFloat(r.value) || 1,
+        value: parseNumericValue(r.value) || 1,
       },
       { onConflict: "session_name,criteria_i_id,criteria_j_id" }
     );
@@ -215,16 +245,34 @@ async function importReferences(rows: Record<string, string>[]) {
   for (const r of rows) {
     if (!r.title) continue;
     try {
-      await supabaseAdmin.from("references_docs").insert({
-        category: r.category || "Lainnya",
-        title: r.title,
-        number: r.number || null,
-        year: r.year ? parseInt(r.year) : null,
-        publisher: r.publisher || null,
-        description: r.description || null,
-        url: r.url || null,
-        sort_order: parseInt(r.sort_order) || 0,
-      });
+      const { data: existing } = await supabaseAdmin
+        .from("references_docs")
+        .select("id")
+        .eq("title", r.title)
+        .maybeSingle();
+
+      if (existing) {
+        await supabaseAdmin.from("references_docs").update({
+          category: r.category || "Lainnya",
+          number: r.number || null,
+          year: r.year ? parseInt(r.year) : null,
+          publisher: r.publisher || null,
+          description: r.description || null,
+          url: r.url || null,
+          sort_order: parseInt(r.sort_order) || 0,
+        }).eq("id", existing.id);
+      } else {
+        await supabaseAdmin.from("references_docs").insert({
+          category: r.category || "Lainnya",
+          title: r.title,
+          number: r.number || null,
+          year: r.year ? parseInt(r.year) : null,
+          publisher: r.publisher || null,
+          description: r.description || null,
+          url: r.url || null,
+          sort_order: parseInt(r.sort_order) || 0,
+        });
+      }
       count++;
     } catch {
       // Skip duplicate or constraint errors gracefully

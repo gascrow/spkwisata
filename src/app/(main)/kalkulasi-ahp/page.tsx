@@ -94,9 +94,11 @@ export default function KalkulasiAhpPage() {
               for (let j = 0; j < matrixN; j++) {
                 if (i === j) matrix[i][j] = 1;
                 else if (i < j) {
-                  matrix[i][j] = flatComparisons[`${critIds[i]}-${critIds[j]}`] || 1;
+                  const val = flatComparisons[`${critIds[i]}-${critIds[j]}`] || 1;
+                  matrix[i][j] = Math.round(val * 100) / 100;
                 } else {
-                  matrix[i][j] = 1 / (flatComparisons[`${critIds[j]}-${critIds[i]}`] || 1);
+                  const val = 1 / (flatComparisons[`${critIds[j]}-${critIds[i]}`] || 1);
+                  matrix[i][j] = Math.round(val * 100) / 100;
                 }
               }
             }
@@ -174,9 +176,11 @@ export default function KalkulasiAhpPage() {
           for (let j = 0; j < n; j++) {
             if (i === j) matrix[i][j] = 1;
             else if (i < j) {
-              matrix[i][j] = comparisons[`${critIds[i]}-${critIds[j]}`] || 1;
+              const val = comparisons[`${critIds[i]}-${critIds[j]}`] || 1;
+              matrix[i][j] = Math.round(val * 100) / 100;
             } else {
-              matrix[i][j] = 1 / (comparisons[`${critIds[j]}-${critIds[i]}`] || 1);
+              const val = 1 / (comparisons[`${critIds[j]}-${critIds[i]}`] || 1);
+              matrix[i][j] = Math.round(val * 100) / 100;
             }
           }
         }
@@ -418,7 +422,7 @@ export default function KalkulasiAhpPage() {
                     <tr key={i} className="hover:bg-slate-50/30">
                       <td className="p-2 border border-slate-200 bg-slate-50 font-bold text-center">{criteria[i].code}</td>
                       {row.map((val, j) => (
-                        <td key={j} className="p-2 border border-slate-200 text-center">{val.toFixed(4)}</td>
+                        <td key={j} className="p-2 border border-slate-200 text-center">{val.toFixed(2)}</td>
                       ))}
                     </tr>
                   ))}
@@ -426,7 +430,7 @@ export default function KalkulasiAhpPage() {
                   <tr className="bg-slate-100/60 font-bold">
                     <td className="p-2 border border-slate-200 text-center">Jumlah (Sum)</td>
                     {colSums.map((sum, j) => (
-                      <td key={j} className="p-2 border border-slate-200 text-center text-primary">{sum.toFixed(4)}</td>
+                      <td key={j} className="p-2 border border-slate-200 text-center text-primary">{sum.toFixed(2)}</td>
                     ))}
                   </tr>
                 </tbody>
