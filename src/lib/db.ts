@@ -315,7 +315,11 @@ export const db = {
         *,
         alternative:alternatives(
           *,
-          cluster:clusters(*)
+          cluster:clusters(*),
+          scores:scores(
+            *,
+            criteria:criteria(*)
+          )
         )
       `
       )
