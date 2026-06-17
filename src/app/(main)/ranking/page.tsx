@@ -116,8 +116,8 @@ export default function RankingPage() {
             Kalkulasi TOPSIS belum pernah dijalankan atau disimpan untuk sesi <strong className="text-slate-800">{activeSession}</strong>. Silakan jalankan kalkulasi TOPSIS terlebih dahulu.
           </p>
         </div>
-        <Link href="/kalkulasi-topsis" className="h-10 px-5 rounded-lg bg-primary hover:bg-primary/95 text-white font-semibold text-xs flex items-center justify-center transition-colors shadow shadow-primary/20">
-          Mulai Kalkulasi TOPSIS
+        <Link href="/kalkulasi-ahp" className="h-10 px-5 rounded-lg bg-primary hover:bg-primary/95 text-white font-semibold text-xs flex items-center justify-center transition-colors shadow shadow-primary/20">
+          Mulai Hitung Ranking
         </Link>
       </div>
     );
