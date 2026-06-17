@@ -18,6 +18,7 @@ import {
   Trash2,
 } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell, Tooltip } from "recharts";
+import { MultiStepLoader } from "@/components/ui/multi-step-loader";
 
 export default function KalkulasiAhpPage() {
   const { activeSession, refreshKey, triggerRefresh } = useApp();
@@ -42,6 +43,81 @@ export default function KalkulasiAhpPage() {
     cr: number;
     isConsistent: boolean;
   } | null>(null);
+
+  // Automated TOPSIS calculation & Loader state
+  const [isTopsisModalOpen, setIsTopsisModalOpen] = useState(false);
+  const [topsisStep, setTopsisStep] = useState(0);
+  const [topsisStatus, setTopsisStatus] = useState<'idle' | 'running' | 'success' | 'failed'>('idle');
+  const [topsisError, setTopsisError] = useState("");
+
+  const topsisLoadingStates = [
+    { text: "Menginisialisasi kalkulasi TOPSIS..." },
+    { text: "Mengambil data bobot kriteria AHP..." },
+    { text: "Mengambil data alternatif & skor penilaian..." },
+    { text: "Membentuk matriks keputusan awal (X)..." },
+    { text: "Menghitung matriks normalisasi (R)..." },
+    { text: "Menerapkan bobot kriteria AHP (Matriks V)..." },
+    { text: "Menentukan solusi ideal positif (A+) & negatif (A-)..." },
+    { text: "Menghitung jarak ideal positif (D+) & negatif (D-)..." },
+    { text: "Menghitung nilai preferensi (Ci) & peringkat..." },
+    { text: "Menyimpan hasil kalkulasi ke database..." },
+  ];
+
+  const handleRunTopsisCalculation = async () => {
+    setIsTopsisModalOpen(true);
+    setTopsisStep(0);
+    setTopsisStatus("running");
+    setTopsisError("");
+
+    let apiSuccess = false;
+    let apiErrorMsg = "";
+
+    // Trigger API call in parallel
+    const apiPromise = fetch("/api/topsis", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionName: activeSession }),
+    })
+      .then((r) => r.json())
+      .then((res) => {
+        if (res.success) {
+          apiSuccess = true;
+        } else {
+          apiErrorMsg = res.error || "Gagal menghitung TOPSIS";
+        }
+      })
+      .catch((e) => {
+        apiErrorMsg = "Terjadi kesalahan koneksi";
+      });
+
+    // Simulate steps 0 to 9
+    for (let currentStep = 0; currentStep <= 9; currentStep++) {
+      setTopsisStep(currentStep);
+      
+      // Delay for each step to make it feel natural
+      const delay = currentStep === 9 ? 1500 : 600 + Math.random() * 200;
+      await new Promise((resolve) => setTimeout(resolve, delay));
+
+      // At step 9, wait for the actual API call to complete
+      if (currentStep === 9) {
+        await apiPromise;
+        if (!apiSuccess) {
+          setTopsisStatus("failed");
+          setTopsisError(apiErrorMsg);
+          toast.error(apiErrorMsg);
+          return;
+        }
+      }
+    }
+
+    setTopsisStatus("success");
+    toast.success("Kalkulasi TOPSIS selesai & disimpan!");
+    
+    // Automatically redirect to ranking page
+    setTimeout(() => {
+      window.location.href = "/ranking";
+    }, 1000);
+  };
 
   // Fetch criteria and existing comparisons
   useEffect(() => {
@@ -585,13 +661,10 @@ export default function KalkulasiAhpPage() {
               </button>
 
               <button
-                onClick={() => {
-                  toast.success("Bobot AHP Tersimpan!");
-                  window.location.href = "/kalkulasi-topsis";
-                }}
+                onClick={handleRunTopsisCalculation}
                 className="h-10 px-6 rounded-lg bg-primary hover:bg-primary/95 text-white font-semibold text-xs flex items-center gap-1.5 shadow-md shadow-primary/10 transition-all cursor-pointer"
               >
-                Lanjut ke TOPSIS
+                Lanjut Perhitungan Otomatis TOPSIS
                 <ChevronRight className="h-4 w-4" />
               </button>
             </div>
@@ -640,6 +713,40 @@ export default function KalkulasiAhpPage() {
           </table>
         </div>
       </div>
+
+      {/* TOPSIS Multi-Step Loader */}
+      <MultiStepLoader
+        loadingStates={topsisLoadingStates}
+        loading={isTopsisModalOpen && (topsisStatus === "running" || topsisStatus === "success")}
+        value={topsisStep}
+        duration={800}
+      />
+
+      {/* Failure Overlay */}
+      {isTopsisModalOpen && topsisStatus === "failed" && (
+        <div className="fixed inset-0 z-[110] flex items-center justify-center bg-slate-950/80 backdrop-blur-md">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl w-full max-w-sm text-center space-y-4">
+            <div className="h-12 w-12 rounded-full bg-red-100 dark:bg-red-950/30 text-red-600 dark:text-red-400 flex items-center justify-center mx-auto">
+              <XCircle className="h-7 w-7" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="font-bold text-slate-900 dark:text-white text-base">Perhitungan Gagal</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                {topsisError || "Terjadi kesalahan saat menjalankan kalkulasi TOPSIS."}
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                setTopsisStatus("idle");
+                setIsTopsisModalOpen(false);
+              }}
+              className="w-full py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs rounded-lg transition-colors border border-slate-200 dark:border-slate-700 cursor-pointer"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

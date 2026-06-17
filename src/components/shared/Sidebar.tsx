@@ -32,7 +32,6 @@ const mainMenus: MenuItem[] = [
 
 const analysisMenus: MenuItem[] = [
   { title: "Kalkulasi AHP", href: "/kalkulasi-ahp", icon: Calculator },
-  { title: "Kalkulasi TOPSIS", href: "/kalkulasi-topsis", icon: BarChart3 },
   { title: "Ranking", href: "/ranking", icon: Trophy },
 ];
 
