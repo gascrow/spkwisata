@@ -129,7 +129,7 @@ export default function ObjekWisataPage() {
     reset({
       code: nextCode,
       name: "",
-      cluster_id: clusters[0]?.id || "",
+      cluster_id: "",
       description: "",
       address: "",
       latitude: -1.244,
@@ -170,10 +170,14 @@ export default function ObjekWisataPage() {
   const onSubmit = async (data: any) => {
     setSaving(true);
     try {
+      const payload = {
+        ...data,
+        id: editingAlternative ? editingAlternative.id : data.id,
+      };
       const response = await fetch("/api/alternatives", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
       const result = await response.json();
 
@@ -544,6 +548,7 @@ export default function ObjekWisataPage() {
 
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit, onError)} className="p-6 space-y-6">
+              <input type="hidden" {...register("id")} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Kode */}
                 <div className="space-y-1.5">
@@ -575,6 +580,7 @@ export default function ObjekWisataPage() {
                     {...register("cluster_id")}
                     className="w-full h-10 px-3 rounded-lg border border-slate-200 outline-none text-sm focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-white"
                   >
+                    <option value="">-- Pilih Klaster --</option>
                     {clusters.map((c) => (
                       <option key={c.id} value={c.id}>
                         {c.name}
