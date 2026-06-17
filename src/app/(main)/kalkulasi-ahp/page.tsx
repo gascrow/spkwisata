@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useApp } from "@/components/shared/AppContext";
 import { Criteria } from "@/types";
-import { formatNumberID, formatFraction, SAATY_SCALE } from "@/lib/utils";
+import { formatNumberID, formatFraction, SAATY_SCALE, getClosestSaatyValue } from "@/lib/utils";
 import toast from "react-hot-toast";
 import {
   ChevronRight,
@@ -399,7 +399,7 @@ export default function KalkulasiAhpPage() {
                           return (
                             <td key={colCrit.id} className="p-1.5 border border-slate-200 text-center bg-white">
                               <select
-                                value={val}
+                                value={getClosestSaatyValue(val)}
                                 onChange={(e) => handleValChange(rowCrit.id, colCrit.id, Number(e.target.value))}
                                 className="w-full h-8 px-1.5 border border-slate-200/80 rounded outline-none text-xs font-mono text-center font-bold bg-white cursor-pointer hover:border-slate-400 focus:border-primary focus:ring-1 focus:ring-primary/20"
                               >

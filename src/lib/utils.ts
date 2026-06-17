@@ -87,6 +87,20 @@ export const SAATY_SCALE = [
   { value: 1/9, label: "1/9 - Mutlak kurang penting" },
 ];
 
+/** Get closest Saaty scale value to avoid floating point precision dropdown mismatch */
+export function getClosestSaatyValue(val: number): number {
+  let closest = SAATY_SCALE[0].value;
+  let minDiff = Math.abs(val - closest);
+  for (let i = 1; i < SAATY_SCALE.length; i++) {
+    const diff = Math.abs(val - SAATY_SCALE[i].value);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closest = SAATY_SCALE[i].value;
+    }
+  }
+  return closest;
+}
+
 /** RI values for AHP consistency check */
 export const RI_VALUES: Record<number, number> = {
   1: 0, 2: 0, 3: 0.58, 4: 0.90, 5: 1.12,
