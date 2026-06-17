@@ -356,7 +356,7 @@ export default function KriteriaPage() {
 
             {/* Sub-Criteria Table Area */}
             {selectedCriteria ? (
-              <div className="flex-1 overflow-x-auto">
+              <div className="flex-1 overflow-auto max-h-[500px] scrollbar-thin">
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-slate-100/60 border-b border-slate-200 text-slate-500 text-[10px] font-bold uppercase tracking-wider">
