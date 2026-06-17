@@ -31,7 +31,7 @@ const mainMenus: MenuItem[] = [
 ];
 
 const analysisMenus: MenuItem[] = [
-  { title: "Kalkulasi AHP", href: "/kalkulasi-ahp", icon: Calculator },
+  { title: "Kalkulasi", href: "/kalkulasi-ahp", icon: Calculator },
   { title: "Ranking", href: "/ranking", icon: Trophy },
 ];
 
@@ -139,7 +139,7 @@ export default function Sidebar() {
       {/* Footer */}
       <div className="p-4 border-t border-slate-900 bg-slate-950/40 text-center shrink-0">
         <div className={cn("transition-all duration-300 flex flex-col items-center justify-center gap-0.5", sidebarOpen ? "opacity-100 h-auto" : "opacity-0 h-0 overflow-hidden")}>
-          <span className="text-[10px] font-semibold text-slate-500 tracking-wider">VERSI 1.0</span>
+          <span className="text-[10px] font-semibold text-slate-500 tracking-wider">VERSI 2.0</span>
           <span className="text-[10px] text-slate-600 font-medium">© 2026 Dinas Pariwisata</span>
         </div>
         {!sidebarOpen && <span className="text-[10px] font-bold text-slate-600">V1.0</span>}

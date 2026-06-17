@@ -86,12 +86,16 @@ export const MultiStepLoader = ({
   duration = 2000,
   loop = true,
   value,
+  title = "Kalkulasi TOPSIS",
+  subtitle = "Memproses perhitungan perankingan alternatif...",
 }: {
   loadingStates: LoadingState[];
   loading?: boolean;
   duration?: number;
   loop?: boolean;
   value?: number;
+  title?: string;
+  subtitle?: string;
 }) => {
   const [currentState, setCurrentState] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -151,10 +155,10 @@ export const MultiStepLoader = ({
               className="text-center space-y-2"
             >
               <h2 className="text-xl font-bold text-white tracking-tight">
-                Kalkulasi TOPSIS
+                {title}
               </h2>
               <p className="text-sm text-white/40 font-medium">
-                Memproses perhitungan perankingan alternatif...
+                {subtitle}
               </p>
             </motion.div>
 
